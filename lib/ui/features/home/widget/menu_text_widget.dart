@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/utils/theme/app_colors.dart';
+import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class MenuTextWidget extends StatelessWidget {
   const MenuTextWidget({super.key, required this.label, this.onTap});

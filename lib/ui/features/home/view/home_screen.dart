@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/features/home/widget/about_componet.dart';
 import 'package:nitingamechi/ui/features/home/widget/home_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/menu_text_widget.dart';
-import 'package:nitingamechi/utils/theme/app_colors.dart';
+import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,16 +44,16 @@ class HomeScreen extends StatelessWidget {
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            MenuTextWidget(label: 'Home'),
-            SizedBox(width: 30),
-            MenuTextWidget(label: 'About me'),
-            SizedBox(width: 30),
-            MenuTextWidget(label: 'Skills'),
-            SizedBox(width: 30),
-            MenuTextWidget(label: 'Work'),
-            SizedBox(width: 30),
-            MenuTextWidget(label: 'Experience'),
-            SizedBox(width: 30),
+            MenuTextWidget(label: AppString.kHome),
+            SizedBox(width: size30),
+            MenuTextWidget(label: AppString.kAboutMe),
+            SizedBox(width: size30),
+            MenuTextWidget(label: AppString.kSkills),
+            SizedBox(width: size30),
+            MenuTextWidget(label: AppString.kWork),
+            SizedBox(width: size30),
+            MenuTextWidget(label: AppString.kExperience),
+            SizedBox(width: size30),
           ],
         ),
         actions: [
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
             style: const ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(AppColors.kBlackColor),
             ),
-            child: const Text('Download Resume'),
+            child: const Text(AppString.kDownloadResume),
           ),
           const SizedBox(width: 20)
         ],

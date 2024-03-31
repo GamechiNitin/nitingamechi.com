@@ -103,11 +103,35 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   textTheme: TextTheme(
+    headlineLarge: GoogleFonts.crimsonText(
+      fontSize: 26,
+      fontWeight: FontWeight.w800,
+      color: Colors.black,
+      letterSpacing: 1.1,
+    ),
     headlineMedium: GoogleFonts.crimsonText(
       fontSize: 22,
       fontWeight: FontWeight.w800,
       color: Colors.black,
       letterSpacing: 1.1,
+    ),
+    headlineSmall: GoogleFonts.crimsonText(
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+      letterSpacing: 1.1,
+    ),
+    bodyLarge: GoogleFonts.crimsonText(
+      fontSize: 35,
+      fontWeight: FontWeight.w800,
+      color: Colors.blue,
+      height: 1.2,
+      letterSpacing: 1.1,
+    ),
+    bodySmall: GoogleFonts.crimsonText(
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: Colors.black,
     ),
     labelMedium: GoogleFonts.blaka(
       fontSize: 26,
@@ -132,14 +156,6 @@ ThemeData lightTheme = ThemeData(
     ),
     displaySmall: GoogleFonts.poppins(
       fontSize: 14,
-      color: AppColors.kBlackColor,
-    ),
-    bodyLarge: GoogleFonts.poppins(
-      fontSize: 12,
-      color: AppColors.kBlackColor,
-    ),
-    bodyMedium: GoogleFonts.poppins(
-      fontSize: 12,
       color: AppColors.kBlackColor,
     ),
   ),

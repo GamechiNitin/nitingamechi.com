@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:nitingamechi/utils/app_assets.dart';
-import 'package:nitingamechi/utils/theme/app_colors.dart';
-import 'package:nitingamechi/utils/theme/app_decoration.dart';
-
+import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'social_button_widget.dart';
 
 class AboutComponent extends StatelessWidget {
@@ -14,7 +10,7 @@ class AboutComponent extends StatelessWidget {
     return Container(
       color: AppColors.kWhiteColor.withOpacity(0.05),
       height: MediaQuery.of(context).size.height,
-      padding: const EdgeInsets.all(50),
+      padding: const EdgeInsets.all(size50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -30,14 +26,14 @@ class AboutComponent extends StatelessWidget {
                     borderRadius: BorderRadius.circular(300),
                     child: Image.asset(
                       AppAssets.kProfile,
-                      width: 150,
-                      height: 150,
+                      width: size150,
+                      height: size150,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 const SocialButtonWidget(
-                  label: "Nitin Gamechi",
+                  label: AppString.kNitinGamechi,
                   assetsPath: AppAssets.kDash1,
                 )
               ],
@@ -51,34 +47,17 @@ class AboutComponent extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "About me",
-                  style: GoogleFonts.crimsonText(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                    // fontStyle: FontStyle.italic,
-                    letterSpacing: 1.1,
-                  ),
+                  AppString.kAboutMe,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 Text(
-                  "Transforming ideas and wireframe \ninto applications.",
-                  style: GoogleFonts.crimsonText(
-                    fontSize: 35,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black,
-                    height: 1.2,
-                    // fontStyle: FontStyle.italic,
-                    letterSpacing: 1.1,
-                  ),
+                  AppString.kAboutTile,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: size20),
                 Text(
-                  "Experienced Software [Flutter] Developer within 2.5+ years, skilled in crafting elegant mobile apps using Flutter, Dart, Firebase, Socket.IO and Golang. Proficient in GitHub for version control, and efficient build/deployment with Fastlane and Jenkins. Focused on design, user experiences, and collaborative, high- quality solutions.",
-                  style: GoogleFonts.crimsonText(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
+                  AppString.kAboutSubtitle,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],
             ),

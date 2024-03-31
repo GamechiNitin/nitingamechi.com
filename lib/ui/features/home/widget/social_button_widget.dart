@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:nitingamechi/utils/app_assets.dart';
-import 'package:nitingamechi/utils/theme/app_colors.dart';
+import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class SocialButtonWidget extends StatelessWidget {
   const SocialButtonWidget({
@@ -42,12 +40,7 @@ class SocialButtonWidget extends StatelessWidget {
           children: [
             Text(
               label,
-              style: GoogleFonts.crimsonText(
-                fontSize: 26,
-                fontWeight: FontWeight.w800,
-                color: Colors.blue,
-                letterSpacing: 1.1,
-              ),
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
