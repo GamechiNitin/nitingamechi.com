@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nitingamechi/utils/theme/dark_theme.dart';
 
 import 'ui/features/home/view/home_screen.dart';
 import 'utils/theme/light_theme.dart';
@@ -15,7 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Nitin Gamechi',
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
       theme: lightTheme,
+      darkTheme: darkTheme,
       home: const HomeScreen(),
     );
   }

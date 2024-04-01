@@ -8,7 +8,7 @@ class HomeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.kBlueAccentColor.withOpacity(0.05),
+      // color: AppColors.kBlueAccentColor.withOpacity(0.05),
       height: MediaQuery.of(context).size.height,
       padding: const EdgeInsets.all(size50),
       child: Row(

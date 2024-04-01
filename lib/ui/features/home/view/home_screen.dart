@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/features/home/widget/about_componet.dart';
+import 'package:nitingamechi/ui/features/home/widget/experience_componet.dart';
 import 'package:nitingamechi/ui/features/home/widget/home_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/menu_text_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
@@ -81,6 +82,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             HomeComponent(),
             AboutComponent(),
+            ExperienceComponent(),
           ],
         ),
       ),
