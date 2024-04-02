@@ -8,8 +8,8 @@ class AboutComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.kWhiteColor.withOpacity(0.05),
-      height: MediaQuery.of(context).size.height,
+      color: AppColors.kBlueAccentColor.withOpacity(0.05),
+      height: MediaQuery.of(context).size.height / 1.8,
       padding: const EdgeInsets.all(size50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

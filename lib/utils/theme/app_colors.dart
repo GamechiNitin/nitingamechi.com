@@ -11,6 +11,7 @@ class AppColors {
   static const Color kWhiteColor = Colors.white;
   static Color kLightWhiteColor = Colors.white.withOpacity(0.5);
   static const Color kBlackColor = Colors.black;
+  static const Color kMediumBlackColor = Colors.black54;
 
   static const Color kHintColor = Colors.black26;
   static const Color kLightDisabledColor = Color(0x61000000);
@@ -19,20 +20,6 @@ class AppColors {
   static const Color kLightErrorColor = Color(0xffffcdd2);
   static const Color kBlueAccentColor = Colors.blueAccent;
   static const Color kBlueColor = Colors.blue;
-
-// Transaction Card Color
-  static Color kLightTealColor = Colors.teal.withOpacity(kOpacity);
-  static Color kLightGreenColor = Colors.green.withOpacity(kOpacity);
-  static Color kRedAccentColor = Colors.redAccent.withOpacity(kOpacity);
-  static Color kPinkAccentColor =
-      Colors.pinkAccent.shade200.withOpacity(kOpacity);
-  static Color kLightBlueAccentColor = Colors.blueAccent.withOpacity(kOpacity);
-  static Color kdeepOrangeColor = Colors.deepOrange.withOpacity(kOpacity);
-  static Color ktealColor = Colors.teal.withOpacity(kOpacity);
-  static Color ktealAccentColor = Colors.tealAccent.withOpacity(kOpacity);
-  static Color kdeepPurpleAccentColor =
-      Colors.deepPurpleAccent.withOpacity(kOpacity);
-  static Color kpurpleAccentColor = Colors.purpleAccent.withOpacity(kOpacity);
 
 // Dark Theme Color
   static const Color kDarkGreyColor = Color(0xFF121212);

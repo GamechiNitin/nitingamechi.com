@@ -36,4 +36,22 @@ class AppDecoration {
       )
     ],
   );
+  static Decoration kExpShadowDecoration = BoxDecoration(
+    borderRadius: BorderRadius.circular(8),
+    color: AppColors.kWhiteColor,
+    boxShadow: [
+      const BoxShadow(
+        color: Colors.black12,
+        offset: Offset(6, 6),
+        spreadRadius: 1,
+        blurRadius: 4,
+      ),
+      BoxShadow(
+        color: AppColors.kSecondaryColor.withOpacity(0.1),
+        offset: const Offset(-6, -6),
+        spreadRadius: 1,
+        blurRadius: 4,
+      )
+    ],
+  );
 }

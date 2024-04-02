@@ -144,6 +144,12 @@ ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.w500,
       letterSpacing: 1,
     ),
+    titleSmall: GoogleFonts.poppins(
+      fontSize: 12,
+      color: AppColors.kBlackColor,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1,
+    ),
     displayLarge: GoogleFonts.pacifico(
       fontSize: 24,
       color: AppColors.kPrimaryColor,
@@ -154,9 +160,11 @@ ThemeData lightTheme = ThemeData(
       color: AppColors.kBlackColor,
       fontWeight: FontWeight.w500,
     ),
-    displaySmall: GoogleFonts.poppins(
-      fontSize: 14,
-      color: AppColors.kBlackColor,
+    displaySmall: GoogleFonts.cambay(
+      fontSize: 12,
+      color: AppColors.kMediumBlackColor,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1,
     ),
   ),
 );
