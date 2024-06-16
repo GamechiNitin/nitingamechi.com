@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nitingamechi/core/theme/theme_cubit/dark_mode_cubit.dart';
 import 'package:nitingamechi/ui/features/home/widget/about_componet.dart';
 import 'package:nitingamechi/ui/features/home/widget/experience_componet.dart';
 import 'package:nitingamechi/ui/features/home/widget/home_component.dart';
@@ -58,11 +60,18 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         actions: [
-          Switch(
-            value: false,
-            inactiveThumbColor: AppColors.kErrorColor,
-            inactiveTrackColor: AppColors.kLightErrorColor,
-            onChanged: (onChanged) {},
+          BlocBuilder<DarkModeCubit, DarkModeInitialState>(
+            builder: (context, state) {
+              return Switch(
+                value: state.isDarkMode,
+                inactiveThumbColor: AppColors.kErrorColor,
+                inactiveTrackColor: AppColors.kLightErrorColor,
+                onChanged: (onChanged) {
+                  BlocProvider.of<DarkModeCubit>(context)
+                      .changeTheme(onChanged);
+                },
+              );
+            },
           ),
           const SizedBox(width: 20),
           ElevatedButton(

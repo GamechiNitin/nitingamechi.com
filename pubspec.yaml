@@ -36,11 +36,13 @@ dependencies:
 
   # State Management
   flutter_bloc: ^8.1.5
+  shared_preferences: ^2.2.3
 
   # UI LIB
   shimmer: ^3.0.0
   google_fonts: ^6.2.1
   rive: ^0.13.1
+  
 
 
   # The following adds the Cupertino Icons font to your application.
