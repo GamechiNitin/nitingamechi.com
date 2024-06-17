@@ -51,6 +51,7 @@ ThemeData lightTheme = ThemeData(
   ),
   appBarTheme: AppBarTheme(
     backgroundColor: AppColors.kWhiteColor,
+    surfaceTintColor: AppColors.kTransparentColor,
     titleTextStyle: GoogleFonts.poppins(
       color: AppColors.kBlackColor,
       fontSize: 16,

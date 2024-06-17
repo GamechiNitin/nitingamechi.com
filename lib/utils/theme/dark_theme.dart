@@ -50,19 +50,24 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   appBarTheme: AppBarTheme(
-    backgroundColor: AppColors.kWhiteColor,
+    backgroundColor: AppColors.kDarkGrey3Color,
     titleTextStyle: GoogleFonts.poppins(
-      color: AppColors.kBlackColor,
+      color: AppColors.kWhiteColor,
       fontSize: 16,
       fontWeight: FontWeight.w500,
+    ),
+    actionsIconTheme: const IconThemeData(
+      color: AppColors.kWhiteColor,
     ),
   ),
   useMaterial3: true,
   primaryColor: AppColors.kPrimaryColor,
 
-  scaffoldBackgroundColor: AppColors.kDarkGrey1Color,
+  scaffoldBackgroundColor: AppColors.kTransparentColor,
   dividerColor: Colors.black38,
-  splashColor: ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).primary,
+  splashColor: ColorScheme.fromSeed(
+    seedColor: AppColors.kPrimaryColor,
+  ).primary,
   colorScheme: ColorScheme(
     brightness: Brightness.dark,
     primary: AppColors.kWhiteColor,
@@ -71,7 +76,7 @@ ThemeData darkTheme = ThemeData(
     onSecondary: AppColors.kWhiteColor,
     error: AppColors.kBlackColor,
     onError: ColorScheme.fromSeed(seedColor: AppColors.kErrorColor).onError,
-    background: AppColors.kBlackColor,
+    background: AppColors.kTransparentColor,
     onBackground:
         ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).background,
     surface: AppColors.kPrimaryColor,
