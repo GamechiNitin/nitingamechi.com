@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nitingamechi/utils/theme/app_style.dart';
 
 import 'app_colors.dart';
 
@@ -50,7 +51,7 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   appBarTheme: AppBarTheme(
-    backgroundColor: AppColors.kDarkGrey3Color,
+    backgroundColor: AppColors.kBlackColor,
     titleTextStyle: GoogleFonts.poppins(
       color: AppColors.kWhiteColor,
       fontSize: 16,
@@ -64,7 +65,6 @@ ThemeData darkTheme = ThemeData(
   primaryColor: AppColors.kPrimaryColor,
 
   scaffoldBackgroundColor: AppColors.kTransparentColor,
-  dividerColor: Colors.black38,
   splashColor: ColorScheme.fromSeed(
     seedColor: AppColors.kPrimaryColor,
   ).primary,
@@ -141,12 +141,6 @@ ThemeData darkTheme = ThemeData(
       fontWeight: FontWeight.w500,
       color: AppColors.kBlueAccentColor,
     ),
-    titleMedium: GoogleFonts.poppins(
-      fontSize: 16,
-      color: AppColors.kWhiteColor,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 1,
-    ),
     displayLarge: GoogleFonts.pacifico(
       fontSize: 24,
       color: AppColors.kPrimaryColor,
@@ -161,5 +155,10 @@ ThemeData darkTheme = ThemeData(
       fontSize: 14,
       color: AppColors.kWhiteColor,
     ),
+
+    // ------------
+    titleLarge: DarkStyle.kTitleStyle,
+    titleMedium: DarkStyle.kTitleMedium,
+    titleSmall: DarkStyle.kTitleStyle,
   ),
 );

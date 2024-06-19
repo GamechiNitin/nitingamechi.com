@@ -26,15 +26,11 @@ class AboutComponent extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           Text(
             AppString.kAboutSubtitle,
             textAlign: TextAlign.justify,
-            style: GoogleFonts.poppins(
-              color: AppColors.kBlackColor,
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-            ),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ],
       ),

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
@@ -28,15 +30,6 @@ class ExperienceComponent extends StatelessWidget {
             textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
-          Text(
-            AppString.kAboutTile,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.poppins(
-              color: AppColors.kBlueColor,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
           const SizedBox(height: size20),
           ListView.builder(
             itemCount: 3,
@@ -45,7 +38,24 @@ class ExperienceComponent extends StatelessWidget {
             itemBuilder: (context, index) => Container(
               margin: const EdgeInsets.only(bottom: 20),
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: AppDecoration.kExpShadowDecoration,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Theme.of(context).appBarTheme.backgroundColor,
+                boxShadow: [
+                  const BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(6, 6),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                  ),
+                  BoxShadow(
+                    color: AppColors.kSecondaryColor.withOpacity(0.1),
+                    offset: const Offset(-3, -3),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                  )
+                ],
+              ),
               child: Theme(
                 data: Theme.of(context).copyWith(
                   dividerColor: Colors.transparent,
@@ -53,7 +63,7 @@ class ExperienceComponent extends StatelessWidget {
                 ),
                 child: ExpansionTile(
                   tilePadding: EdgeInsets.zero,
-                  collapsedIconColor: AppColors.kBlackColor,
+                  // collapsedIconColor: AppColors.kBlackColor,
                   iconColor: AppColors.kPrimaryColor,
                   expandedAlignment: Alignment.centerLeft,
                   expandedCrossAxisAlignment: CrossAxisAlignment.start,
@@ -78,43 +88,50 @@ class ExperienceComponent extends StatelessWidget {
                     ],
                   ),
                   children: [
-                    const Divider(
-                      height: 5,
+                    Divider(
                       thickness: 0.9,
-                      color: AppColors.kHintColor,
+                      height: 1,
+                      color: Theme.of(context).hintColor,
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 12),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Icon(
                           Icons.location_on_sharp,
-                          color: AppColors.kBlackColor,
+                          size: 16,
+                          // color: AppColors.kBlackColor,
                         ),
-                        const SizedBox(width: 8),
-                        Text(
-                          'Gurugram, Haryana, India',
-                          style: Theme.of(context).textTheme.displaySmall,
+                        const SizedBox(width: 4),
+                        Expanded(
+                          child: Text(
+                            'Gurugram, Haryana, India',
+                            maxLines: 1,
+                            style: Theme.of(context).textTheme.titleSmall,
+                          ),
                         ),
-                        const SizedBox(width: 50),
                         const Icon(
                           Icons.link,
-                          color: AppColors.kBlackColor,
+                          size: 16,
                         ),
-                        const SizedBox(width: 8),
+                        const SizedBox(width: 4),
                         Flexible(
                           child: Text(
                             'https://kodehash.com',
                             maxLines: 1,
-                            style: Theme.of(context).textTheme.displaySmall,
+                            style: Theme.of(context).textTheme.titleSmall,
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      "Engaged in Flutter UI/UX development with Material Design, crafting intricate interfaces, layout & widget. \nUsing advance state management like Bloc & other plugin for effective data-flow and application logic. \nIntegrating back-end services through REST-API calls and WebSocket, prioritizing robust error handling. \nFollowing SDLC systematic process for planning, creating, testing, deploying, and maintaining software applications. \nDeveloped and contributed in 5 different app’s.",
-                      style: Theme.of(context).textTheme.titleSmall,
+                      "Engaged in Flutter UI/UX development with Material Design, crafting intricate interfaces, layout & widget. Using advance state management like Bloc & other plugin for effective data-flow and application logic. Integrating back-end services through REST-API calls and WebSocket, prioritizing robust error handling. Following SDLC systematic process for planning, creating, testing, deploying, and maintaining software applications. Developed and contributed in 5 different app’s.",
+                      textAlign: TextAlign.justify,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontSize: 12,
+                          ),
                     ),
                     const SizedBox(height: 8),
                   ],

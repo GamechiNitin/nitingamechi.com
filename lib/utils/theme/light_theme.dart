@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
+import 'app_style.dart';
 
 ThemeData lightTheme = ThemeData(
   switchTheme: const SwitchThemeData(
@@ -63,7 +64,6 @@ ThemeData lightTheme = ThemeData(
 
   scaffoldBackgroundColor:
       ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).background,
-  dividerColor: Colors.black38,
   splashColor: ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).primary,
   colorScheme: ColorScheme(
     brightness: Brightness.light,
@@ -139,18 +139,6 @@ ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.w500,
       color: AppColors.kBlueAccentColor,
     ),
-    titleMedium: GoogleFonts.poppins(
-      fontSize: 16,
-      color: AppColors.kBlackColor,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 1,
-    ),
-    titleSmall: GoogleFonts.poppins(
-      fontSize: 12,
-      color: AppColors.kBlackColor,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 1,
-    ),
     displayLarge: GoogleFonts.pacifico(
       fontSize: 24,
       color: AppColors.kPrimaryColor,
@@ -161,11 +149,8 @@ ThemeData lightTheme = ThemeData(
       color: AppColors.kBlackColor,
       fontWeight: FontWeight.w500,
     ),
-    displaySmall: GoogleFonts.cambay(
-      fontSize: 12,
-      color: AppColors.kMediumBlackColor,
-      fontWeight: FontWeight.w400,
-      letterSpacing: 1,
-    ),
+    titleLarge: LightStyle.kTitleStyle,
+    titleMedium: LightStyle.kTitleMedium,
+    titleSmall: LightStyle.kTitleSmall,
   ),
 );

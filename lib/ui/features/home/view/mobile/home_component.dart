@@ -9,16 +9,6 @@ class HomeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // decoration: const BoxDecoration(
-      //   // color: AppColors.kH1,
-
-      //   gradient: LinearGradient(
-      //     colors: [
-      //       AppColors.kH1,
-      //       AppColors.kWhiteColor,
-      //     ],
-      //   ),
-      // ),
       padding: const EdgeInsets.all(16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -60,28 +50,19 @@ class HomeComponent extends StatelessWidget {
               textAlign: TextAlign.justify,
               text: TextSpan(
                 text: 'A Passionate ',
-                style: GoogleFonts.poppins(
-                  color: AppColors.kBlackColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
                 children: [
                   TextSpan(
                     text: 'Software Developer',
                     style: GoogleFonts.poppins(
                       color: AppColors.kPrimaryColor,
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  TextSpan(
+                  const TextSpan(
                     text:
-                        ' with 3 years of experince creating multi-platfrom mobile application.',
-                    style: GoogleFonts.poppins(
-                      color: AppColors.kBlackColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
+                        ' with 3+ years of experince creating multi-platfrom mobile application.',
                   ),
                 ],
               ),

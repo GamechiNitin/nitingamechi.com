@@ -9,8 +9,8 @@ class AppColors {
   static const Color kTransparentColor = Colors.transparent;
 
   static const Color kWhiteColor = Colors.white;
-  static const Color kWhiteBGColor = Color(0x33FFFFFF);
-  static Color kLightWhiteColor = Colors.white.withOpacity(0.5);
+  static const Color kLightWhiteColor = Color(0xBFFFFFFF);
+  static const Color kWhite90Color = Color(0xE6FFFFFF);
   static const Color kBlackColor = Colors.black;
   static const Color kMediumBlackColor = Colors.black54;
 
@@ -26,20 +26,10 @@ class AppColors {
   static const Color kDarkGreyColor = Color(0xFF121212);
   static const Color kDarkGrey1Color = Color(0xFF1F1A24);
   static const Color kDarkGrey2Color = Color(0xFF332940);
-  static const Color kDarkGrey3Color = Color(0xff080e2c);
-  static Color kDarkGrey4Color = const Color(0xff080e2c).withOpacity(0.5);
 
   static const Color lightGreen = Colors.lightGreen;
-  // static const Color kH = kDarkGreyColor;
-  static const Color kH = kWhiteColor;
-  static const Color kH9 = Color(0xFF3fcb82);
-  static const Color kH8 = Color(0xFF121414);
-  static const Color kH7 = Color(0xFF1f3927);
-  static const Color kH6 = Color(0x6680ffdb);
   static const Color kH11 = Color(0xFF80ffdb);
   static const Color kH1 = Color(0x4080ffdb);
-  static const Color kH2 = Color(0x4048bfe3);
-  static const Color kH3 = Color(0x40ffddd2);
-  static const Color kH4 = Color(0xFF83c5be);
-  static const Color kH5 = Color(0x40f1faee);
+
+  static const Color kS1Color = Color(0xff121212);
 }

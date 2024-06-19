@@ -99,7 +99,7 @@ class MainScreen extends StatelessWidget {
                     topLeft: Radius.circular(16),
                   ),
                   color: Theme.of(context).brightness == Brightness.dark
-                      ? AppColors.kWhiteColor
+                      ? AppColors.kS1Color
                       : null,
                   gradient: Theme.of(context).brightness == Brightness.dark
                       ? null
