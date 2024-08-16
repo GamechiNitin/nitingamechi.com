@@ -42,7 +42,11 @@ dependencies:
   shimmer: ^3.0.0
   google_fonts: ^6.2.1
   rive: ^0.13.1
+
+  flutter_responsive_ui:
+    git: https://github.com/GamechiNitin/Flutter-Responsive-UI
   
+      # url: https://github.com/jlouage/flutter-carousel-pro.git
 
 
   # The following adds the Cupertino Icons font to your application.

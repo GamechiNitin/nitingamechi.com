@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:rive/rive.dart' as rive;
+import 'package:shimmer/shimmer.dart';
 
 class HomeComponent extends StatelessWidget {
   const HomeComponent({super.key});
@@ -8,7 +10,6 @@ class HomeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: AppColors.kBlueAccentColor.withOpacity(0.05),
       height: MediaQuery.of(context).size.height,
       padding: const EdgeInsets.all(size50),
       child: Row(
@@ -26,21 +27,59 @@ class HomeComponent extends StatelessWidget {
                   "Nitin Gamechi",
                   style: AppStyle.kH4,
                 ),
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    Shimmer.fromColors(
+                      baseColor: AppColors.kWhiteColor,
+                      highlightColor: Colors.blueAccent,
+                      child: Text(
+                        'Flutter Developer',
+                        style: GoogleFonts.poppins(
+                          color: AppColors.kWhiteColor,
+                          fontSize: 70,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(40),
+                      child: Shimmer.fromColors(
+                        baseColor: AppColors.kPrimaryColor,
+                        highlightColor: Colors.black12,
+                        child: Text(
+                          'Flutter Developer',
+                          style: GoogleFonts.poppins(
+                            color: AppColors.kPrimaryColor,
+                            fontSize: 70,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 16),
                   child: RichText(
+                    textAlign: TextAlign.justify,
                     text: TextSpan(
-                      text: 'A Passionate ',
-                      style: AppStyle.kH3,
+                      text: '\nA Passionate ',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontSize: 24,
+                          ),
                       children: [
                         TextSpan(
-                          text: '<Flutter Developer/>',
-                          style: AppStyle.kH1,
+                          text: 'Software Developer\n',
+                          style: GoogleFonts.poppins(
+                            color: AppColors.kPrimaryColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                        TextSpan(
+                        const TextSpan(
                           text:
-                              ' \nwith 3 years of experince creating \nmulti-platfrom mobile application.',
-                          style: AppStyle.kH2,
+                              'with 3+ years of experince creating \nmulti-platfrom mobile application.',
                         ),
                       ],
                     ),

@@ -10,8 +10,8 @@ import 'home_component.dart';
 
 List<String> menu = ['Home', 'About', 'Experience', 'Resume'];
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+class MobileScreen extends StatelessWidget {
+  const MobileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -98,9 +98,6 @@ class MainScreen extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                   ),
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? AppColors.kS1Color
-                      : null,
                   gradient: Theme.of(context).brightness == Brightness.dark
                       ? null
                       : const LinearGradient(

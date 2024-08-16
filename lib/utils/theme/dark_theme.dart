@@ -64,7 +64,7 @@ ThemeData darkTheme = ThemeData(
   useMaterial3: true,
   primaryColor: AppColors.kPrimaryColor,
 
-  scaffoldBackgroundColor: AppColors.kTransparentColor,
+  scaffoldBackgroundColor: AppColors.kS1Color,
   splashColor: ColorScheme.fromSeed(
     seedColor: AppColors.kPrimaryColor,
   ).primary,
@@ -76,9 +76,8 @@ ThemeData darkTheme = ThemeData(
     onSecondary: AppColors.kWhiteColor,
     error: AppColors.kBlackColor,
     onError: ColorScheme.fromSeed(seedColor: AppColors.kErrorColor).onError,
-    background: AppColors.kTransparentColor,
-    onBackground:
-        ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).background,
+    background: AppColors.kS1Color,
+    onBackground: AppColors.kBlackColor,
     surface: AppColors.kPrimaryColor,
     onSurface: ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).primary,
     shadow: AppColors.kWhiteColor,
