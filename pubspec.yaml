@@ -34,6 +34,8 @@ dependencies:
   # Navigation
   go_router: ^13.2.2
 
+  url_launcher: ^6.3.0
+
   # State Management
   flutter_bloc: ^8.1.5
   shared_preferences: ^2.2.3

@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
+
+import 'social_component.dart';
 
 class HomeComponent extends StatelessWidget {
   const HomeComponent({super.key});
@@ -14,71 +15,61 @@ class HomeComponent extends StatelessWidget {
     if (!DeviceInfo(context).isMobile && !DeviceInfo(context).isSmallMobile) {
       return Container(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 3,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Namaste, I'm",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall
-                              ?.copyWith(
+            Expanded(
+              child: SizedBox(
+                width: 380,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: MediaQuery.sizeOf(context).width / 12),
+                    Text(
+                      "Namaste, I'm",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
                                 fontSize: 12,
                               ),
+                    ),
+                    Text(
+                      "Nitin Gamechi",
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    Shimmer.fromColors(
+                      baseColor: AppColors.kWhiteColor,
+                      highlightColor: Colors.blueAccent,
+                      child: Text(
+                        'Software Developer',
+                        style: GoogleFonts.poppins(
+                          color: AppColors.kWhiteColor,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w600,
+                          wordSpacing: 1,
+                          height: 2,
                         ),
-                        Text(
-                          "Nitin Gamechi",
-                          style: Theme.of(context).textTheme.headlineSmall,
-                        ),
-                        Shimmer.fromColors(
-                          baseColor: AppColors.kWhiteColor,
-                          highlightColor: Colors.blueAccent,
-                          child: Text(
-                            'Software Developer',
-                            style: GoogleFonts.poppins(
-                              color: AppColors.kWhiteColor,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w600,
-                              wordSpacing: 1,
-                              height: 2,
-                            ),
+                      ),
+                    ),
+                    Text(
+                      AppString.kIntro,
+                      textAlign: TextAlign.justify,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontSize: 16,
                           ),
-                        ),
-                        Text(
-                          AppString.kIntro,
-                          textAlign: TextAlign.justify,
-                          style:
-                              Theme.of(context).textTheme.titleLarge?.copyWith(
-                                    fontSize: 16,
-                                  ),
-                        )
-                      ],
                     ),
-                  ),
+                    const SocialComponent(),
+                  ],
                 ),
-                Flexible(
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 3.3,
-                    height: MediaQuery.of(context).size.width / 3,
-                    // height: 120,
-                    child: const rive.RiveAnimation.asset(
-                      AppAssets.kDash,
-                    ),
-                  ),
-                ),
-              ],
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 3,
+              height: MediaQuery.of(context).size.width / 3,
+              // height: 120,
+              child: const rive.RiveAnimation.asset(
+                AppAssets.kDash,
+              ),
             ),
           ],
         ),
@@ -142,7 +133,8 @@ class HomeComponent extends StatelessWidget {
             Text(
               AppString.kIntro,
               style: Theme.of(context).textTheme.titleLarge,
-            )
+            ),
+            const SocialComponent(),
           ],
         ),
       );
