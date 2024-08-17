@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:nitingamechi/core/theme/theme_cubit/dark_mode_cubit.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/about_component.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/experience_componet.dart';
+import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/dm_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 

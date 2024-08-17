@@ -3,7 +3,7 @@ class AppString {
   static const String kAboutMe = 'About';
   static const String kSkills = 'Skills';
   static const String kWork = 'Work';
-  static const String kExperience = 'Experience';
+  static const String kExperience = 'Work Experience';
   static const String kDownloadResume = 'Download Resume';
   static const String kNitinGamechi = 'Nitin Gamechi';
   static const String kComputerEngineer = 'Computer Engineer';

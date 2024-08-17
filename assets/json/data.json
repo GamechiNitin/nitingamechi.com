@@ -1,0 +1,60 @@
+{
+    "experience": [
+        {
+            "company": "Kodehash",
+            "timeline": "July, 2023 - July 2024",
+            "location": "Gurugram, Haryana",
+            "position": "Senior Flutter Developer",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "Socket.io",
+                "Figma",
+                "SDLC"
+            ],
+            "experience": [
+                "Contributed to the development of 8+ various applications like E-commerce, Shopping apps.",
+                "Following SDLC systematic process for planning, creating, testing, deploying, maintaining software apps. ",
+                "UI/UX, API integration, Payment gateway, Session management, Bug fixing, Unit testing, App support.",
+                "Improve app developing performance by 40%, reduce bug count by 60%.",
+                "Delivered project 10% ahead of schedule, achieved a 95% client satisfaction rate."
+            ]
+        },
+        {
+            "company": "Smitech",
+            "timeline": "May, 2022 - Feb 2023",
+            "location": "Remote - Vadodara",
+            "position": "Flutter Developer (Contract)",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "Figma",
+                "Agora",
+                "Google Autocomplete"
+            ],
+            "experience": [
+                "Responsible for creating and developing high performance, cross-platform mobile applications for Android and IOS using Flutter and Dart framework.",
+                " Delivered project 20% ahead of schedule, achieved 80% client satisfaction rates."
+            ]
+        },
+        {
+            "company": "Kode-Creator",
+            "timeline": "March, 2021 - April 2022",
+            "location": "Ajwa, Vadodara",
+            "position": "Flutter Developer",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "Material Ui"
+            ],
+            "experience": [
+                "Developed and contributed to 15+ various applications like E-commerce, SocialMedia, Grocery, Shopping apps.",
+                "UI/UX, API integration, Payment gateway, State management, Session management, update, bug fixing, unit testing etc.",
+                "Helping team members to deliver applications on time, which improves performance by 20% and reduces bug count by 20%."
+            ]
+        }
+    ]
+}
