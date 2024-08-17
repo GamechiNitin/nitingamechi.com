@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
@@ -18,52 +19,59 @@ class HomeComponent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  flex: 2,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Namaste, I'm",
-                        style:
-                            Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                  fontSize: 12,
-                                ),
-                      ),
-                      Text(
-                        "Nitin Gamechi",
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                      Shimmer.fromColors(
-                        baseColor: AppColors.kWhiteColor,
-                        highlightColor: Colors.blueAccent,
-                        child: Text(
-                          'Software Developer',
-                          style: GoogleFonts.poppins(
-                            color: AppColors.kWhiteColor,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w600,
-                            wordSpacing: 1,
-                            height: 2,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width / 3,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Namaste, I'm",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(
+                                fontSize: 12,
+                              ),
+                        ),
+                        Text(
+                          "Nitin Gamechi",
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                        Shimmer.fromColors(
+                          baseColor: AppColors.kWhiteColor,
+                          highlightColor: Colors.blueAccent,
+                          child: Text(
+                            'Software Developer',
+                            style: GoogleFonts.poppins(
+                              color: AppColors.kWhiteColor,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w600,
+                              wordSpacing: 1,
+                              height: 2,
+                            ),
                           ),
                         ),
-                      ),
-                      Text(
-                        AppString.kIntro,
-                        textAlign: TextAlign.justify,
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              fontSize: 18,
-                            ),
-                      )
-                    ],
+                        Text(
+                          AppString.kIntro,
+                          textAlign: TextAlign.justify,
+                          style:
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
+                                    fontSize: 16,
+                                  ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-                Expanded(
+                Flexible(
                   child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 2,
-                    height: MediaQuery.of(context).size.width / 2,
+                    width: MediaQuery.of(context).size.width / 3.3,
+                    height: MediaQuery.of(context).size.width / 3,
                     // height: 120,
                     child: const rive.RiveAnimation.asset(
                       AppAssets.kDash,
@@ -133,7 +141,6 @@ class HomeComponent extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               AppString.kIntro,
-              // textAlign: TextAlign.justify,
               style: Theme.of(context).textTheme.titleLarge,
             )
           ],

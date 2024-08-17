@@ -7,7 +7,8 @@ class DarkStyle {
   static TextStyle kTitleStyle = GoogleFonts.poppins(
     color: AppColors.kWhite90Color,
     fontSize: 13,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w300,
+    letterSpacing: 1,
   );
   static TextStyle kTitleMedium = GoogleFonts.poppins(
     fontSize: 16,
@@ -28,6 +29,7 @@ class LightStyle {
     color: AppColors.kBlackColor,
     fontSize: 13,
     fontWeight: FontWeight.w400,
+    letterSpacing: 1,
   );
   static TextStyle kTitleMedium = GoogleFonts.poppins(
     fontSize: 16,
