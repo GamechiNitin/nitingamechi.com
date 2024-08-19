@@ -149,8 +149,11 @@ ThemeData lightTheme = ThemeData(
       color: AppColors.kBlackColor,
       fontWeight: FontWeight.w500,
     ),
-    titleLarge: LightStyle.kTitleStyle,
+    // ---------
+    titleLarge: LightStyle.kTitleLarge,
     titleMedium: LightStyle.kTitleMedium,
     titleSmall: LightStyle.kTitleSmall,
+    // ---------
+    labelSmall: LightStyle.kLabelSmall,
   ),
 );

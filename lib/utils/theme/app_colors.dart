@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   static double kOpacity = 0.7;
   static const Color kPrimaryColor = Color(0xff3CCF4E);
-  static const Color kSecondaryColor = Color(0xff3CCF4E);
+  static const Color kSecondaryColor = Colors.blueAccent;
   static const Color kLPrimaryColor = Color(0x403CCF4E);
 
   static const Color kTransparentColor = Colors.transparent;
@@ -11,7 +11,8 @@ class AppColors {
   static const Color kWhiteColor = Colors.white;
   static const Color kLightWhiteColor = Color(0xBFFFFFFF);
   static const Color kWhite90Color = Color(0xE6FFFFFF);
-  static const Color kWhite40Color = Color(0x40FFFFFF);
+  static const Color kWhite70Color = Color(0xCCFFFFFF);
+  static const Color kWhite40Color = Color(0x66FFFFFF);
   static const Color kBlackColor = Colors.black;
   static const Color kMediumBlackColor = Colors.black54;
 

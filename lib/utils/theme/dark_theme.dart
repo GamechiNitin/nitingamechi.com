@@ -11,6 +11,13 @@ ThemeData darkTheme = ThemeData(
     trackColor: MaterialStatePropertyAll(AppColors.kLPrimaryColor),
     trackOutlineColor: MaterialStatePropertyAll(AppColors.kTransparentColor),
   ),
+  primaryIconTheme: const IconThemeData(
+    color: AppColors.kWhiteColor,
+  ),
+
+  iconTheme: const IconThemeData(
+    color: AppColors.kWhite40Color,
+  ),
 
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
@@ -156,8 +163,10 @@ ThemeData darkTheme = ThemeData(
     ),
 
     // ------------
-    titleLarge: DarkStyle.kTitleStyle,
+    titleLarge: DarkStyle.kTitleLarge,
     titleMedium: DarkStyle.kTitleMedium,
-    titleSmall: DarkStyle.kTitleStyle,
+    titleSmall: DarkStyle.kTitleSmall,
+
+    labelSmall: DarkStyle.kLabelSmall,
   ),
 );

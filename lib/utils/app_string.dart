@@ -18,9 +18,7 @@ class AppString {
   static const String kAboutSubtitle2 =
       '''I'm Nitin Gamechi, a Software Developer specializing in cross-platform mobile development for Android and iOS. Utilizing technologies like Flutter, Dart, Firebase, Socket.IO, and Go, I craft high-performance, scalable applications.
 
-I hold a Bachelor's Degree in Computer Science from SVIT Vasad, where I gained expertise in Flutter, Dart, Go, C++, Kotlin, HTML, CSS, and JavaScript, along with tools such as JSON, YAML, Fastlane, Jenkins, Git/GitHub, Figma, Postman, and Thunder Client.
-
-My aim is to create innovative software solutions that exceed user expectations and drive business success by staying ahead of industry trends.''';
+I hold a Bachelor's Degree in Computer Science from SVIT Vasad, where I gained expertise in Flutter, Dart, Go, C++, Kotlin, HTML, CSS, and JavaScript, along with tools such as JSON, YAML, Fastlane, Jenkins, Git/GitHub, Figma, Postman, and Thunder Client. My aim is to create innovative software solutions that exceed user expectations and drive business success by staying ahead of industry trends.''';
   // 'Experience'
   static const String kExperienceTitle =
       'Quick summary of my recent experience';
