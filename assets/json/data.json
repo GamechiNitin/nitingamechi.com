@@ -13,7 +13,7 @@
                 "Figma",
                 "SDLC"
             ],
-            "experience": [
+            "description": [
                 "Contributed to the development of 8+ various applications like E-commerce, Shopping apps.",
                 "Following SDLC systematic process for planning, creating, testing, deploying, maintaining software apps. ",
                 "UI/UX, API integration, Payment gateway, Session management, Bug fixing, Unit testing, App support.",
@@ -34,7 +34,7 @@
                 "Agora",
                 "Google Autocomplete"
             ],
-            "experience": [
+            "description": [
                 "Responsible for creating and developing high performance, cross-platform mobile applications for Android and IOS using Flutter and Dart framework.",
                 " Delivered project 20% ahead of schedule, achieved 80% client satisfaction rates."
             ]
@@ -50,7 +50,7 @@
                 "Firebase",
                 "Material Ui"
             ],
-            "experience": [
+            "description": [
                 "Developed and contributed to 15+ various applications like E-commerce, SocialMedia, Grocery, Shopping apps.",
                 "UI/UX, API integration, Payment gateway, State management, Session management, update, bug fixing, unit testing etc.",
                 "Helping team members to deliver applications on time, which improves performance by 20% and reduces bug count by 20%."
