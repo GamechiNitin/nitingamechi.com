@@ -26,9 +26,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       data.addAll(response.$1!.company);
       if (data.isEmpty) {
         emit(const HomeState.noData());
-      } else {
-        emit(HomeState.data(data));
-      }
+      } else {}
+      emit(HomeState.data(response.$1!));
     } else {
       // emit(HomeState.error(response.$2?.message ?? "No result"));
       emit(HomeState.error(response.$2?.message ?? "No result"));

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nitingamechi/ui/features/home/view/bloc/home_bloc.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
+import 'project_card_component.dart';
 
-import 'experience_card_component.dart';
-
-class ExperienceComponent extends StatelessWidget {
-  const ExperienceComponent({super.key});
+class ProjectComponent extends StatelessWidget {
+  const ProjectComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class ExperienceComponent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppString.kExperience,
+            AppString.kProject,
             textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
@@ -31,13 +30,13 @@ class ExperienceComponent extends StatelessWidget {
                   return const Center(child: Text("No Data"));
                 case HomeStateData():
                   return ListView.separated(
-                    itemCount: state.data.company.length,
+                    itemCount: state.data.project.length,
                     separatorBuilder: (context, index) =>
                         const SizedBox(height: 25),
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => ExperienceCardWidget(
-                      company: state.data.company[index],
+                    itemBuilder: (context, index) => ProjectCardWidget(
+                      project: state.data.project[index],
                       index: index,
                     ),
                   );

@@ -4,6 +4,7 @@ class AppString {
   static const String kSkills = 'Skills';
   static const String kWork = 'Work';
   static const String kExperience = 'Work Experience';
+  static const String kProject = 'Project';
   static const String kDownloadResume = 'Download Resume';
   static const String kNitinGamechi = 'Nitin Gamechi';
   static const String kComputerEngineer = 'Computer Engineer';
