@@ -33,7 +33,8 @@ class Company with _$Company {
 class Project with _$Project {
   const factory Project({
     @JsonKey(name: "title") String? title,
-    @JsonKey(name: "features") String? features,
+    @JsonKey(name: "sub_title") String? subTitle,
+    @JsonKey(name: "features") List<String>? features,
     @JsonKey(name: "image") String? image,
     @JsonKey(name: "github") String? github,
     @JsonKey(name: "playstore") String? playstore,

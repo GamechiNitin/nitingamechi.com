@@ -7,14 +7,14 @@ import 'app_style.dart';
 ThemeData lightTheme = ThemeData(
   switchTheme: const SwitchThemeData(
     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-    thumbColor: MaterialStatePropertyAll(AppColors.kPrimaryColor),
-    trackColor: MaterialStatePropertyAll(AppColors.kLPrimaryColor),
-    trackOutlineColor: MaterialStatePropertyAll(AppColors.kTransparentColor),
+    thumbColor: WidgetStatePropertyAll(AppColors.kPrimaryColor),
+    trackColor: WidgetStatePropertyAll(AppColors.kLPrimaryColor),
+    trackOutlineColor: WidgetStatePropertyAll(AppColors.kTransparentColor),
   ),
 
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
-      textStyle: MaterialStatePropertyAll(
+      textStyle: WidgetStatePropertyAll(
         GoogleFonts.poppins(
           color: AppColors.kBlackColor,
           fontSize: 16,
@@ -41,9 +41,9 @@ ThemeData lightTheme = ThemeData(
 
   // brightness: Brightness.dark,
   checkboxTheme: CheckboxThemeData(
-    fillColor: MaterialStateProperty.resolveWith<Color>(
-      (Set<MaterialState> states) {
-        if (states.contains(MaterialState.selected)) {
+    fillColor: WidgetStateProperty.resolveWith<Color>(
+      (Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
           return AppColors.kPrimaryColor;
         }
         return AppColors.kWhiteColor;
@@ -63,7 +63,7 @@ ThemeData lightTheme = ThemeData(
   primaryColor: AppColors.kPrimaryColor,
 
   scaffoldBackgroundColor:
-      ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).background,
+      ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).surface,
   splashColor: ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).primary,
   colorScheme: ColorScheme(
     brightness: Brightness.light,
@@ -73,17 +73,13 @@ ThemeData lightTheme = ThemeData(
     onSecondary: AppColors.kWhiteColor,
     error: AppColors.kBlackColor,
     onError: ColorScheme.fromSeed(seedColor: AppColors.kErrorColor).onError,
-    background:
-        ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).background,
-    onBackground:
-        ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).background,
     surface: AppColors.kPrimaryColor,
     onSurface: ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).primary,
     shadow: AppColors.kWhiteColor,
   ),
   bottomSheetTheme: BottomSheetThemeData(
     modalBackgroundColor:
-        ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).background,
+        ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).surface,
   ),
 
   inputDecorationTheme: InputDecorationTheme(

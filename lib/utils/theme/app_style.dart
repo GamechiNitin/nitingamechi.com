@@ -39,7 +39,6 @@ class LightStyle {
     fontSize: 14,
     color: AppColors.kBlackColor,
     fontWeight: FontWeight.normal,
-    letterSpacing: 1,
   );
   static TextStyle kTitleSmall = GoogleFonts.cambay(
     fontSize: 12,
