@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/core/data/experience_response.dart';
+import 'package:nitingamechi/core/data/company/company_model.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class ExperienceCardWidget extends StatelessWidget {
-  const ExperienceCardWidget(
-      {super.key, required this.company, required this.index});
+  const ExperienceCardWidget({
+    super.key,
+    required this.company,
+    required this.index,
+  });
   final Company company;
   final int index;
 
@@ -85,11 +88,9 @@ class ExperienceCardWidget extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    Flexible(
-                      child: Text(
-                        company.description![index],
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
+                    Text(
+                      company.description![index],
+                      style: Theme.of(context).textTheme.labelSmall,
                     ),
                   ],
                 ),

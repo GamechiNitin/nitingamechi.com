@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:nitingamechi/core/data/company/company_model.dart';
 import 'package:nitingamechi/core/data/experience_response.dart';
 import 'package:nitingamechi/ui/features/home/view/repository/home_repository.dart';
 

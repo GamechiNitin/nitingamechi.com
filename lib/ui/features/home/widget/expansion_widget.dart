@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/core/data/experience_response.dart';
+import 'package:nitingamechi/core/data/company/company_model.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
 
 import 'glass_widget.dart';

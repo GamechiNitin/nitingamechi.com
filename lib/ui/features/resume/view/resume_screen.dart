@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nitingamechi/ui/features/home/view/mobile/experience_card_component.dart';
+import 'package:nitingamechi/ui/features/home/view/mobile/project_card_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/features/resume/bloc/resume_bloc.dart';
 import 'package:nitingamechi/ui/features/resume/view/widget/education_card_widget.dart';
@@ -14,20 +16,190 @@ class ResumeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Resume"),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 35,
-                      child: Column(
+      body: BlocProvider(
+        create: (context) => ResumeBloc()..add(const ResumeEvent.fetchData()),
+        child: BlocBuilder<ResumeBloc, ResumeState>(
+          builder: (context, state) {
+            switch (state) {
+              case ResumeStateError():
+                return Center(child: Text(state.message));
+              case ResumeStateNoData():
+                return const Center(child: Text(AppString.kNoData));
+              case ResumeStateData():
+                return SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 35,
+                                child: Column(
+                                  children: [
+                                    GlassMorphism(
+                                      blur: 10,
+                                      color: AppColors.kSecondaryColor,
+                                      opacity: 0.1,
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Icon(
+                                          Icons.school,
+                                          color: AppColors.kSecondaryColor,
+                                          size: 20,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 25,
+                                      child: VerticalDivider(
+                                        color: AppColors.kSecondaryColor
+                                            .withOpacity(0.5),
+                                        width: 0.4,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, top: 8),
+                                child: Text(
+                                  AppString.kEducation,
+                                  textAlign: TextAlign.start,
+                                  style:
+                                      Theme.of(context).textTheme.headlineSmall,
+                                ),
+                              ),
+                            ],
+                          ),
+                          GlassMorphism(
+                            blur: 20,
+                            color: AppColors.kSecondaryColor,
+                            opacity: 0.2,
+                            border: true,
+                            borderRadius: BorderRadius.circular(10),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.download,
+                                    size: 16,
+                                    color: AppColors.kSecondaryColor,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    AppString.kDownloadResume,
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: AppColors.kWhiteColor,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      Column(
+                        children: List.generate(
+                          state.data.education.length,
+                          (index) => Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              StepWidget(
+                                showLine:
+                                    state.data.education.length != index + 1,
+                              ),
+                              const SizedBox(width: 10),
+                              EducationCardWidget(
+                                company: state.data.education[index],
+                                index: index,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // ----------
+                      const SizedBox(
+                        height: kToolbarHeight,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 35,
+                            child: Column(
+                              children: [
+                                GlassMorphism(
+                                  blur: 10,
+                                  color: AppColors.kSecondaryColor,
+                                  opacity: 0.1,
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Icons.school,
+                                      color: AppColors.kSecondaryColor,
+                                      size: 20,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 25,
+                                  child: VerticalDivider(
+                                    color: AppColors.kSecondaryColor
+                                        .withOpacity(0.5),
+                                    width: 0.4,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, top: 8),
+                            child: Text(
+                              AppString.kWork,
+                              textAlign: TextAlign.start,
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: List.generate(
+                          state.data.company.length,
+                          (index) => Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              StepWidget(
+                                showLine:
+                                    state.data.company.length != index + 1,
+                                height: index == 1 ? 160 : 230,
+                              ),
+                              const SizedBox(width: 10),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 16.0),
+                                child: ExperienceCardWidget(
+                                  company: state.data.company[index],
+                                  index: index,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           GlassMorphism(
                             blur: 10,
@@ -43,121 +215,77 @@ class ResumeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 25,
-                            child: VerticalDivider(
-                              color: AppColors.kSecondaryColor.withOpacity(0.5),
-                              width: 0.4,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, top: 8),
+                            child: Text(
+                              AppString.kProject,
+                              textAlign: TextAlign.start,
+                              style: Theme.of(context).textTheme.headlineSmall,
                             ),
                           ),
                         ],
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10, top: 8),
-                      child: Text(
-                        AppString.kEducation,
-                        textAlign: TextAlign.start,
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                    ),
-                  ],
-                ),
-                GlassMorphism(
-                  blur: 20,
-                  color: AppColors.kSecondaryColor,
-                  opacity: 0.2,
-                  border: true,
-                  borderRadius: BorderRadius.circular(10),
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.download,
-                          size: 16,
-                          color: AppColors.kSecondaryColor,
+                      const SizedBox(height: 20),
+                      Column(
+                        children: List.generate(
+                          state.data.project.length,
+                          (index) => Padding(
+                            padding: const EdgeInsets.only(bottom: 16.0),
+                            child: ProjectCardWidget(
+                              project: state.data.project[index],
+                              index: index,
+                            ),
+                          ),
                         ),
-                        SizedBox(width: 10),
-                        Text(
-                          AppString.kDownloadResume,
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.kWhiteColor,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            BlocBuilder<ResumeBloc, ResumeState>(
-              bloc: ResumeBloc()..add(const ResumeEvent.fetchData()),
-              builder: (context, state) {
-                switch (state) {
-                  case ResumeStateError():
-                    return Center(child: Text(state.message));
-                  case ResumeStateNoData():
-                    return const Center(child: Text(AppString.kNoData));
-                  case ResumeStateData():
-                    return ListView.builder(
-                      itemCount: state.data.education.length,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) => Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 35,
-                            child: Column(
-                              children: [
-                                GlassMorphism(
-                                  blur: 20,
-                                  color: AppColors.kSecondaryColor,
-                                  border: true,
-                                  bcolor: AppColors.kSecondaryColor
-                                      .withOpacity(0.5),
-                                  opacity: 0.2,
-                                  borderRadius: BorderRadius.circular(300),
-                                  child: const Padding(
-                                    padding: EdgeInsets.all(3),
-                                    child: CircleAvatar(
-                                      radius: 3,
-                                      backgroundColor:
-                                          AppColors.kSecondaryColor,
-                                    ),
-                                  ),
-                                ),
-                                if (state.data.education.length != index + 1)
-                                  SizedBox(
-                                    height: 85,
-                                    child: VerticalDivider(
-                                      color: AppColors.kSecondaryColor
-                                          .withOpacity(0.5),
-                                      width: 0.4,
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          EducationCardWidget(
-                            company: state.data.education[index],
-                            index: index,
-                          ),
-                        ],
                       ),
-                    );
-
-                  default:
-                    return const SizedBox();
-                }
-              },
-            ),
-          ],
+                    ],
+                  ),
+                );
+              default:
+                return const SizedBox();
+            }
+          },
         ),
+      ),
+    );
+  }
+}
+
+class StepWidget extends StatelessWidget {
+  const StepWidget({super.key, required this.showLine, this.height});
+  final bool showLine;
+  final double? height;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 35,
+      child: Column(
+        children: [
+          GlassMorphism(
+            blur: 20,
+            color: AppColors.kSecondaryColor,
+            border: true,
+            bcolor: AppColors.kSecondaryColor.withOpacity(0.5),
+            opacity: 0.2,
+            borderRadius: BorderRadius.circular(300),
+            child: const Padding(
+              padding: EdgeInsets.all(3),
+              child: CircleAvatar(
+                radius: 3,
+                backgroundColor: AppColors.kSecondaryColor,
+              ),
+            ),
+          ),
+          if (showLine)
+            SizedBox(
+              height: height ?? 85,
+              child: VerticalDivider(
+                color: AppColors.kSecondaryColor.withOpacity(0.5),
+                width: 0.4,
+              ),
+            ),
+        ],
       ),
     );
   }
