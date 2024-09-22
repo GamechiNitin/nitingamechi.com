@@ -5,6 +5,7 @@ import 'package:nitingamechi/core/theme/theme_cubit/dark_mode_cubit.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/about_component.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/dm_widget.dart';
+import 'package:nitingamechi/ui/features/resume/view/resume_screen.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 import 'home_component.dart';
@@ -44,7 +45,13 @@ class MobileScreen extends StatelessWidget {
             },
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ResumeScreen(),
+                ),
+              );
+            },
             icon: const Icon(
               Icons.downloading_sharp,
               // color: Theme.of(context).appBarTheme.titleTextStyle?.color,

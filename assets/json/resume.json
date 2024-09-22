@@ -1,0 +1,144 @@
+{
+    "education": [
+        {
+            "title": "Sardar Vallabhbhai Patel, Institute of Technology - SVIT Vasad",
+            "description": "Bachelor Degree in Computer Engineering and specializing in Software Development and Mobile App Development.",
+            "timeline": "March 2015- June 2019",
+            "location": "Vasad, Gujarat India ",
+            "image": "",
+            "website": "https://www.svitvasad.ac.in/"
+        },
+        {
+            "title": "DZ Patel",
+            "description": "Higher Secondary School in Science(Maths) Stream.",
+            "timeline": "June 2013 - May 2015",
+            "location": "Anand, Gujarat 388001 ",
+            "image": "",
+            "website": "https://dzpatelschool.org/"
+        },
+        {
+            "title": "United School Vasad",
+            "description": "Primary English Medium School.",
+            "timeline": " - June 2013",
+            "location": "Vasad Gujarat, India ",
+            "image": "",
+            "website": "https://schools.org.in/anand/24150104906/united-english-school.html"
+        }
+    ],
+    "project": [
+        {
+            "title": "TMDB - Movie App",
+            "sub_title": "Movies App UI and API integration in Flutter and Dart",
+            "features": [
+                "Authentication :- Sign Up, Login, Skip(Guest User) and Logout.",
+                "Homepage :- Product Listing, Category Listing, Local Search Bar, Add to cart and Drawer.",
+                "Details Page :- Product detial infromation with add to Cart and quick navigation.",
+                "Cart Page :- Cart item list, Remove the item, Total Product count and total, Pay Now(Button).",
+                "Order Confirmation page"
+            ],
+            "image": "https://private-user-images.githubusercontent.com/116989851/241976539-aaaac447-c0b3-490d-993e-37ad3f9c2c8c.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjQwODA1MDksIm5iZiI6MTcyNDA4MDIwOSwicGF0aCI6Ii8xMTY5ODk4NTEvMjQxOTc2NTM5LWFhYWFjNDQ3LWMwYjMtNDkwZC05OTNlLTM3YWQzZjljMmM4Yy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwODE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDgxOVQxNTEwMDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZWZiNTk0YzEyZDE1MjE2NmEwMWU3MjhlNDQ3N2I5ZDc3YjIxMTExMTU0NTQzYjExNmNmZTZlNTE5MzViNjFmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.kwY4ig90n-E4WOcGSotR7MNTyQAZZ1J4o7tU8RsdQVU",
+            "github": "https://github.com/GamechiNitin/TMDB-Movies-App",
+            "playstore": "https://github.com/GamechiNitin/",
+            "other": "https://github.com/GamechiNitin/",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "HTTP",
+                "Shared Preference"
+            ],
+            "description": [
+                "Movies App UI and API integration in Flutter and Dart"
+            ]
+        },
+        {
+            "title": "InfinityBox",
+            "sub_title": "Ecommerce App for Electonic, Jewellery and Clothing.",
+            "features": [
+                "Authentication :- Sign Up, Login, Skip(Guest User) and Logout.",
+                "Homepage :- Product Listing, Category Listing, Local Search Bar, Add to cart and Drawer.",
+                "Details Page :- Product detial infromation with add to Cart and quick navigation.",
+                "Cart Page :- Cart item list, Remove the item, Total Product count and total, Pay Now(Button).",
+                "Order Confirmation page"
+            ],
+            "image": "https: //private-user-images.githubusercontent.com/116989851/241976539-aaaac447-c0b3-490d-993e-37ad3f9c2c8c.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjQwODA1MDksIm5iZiI6MTcyNDA4MDIwOSwicGF0aCI6Ii8xMTY5ODk4NTEvMjQxOTc2NTM5LWFhYWFjNDQ3LWMwYjMtNDkwZC05OTNlLTM3YWQzZjljMmM4Yy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwODE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDgxOVQxNTEwMDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZWZiNTk0YzEyZDE1MjE2NmEwMWU3MjhlNDQ3N2I5ZDc3YjIxMTExMTU0NTQzYjExNmNmZTZlNTE5MzViNjFmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.kwY4ig90n-E4WOcGSotR7MNTyQAZZ1J4o7tU8RsdQVU",
+            "github": "https://github.com/GamechiNitin/Infinity",
+            "playstore": "https://github.com/GamechiNitin/",
+            "other": "https://github.com/GamechiNitin/",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "HTTP",
+                "Shared Preference"
+            ],
+            "description": [
+                "User can create a new Account by navigating to Create New Account Page where it require Email, Unique UserId and Password.",
+                "Using the Unique User Id and password it can login into Application.",
+                "Guest User can also walkthrough the application without creating the Account using SKIP action.",
+                "In home screen, in top it has appbar where there is Drawer, Search Bar and Cart Icon. User can use drawer to get the information like User Info, Cart Page, Log Out and other. In body section, there are list of product which are diffrented with category. As per the need or interest he/she can surf through it. Event they can search of any product with Search Bar.",
+                "Product card contain brief, information like Name, Description, Rating, Price & Product is Added to Cart or not.",
+                "In Homescreen, user can also use pull refresh to get updated product list, also to clear the selected category and search.",
+                "In user add any product then the cart icon will turn into Orange. Also the number count will be updated in Cart badge. From there User can Navigate directly to Cart list page.",
+                "To know more details of the product, he/she can tap on product cart to go to Product details page where full information of product is avalible.",
+                "In Cart List Page, all the items added is there with all information and quick call action button like remove to remove the items from cart. Also user can total amount and payment option."
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "company": "Kodehash",
+            "timeline": "July, 2023 - July 2024",
+            "location": "Gurugram, Haryana",
+            "position": "Senior Flutter Developer",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "Socket.io",
+                "Figma",
+                "SDLC"
+            ],
+            "description": [
+                "Contributed to the development of 8+ various applications like E-commerce, Shopping apps.",
+                "Following SDLC systematic process for planning, creating, testing, deploying, maintaining software apps. ",
+                "UI/UX, API integration, Payment gateway, Session management, Bug fixing, Unit testing, App support.",
+                "Improve app developing performance by 40%, reduce bug count by 60%.",
+                "Delivered project 10% ahead of schedule, achieved a 95% client satisfaction rate."
+            ]
+        },
+        {
+            "company": "Smitech",
+            "timeline": "May, 2022 - Feb 2023",
+            "location": "Remote - Vadodara",
+            "position": "Flutter Developer (Contract)",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "Figma",
+                "Agora",
+                "Google Autocomplete"
+            ],
+            "description": [
+                "Responsible for creating and developing high performance, cross-platform mobile applications for Android and IOS using Flutter and Dart framework.",
+                "Delivered project 20% ahead of schedule, achieved 80% client satisfaction rates."
+            ]
+        },
+        {
+            "company": "Kode Creator",
+            "timeline": "March, 2021 - April 2022",
+            "location": "Ajwa, Vadodara",
+            "position": "Flutter Developer",
+            "stack": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "Material Ui"
+            ],
+            "description": [
+                "Developed and contributed to 15+ various applications like E-commerce, SocialMedia, Grocery, Shopping apps.",
+                "UI/UX, API integration, Payment gateway, State management, Session management, update, bug fixing, unit testing etc.",
+                "Helping team members to deliver applications on time, which improves performance by 20% and reduces bug count by 20%."
+            ]
+        }
+    ]
+}

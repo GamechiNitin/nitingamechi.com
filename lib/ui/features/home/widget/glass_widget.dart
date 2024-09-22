@@ -11,11 +11,13 @@ class GlassMorphism extends StatelessWidget {
     required this.color,
     this.borderRadius,
     this.border,
+    this.bcolor,
   });
   final Widget child;
   final double blur;
   final double opacity;
   final Color color;
+  final Color? bcolor;
   final bool? border;
   final BorderRadius? borderRadius;
   @override
@@ -28,7 +30,7 @@ class GlassMorphism extends StatelessWidget {
           decoration: BoxDecoration(
             color: color.withOpacity(opacity),
             borderRadius: borderRadius,
-            border: border == true ? Border.all(color: color) : null,
+            border: border == true ? Border.all(color: bcolor ?? color) : null,
           ),
           child: child,
         ),

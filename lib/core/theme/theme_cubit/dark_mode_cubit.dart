@@ -26,10 +26,6 @@ class ThemePreference {
     bool? result = sharedPreferences.getBool("theme");
     log("GET ::: ThemeStatus : $result -- DarkMode : $result");
 
-    if (result != null) {
-      return result;
-    } else {
-      return false;
-    }
+    return result ?? false;
   }
 }
