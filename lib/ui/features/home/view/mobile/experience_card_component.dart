@@ -90,6 +90,7 @@ class ExperienceCardWidget extends StatelessWidget {
                     const SizedBox(width: 8),
                     Text(
                       company.description![index],
+                      maxLines: 1,
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                   ],
@@ -101,6 +102,13 @@ class ExperienceCardWidget extends StatelessWidget {
         Wrap(
           runSpacing: 16,
           spacing: 16,
+          runAlignment: WrapAlignment.center,
+          alignment: WrapAlignment.center,
+          direction: Axis.horizontal,
+          verticalDirection: VerticalDirection.down,
+
+          // verticalDirection: VerticalDirection.down,
+
           crossAxisAlignment: WrapCrossAlignment.start,
           children: List.generate(
             company.stack!.length,

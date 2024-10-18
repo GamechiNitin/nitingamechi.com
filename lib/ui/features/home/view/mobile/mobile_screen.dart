@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
-import 'package:nitingamechi/core/theme/theme_cubit/dark_mode_cubit.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/about_component.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.dart';
-import 'package:nitingamechi/ui/features/home/widget/dm_widget.dart';
-import 'package:nitingamechi/ui/features/resume/view/resume_screen.dart';
+import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 import 'home_component.dart';
 import 'project_component.dart';
 
-List<String> menu = ['Home', 'About', 'Experience', 'Resume'];
+List<String> menu = ['Home', 'Project', 'About', 'Experience', 'Resume'];
 
 class MobileScreen extends StatelessWidget {
   const MobileScreen({super.key});
@@ -19,47 +16,47 @@ class MobileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: Icon(
-          Icons.menu,
-          color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-        ),
-        titleSpacing: 0,
-        title: const DMWidget(),
-        actions: [
-          BlocBuilder<DarkModeCubit, DarkModeInitialState>(
-            builder: (context, state) {
-              return IconButton(
-                onPressed: () {
-                  bool ok = state.isDarkMode;
-                  ok = !ok;
-                  BlocProvider.of<DarkModeCubit>(context).changeTheme(ok);
-                },
-                icon: const Icon(
-                  Icons.light_mode,
-                  color: AppColors.kPrimaryColor,
-                  size: 28,
-                ),
-              );
-            },
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const ResumeScreen(),
-                ),
-              );
-            },
-            icon: const Icon(
-              Icons.downloading_sharp,
-              // color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-              size: 28,
-            ),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   leading: Icon(
+      //     Icons.menu,
+      //     color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+      //   ),
+      //   titleSpacing: 0,
+      //   title: const DMWidget(),
+      //   actions: [
+      //     BlocBuilder<DarkModeCubit, DarkModeInitialState>(
+      //       builder: (context, state) {
+      //         return IconButton(
+      //           onPressed: () {
+      //             bool ok = state.isDarkMode;
+      //             ok = !ok;
+      //             BlocProvider.of<DarkModeCubit>(context).changeTheme(ok);
+      //           },
+      //           icon: const Icon(
+      //             Icons.light_mode,
+      //             color: AppColors.kPrimaryColor,
+      //             size: 28,
+      //           ),
+      //         );
+      //       },
+      //     ),
+      //     IconButton(
+      //       onPressed: () {
+      //         Navigator.of(context).push(
+      //           MaterialPageRoute(
+      //             builder: (context) => const ResumeScreen(),
+      //           ),
+      //         );
+      //       },
+      //       icon: const Icon(
+      //         Icons.downloading_sharp,
+      //         // color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+      //         size: 28,
+      //       ),
+      //     ),
+      //   ],
+      // ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,22 +73,31 @@ class MobileScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: List.generate(
                   menu.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: RichText(
-                      text: TextSpan(
-                        text: menu[index].substring(0, 1),
-                        style: Theme.of(context).appBarTheme.titleTextStyle,
-                        children: [
-                          TextSpan(
-                            text: menu[index].substring(1),
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.kPrimaryColor,
-                            ),
-                          )
-                        ],
+                  (index) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ProjectScreen(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: RichText(
+                        text: TextSpan(
+                          text: menu[index].substring(0, 1),
+                          style: Theme.of(context).appBarTheme.titleTextStyle,
+                          children: [
+                            TextSpan(
+                              text: menu[index].substring(1),
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.kPrimaryColor,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),

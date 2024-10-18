@@ -75,17 +75,17 @@ ThemeData darkTheme = ThemeData(
   splashColor: ColorScheme.fromSeed(
     seedColor: AppColors.kPrimaryColor,
   ).primary,
-  colorScheme: ColorScheme(
+  colorScheme: const ColorScheme(
     brightness: Brightness.dark,
-    primary: AppColors.kWhiteColor,
+    primary: AppColors.kPrimaryColor,
     onPrimary: AppColors.kWhiteColor,
-    secondary: AppColors.kWhiteColor,
+    secondary: AppColors.kSecondaryColor,
     onSecondary: AppColors.kWhiteColor,
-    error: AppColors.kBlackColor,
-    onError: ColorScheme.fromSeed(seedColor: AppColors.kErrorColor).onError,
-    surface: AppColors.kPrimaryColor,
-    onSurface: ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).primary,
-    shadow: AppColors.kWhiteColor,
+    error: AppColors.kErrorColor,
+    onError: AppColors.kErrorColor,
+    surface: AppColors.kSurfaceColor,
+    onSurface: AppColors.kWhiteColor,
+    shadow: AppColors.kShadowColor,
   ),
   bottomSheetTheme: BottomSheetThemeData(
     modalBackgroundColor:

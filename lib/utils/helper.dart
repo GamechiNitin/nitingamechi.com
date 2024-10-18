@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
@@ -44,4 +45,22 @@ abstract class Helper {
           child: CircularProgressIndicator(),
         ),
       );
+
+  static Color generateRandomColor() {
+    final random = math.Random();
+    return Color.fromARGB(
+      255, // Alpha
+      random.nextInt(256), // Red
+      random.nextInt(256), // Green
+      random.nextInt(256), // Blue
+    );
+  }
+
+  static Color getTextColor(Color bgColor) {
+    // Calculate brightness
+    final brightness =
+        (bgColor.red * 0.299 + bgColor.green * 0.587 + bgColor.blue * 0.114);
+    // Return white for dark backgrounds and black for light backgrounds
+    return brightness > 186 ? Colors.black : Colors.white;
+  }
 }

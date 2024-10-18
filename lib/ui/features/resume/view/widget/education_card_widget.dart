@@ -13,67 +13,57 @@ class EducationCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Text(
-              company.title ?? '',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.kSecondaryColor,
-                  ),
-            ),
-            // Text(
-            //   " - ",
-            //   style: Theme.of(context).textTheme.titleMedium,
-            // ),
-            // Text(
-            //   company.title ?? '',
-            //   style: Theme.of(context).textTheme.titleMedium,
-            // ),
-          ],
-        ),
-        const SizedBox(height: 10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(
-              Icons.location_on_outlined,
-              size: 13,
-              color: Theme.of(context).iconTheme.color,
-            ),
-            const SizedBox(width: 4),
-            Text(
-              company.location ?? '',
-              maxLines: 1,
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: Theme.of(context).iconTheme.color,
-                  ),
-            ),
-            const SizedBox(width: 20),
-            Icon(
-              Icons.watch_later_outlined,
-              size: 13,
-              color: Theme.of(context).iconTheme.color,
-            ),
-            const SizedBox(width: 4),
-            Text(
-              company.timeline ?? '',
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: Theme.of(context).iconTheme.color,
-                  ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 12),
-        Text(
-          company.description ?? "",
-          style: Theme.of(context).textTheme.labelSmall,
-        ),
-        const SizedBox(height: 16),
-      ],
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            company.title ?? '',
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: AppColors.kSecondaryColor,
+                ),
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.location_on_outlined,
+                size: 13,
+                color: Theme.of(context).iconTheme.color,
+              ),
+              const SizedBox(width: 4),
+              Text(
+                company.location ?? '',
+                maxLines: 1,
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      color: Theme.of(context).iconTheme.color,
+                    ),
+              ),
+              const SizedBox(width: 20),
+              Icon(
+                Icons.watch_later_outlined,
+                size: 13,
+                color: Theme.of(context).iconTheme.color,
+              ),
+              const SizedBox(width: 4),
+              Text(
+                company.timeline ?? '',
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      color: Theme.of(context).iconTheme.color,
+                    ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(
+            company.description ?? "",
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          const SizedBox(height: 16),
+        ],
+      ),
     );
   }
 }
