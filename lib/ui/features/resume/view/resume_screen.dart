@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/experience_card_component.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/project_card_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/features/project/project_item_widget.dart';
 import 'package:nitingamechi/ui/features/resume/bloc/resume_bloc.dart';
 import 'package:nitingamechi/ui/features/resume/view/widget/education_card_widget.dart';
 import 'package:nitingamechi/utils/app_string.dart';
@@ -13,9 +14,11 @@ class ResumeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Resume"),
-      ),
+      backgroundColor: AppColors.kTransparentColor,
+
+      // appBar: AppBar(
+      //   title: const Text("Resume"),
+      // ),
       body: BlocProvider(
         create: (context) => ResumeBloc()..add(const ResumeEvent.fetchData()),
         child: BlocBuilder<ResumeBloc, ResumeState>(
@@ -44,14 +47,14 @@ class ResumeScreen extends StatelessWidget {
                                   children: [
                                     GlassMorphism(
                                       blur: 10,
-                                      color: AppColors.kSecondaryColor,
+                                      color: AppColors.kPrimaryColor,
                                       opacity: 0.1,
                                       borderRadius: BorderRadius.circular(10),
                                       child: const Padding(
                                         padding: EdgeInsets.all(8.0),
                                         child: Icon(
                                           Icons.school,
-                                          color: AppColors.kSecondaryColor,
+                                          color: AppColors.kPrimaryColor,
                                           size: 20,
                                         ),
                                       ),
@@ -59,7 +62,7 @@ class ResumeScreen extends StatelessWidget {
                                     SizedBox(
                                       height: 25,
                                       child: VerticalDivider(
-                                        color: AppColors.kSecondaryColor
+                                        color: AppColors.kPrimaryColor
                                             .withOpacity(0.5),
                                         width: 0.4,
                                       ),
@@ -81,7 +84,7 @@ class ResumeScreen extends StatelessWidget {
                           ),
                           GlassMorphism(
                             blur: 20,
-                            color: AppColors.kSecondaryColor,
+                            color: AppColors.kPrimaryColor,
                             opacity: 0.2,
                             border: true,
                             borderRadius: BorderRadius.circular(10),
@@ -92,7 +95,7 @@ class ResumeScreen extends StatelessWidget {
                                   Icon(
                                     Icons.download,
                                     size: 16,
-                                    color: AppColors.kSecondaryColor,
+                                    color: AppColors.kPrimaryColor,
                                   ),
                                   SizedBox(width: 10),
                                   Text(
@@ -142,14 +145,14 @@ class ResumeScreen extends StatelessWidget {
                               children: [
                                 GlassMorphism(
                                   blur: 10,
-                                  color: AppColors.kSecondaryColor,
+                                  color: AppColors.kPrimaryColor,
                                   opacity: 0.1,
                                   borderRadius: BorderRadius.circular(10),
                                   child: const Padding(
                                     padding: EdgeInsets.all(8.0),
                                     child: Icon(
                                       Icons.school,
-                                      color: AppColors.kSecondaryColor,
+                                      color: AppColors.kPrimaryColor,
                                       size: 20,
                                     ),
                                   ),
@@ -157,7 +160,7 @@ class ResumeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 25,
                                   child: VerticalDivider(
-                                    color: AppColors.kSecondaryColor
+                                    color: AppColors.kPrimaryColor
                                         .withOpacity(0.5),
                                     width: 0.4,
                                   ),
@@ -203,14 +206,14 @@ class ResumeScreen extends StatelessWidget {
                         children: [
                           GlassMorphism(
                             blur: 10,
-                            color: AppColors.kSecondaryColor,
+                            color: AppColors.kPrimaryColor,
                             opacity: 0.1,
                             borderRadius: BorderRadius.circular(10),
                             child: const Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.school,
-                                color: AppColors.kSecondaryColor,
+                                color: AppColors.kPrimaryColor,
                                 size: 20,
                               ),
                             ),
@@ -226,17 +229,25 @@ class ResumeScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      Column(
-                        children: List.generate(
-                          state.data.project.length,
-                          (index) => Padding(
-                            padding: const EdgeInsets.only(bottom: 16.0),
-                            child: ProjectCardWidget(
-                              project: state.data.project[index],
-                              index: index,
-                            ),
-                          ),
+                      GridView.builder(
+                        shrinkWrap: true,
+                        itemCount: state.data.project.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: DeviceInfo(context).isMobile
+                              ? 1
+                              : DeviceInfo(context).isTablet
+                                  ? 2
+                                  : 3,
+                          mainAxisExtent: 480,
+                          crossAxisSpacing: 20,
+                          mainAxisSpacing: 20,
                         ),
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return ProjectItem(
+                            project: state.data.project[index],
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -264,16 +275,16 @@ class StepWidget extends StatelessWidget {
         children: [
           GlassMorphism(
             blur: 20,
-            color: AppColors.kSecondaryColor,
+            color: AppColors.kPrimaryColor,
             border: true,
-            bcolor: AppColors.kSecondaryColor.withOpacity(0.5),
+            bcolor: AppColors.kPrimaryColor.withOpacity(0.5),
             opacity: 0.2,
             borderRadius: BorderRadius.circular(300),
             child: const Padding(
               padding: EdgeInsets.all(3),
               child: CircleAvatar(
                 radius: 3,
-                backgroundColor: AppColors.kSecondaryColor,
+                backgroundColor: AppColors.kPrimaryColor,
               ),
             ),
           ),
@@ -281,7 +292,7 @@ class StepWidget extends StatelessWidget {
             SizedBox(
               height: height ?? 85,
               child: VerticalDivider(
-                color: AppColors.kSecondaryColor.withOpacity(0.5),
+                color: AppColors.kPrimaryColor.withOpacity(0.5),
                 width: 0.4,
               ),
             ),

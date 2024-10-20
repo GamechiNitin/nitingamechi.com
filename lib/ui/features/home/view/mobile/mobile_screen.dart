@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
+import 'package:nitingamechi/core/theme/theme_cubit/dark_mode_cubit.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/about_component.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.dart';
+import 'package:nitingamechi/ui/features/home/widget/dm_widget.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
@@ -16,47 +19,41 @@ class MobileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   leading: Icon(
-      //     Icons.menu,
-      //     color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-      //   ),
-      //   titleSpacing: 0,
-      //   title: const DMWidget(),
-      //   actions: [
-      //     BlocBuilder<DarkModeCubit, DarkModeInitialState>(
-      //       builder: (context, state) {
-      //         return IconButton(
-      //           onPressed: () {
-      //             bool ok = state.isDarkMode;
-      //             ok = !ok;
-      //             BlocProvider.of<DarkModeCubit>(context).changeTheme(ok);
-      //           },
-      //           icon: const Icon(
-      //             Icons.light_mode,
-      //             color: AppColors.kPrimaryColor,
-      //             size: 28,
-      //           ),
-      //         );
-      //       },
-      //     ),
-      //     IconButton(
-      //       onPressed: () {
-      //         Navigator.of(context).push(
-      //           MaterialPageRoute(
-      //             builder: (context) => const ResumeScreen(),
-      //           ),
-      //         );
-      //       },
-      //       icon: const Icon(
-      //         Icons.downloading_sharp,
-      //         // color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-      //         size: 28,
-      //       ),
-      //     ),
-      //   ],
-      // ),
+      appBar: AppBar(
+        elevation: 0,
+        leading: Icon(
+          Icons.menu,
+          color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+        ),
+        titleSpacing: 0,
+        title: const DMWidget(),
+        actions: [
+          BlocBuilder<DarkModeCubit, DarkModeInitialState>(
+            builder: (context, state) {
+              return IconButton(
+                onPressed: () {
+                  bool ok = state.isDarkMode;
+                  ok = !ok;
+                  BlocProvider.of<DarkModeCubit>(context).changeTheme(ok);
+                },
+                icon: const Icon(
+                  Icons.light_mode,
+                  color: AppColors.kPrimaryColor,
+                  size: 28,
+                ),
+              );
+            },
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.downloading_sharp,
+              // color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+              size: 28,
+            ),
+          ),
+        ],
+      ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +110,7 @@ class MobileScreen extends StatelessWidget {
                         !DeviceInfo(context).isSmallMobile &&
                         !DeviceInfo(context).isTablet)
                     ? const EdgeInsets.symmetric(horizontal: 80)
-                    : const EdgeInsets.symmetric(horizontal: 6),
+                    : const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),

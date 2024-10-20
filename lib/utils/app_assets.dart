@@ -5,6 +5,7 @@ abstract class AppAssets {
   static const String kAppStore = 'assets/image/icon/app-store.png';
   static const String kLinkedin = 'assets/image/icon/linked_in.png';
   static const String kLinkedin2 = 'assets/image/icon/linkedin.png';
+  static const String kcontact = 'assets/image/other/contact.png';
 
   // Rive
   static const String kDash = 'assets/rive/dash.riv';

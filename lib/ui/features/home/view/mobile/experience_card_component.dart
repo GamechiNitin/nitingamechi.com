@@ -90,7 +90,7 @@ class ExperienceCardWidget extends StatelessWidget {
                     const SizedBox(width: 8),
                     Text(
                       company.description![index],
-                      maxLines: 1,
+                      maxLines: 2,
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                   ],
@@ -114,7 +114,7 @@ class ExperienceCardWidget extends StatelessWidget {
             company.stack!.length,
             (index) => GlassMorphism(
               blur: 10,
-              color: AppColors.kSecondaryColor,
+              color: AppColors.kPrimaryColor,
               opacity: 0.1,
               borderRadius: BorderRadius.circular(5),
               child: Padding(
@@ -126,7 +126,7 @@ class ExperienceCardWidget extends StatelessWidget {
                   company.stack?[index] ?? '',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontSize: 12,
-                        color: AppColors.kSecondaryColor,
+                        color: AppColors.kPrimaryColor,
                       ),
                 ),
               ),

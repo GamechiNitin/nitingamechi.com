@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/core/data/project/project_model.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/features/project/data/project_response.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class ProjectCardWidget extends StatelessWidget {
@@ -9,7 +9,7 @@ class ProjectCardWidget extends StatelessWidget {
     required this.project,
     required this.index,
   });
-  final Project project;
+  final ProjectModel project;
   final int index;
 
   @override
@@ -69,9 +69,9 @@ class ProjectCardWidget extends StatelessWidget {
               spacing: 16,
               crossAxisAlignment: WrapCrossAlignment.start,
               children: List.generate(
-                project.stack!.length,
+                project.technology!.length,
                 (index) => Text(
-                  project.stack?[index] ?? '',
+                  project.technology?[index] ?? '',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontSize: 12,
                         color: AppColors.kSecondaryColor,

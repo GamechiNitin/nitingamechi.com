@@ -31,8 +31,9 @@ class AppColors {
   static const Color kS1Color = Color(0xff121212);
 
   //
-  // static const Color kPrimaryColor = Color(0xFF000000);
-  static const Color kPrimaryColor = Color(0xff3CCF4E);
+  // static const Color kPrimaryColor = kH11;
+  static const Color kPrimaryColor = Colors.indigoAccent;
+  // static const Color kPrimaryColor = Color(0xff3CCF4E);
 
   static const Color kSecondaryColor = Color(0xFF1A1A1A);
   static const Color kSurfaceColor = Color(0xFF121212);

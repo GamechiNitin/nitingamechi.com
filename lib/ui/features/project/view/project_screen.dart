@@ -10,6 +10,7 @@ class ProjectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kTransparentColor,
       // appBar: AppBar(
       //   title: const Text("Project"),
       // ),

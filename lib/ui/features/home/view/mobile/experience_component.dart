@@ -10,45 +10,42 @@ class ExperienceComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            AppString.kExperience,
-            textAlign: TextAlign.start,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 16),
-          BlocBuilder<HomeBloc, HomeState>(
-            builder: (context, state) {
-              switch (state) {
-                case HomeStateError():
-                  return Center(child: Text(state.message));
-                case HomeStateNoData():
-                  return const Center(child: Text("No Data"));
-                case HomeStateData():
-                  return ListView.separated(
-                    itemCount: state.data.company.length,
-                    separatorBuilder: (context, index) =>
-                        const SizedBox(height: 25),
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => ExperienceCardWidget(
-                      company: state.data.company[index],
-                      index: index,
-                    ),
-                  );
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          AppString.kExperience,
+          textAlign: TextAlign.start,
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+        const SizedBox(height: 16),
+        BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            switch (state) {
+              case HomeStateError():
+                return Center(child: Text(state.message));
+              case HomeStateNoData():
+                return const Center(child: Text("No Data"));
+              case HomeStateData():
+                return ListView.separated(
+                  itemCount: state.data.company.length,
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 25),
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) => ExperienceCardWidget(
+                    company: state.data.company[index],
+                    index: index,
+                  ),
+                );
 
-                default:
-                  return const SizedBox();
-              }
-            },
-          ),
-        ],
-      ),
+              default:
+                return const SizedBox();
+            }
+          },
+        ),
+      ],
     );
   }
 }

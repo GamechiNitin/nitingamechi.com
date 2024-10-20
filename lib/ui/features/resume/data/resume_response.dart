@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:nitingamechi/core/data/company/company_model.dart';
-import 'package:nitingamechi/core/data/project/project_model.dart';
+import 'package:nitingamechi/ui/features/project/data/project_response.dart';
 
 part 'resume_response.freezed.dart';
 part 'resume_response.g.dart';
@@ -10,7 +10,7 @@ class ResumeResponse with _$ResumeResponse {
   const factory ResumeResponse({
     @JsonKey(name: "education") @Default([]) List<Education> education,
     @JsonKey(name: "experience") @Default([]) List<Company> company,
-    @JsonKey(name: "project") @Default([]) List<Project> project,
+    @JsonKey(name: "project") @Default([]) List<ProjectModel> project,
   }) = _ResumeResponse;
 
   factory ResumeResponse.fromJson(Map<String, dynamic> json) =>
