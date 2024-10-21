@@ -5,6 +5,7 @@ const double size30 = 30.0;
 const double size50 = 50.0;
 const double size150 = 150.0;
 const double kBorderRadius = 12;
+double kMW(BuildContext context) => MediaQuery.sizeOf(context).width;
 double kAppWebPadding(BuildContext context) =>
     MediaQuery.sizeOf(context).width * 0.1 + 20;
 double kBodyWebPadding(BuildContext context) =>

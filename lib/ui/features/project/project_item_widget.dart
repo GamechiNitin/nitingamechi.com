@@ -18,10 +18,10 @@ class ProjectItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassMorphism(
       blur: 10,
-      color: AppColors.kPrimaryColor,
+      color: AppColors.kFrostedGlassColor,
       bcolor: AppColors.kWhite40Color,
       border: true,
-      opacity: 0.1,
+      opacity: 0.3,
       borderRadius: BorderRadius.circular(kBorderRadius),
       child: Padding(
         padding: const EdgeInsets.all(12),
@@ -32,7 +32,7 @@ class ProjectItem extends StatelessWidget {
               borderRadius:
                   const BorderRadius.all(Radius.circular(kBorderRadius)),
               child: Container(
-                color: AppColors.kH11,
+                color: AppColors.kFrostedGlassColor,
                 child: Image.asset(
                   project.image ?? "",
                   width: MediaQuery.of(context).size.width,

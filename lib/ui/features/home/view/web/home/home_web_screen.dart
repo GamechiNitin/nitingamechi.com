@@ -4,6 +4,7 @@ import 'package:nitingamechi/ui/features/home/view/mobile/about_component.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/home_component.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/project_component.dart';
+import 'package:nitingamechi/ui/features/home/widget/footer_widget.dart';
 
 class HomeWebScreen extends StatelessWidget {
   const HomeWebScreen({super.key});
@@ -26,6 +27,8 @@ class HomeWebScreen extends StatelessWidget {
           ProjectComponent(),
           SizedBox(height: kToolbarHeight),
           ContactScreen(),
+          SizedBox(height: kToolbarHeight),
+          FooterWidget(),
           SizedBox(height: kToolbarHeight),
         ],
       ),

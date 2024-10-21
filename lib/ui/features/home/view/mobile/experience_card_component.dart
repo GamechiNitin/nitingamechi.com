@@ -114,7 +114,7 @@ class ExperienceCardWidget extends StatelessWidget {
             company.stack!.length,
             (index) => GlassMorphism(
               blur: 10,
-              color: AppColors.kPrimaryColor,
+              color: Colors.pinkAccent,
               opacity: 0.1,
               borderRadius: BorderRadius.circular(5),
               child: Padding(

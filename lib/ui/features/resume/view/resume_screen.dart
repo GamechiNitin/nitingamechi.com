@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/experience_card_component.dart';
+import 'package:nitingamechi/ui/features/home/widget/footer_widget.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/features/project/project_item_widget.dart';
 import 'package:nitingamechi/ui/features/resume/bloc/resume_bloc.dart';
@@ -249,6 +250,9 @@ class ResumeScreen extends StatelessWidget {
                           );
                         },
                       ),
+                      const SizedBox(height: kToolbarHeight),
+                      const FooterWidget(),
+                      const SizedBox(height: kToolbarHeight),
                     ],
                   ),
                 );
