@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/experience_card_component.dart';
+import 'package:nitingamechi/ui/features/home/view/mobile/project_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/footer_widget.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/features/project/project_item_widget.dart';
@@ -230,26 +231,7 @@ class ResumeScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      GridView.builder(
-                        shrinkWrap: true,
-                        itemCount: state.data.project.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: DeviceInfo(context).isMobile
-                              ? 1
-                              : DeviceInfo(context).isTablet
-                                  ? 2
-                                  : 3,
-                          mainAxisExtent: 480,
-                          crossAxisSpacing: 20,
-                          mainAxisSpacing: 20,
-                        ),
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return ProjectItem(
-                            project: state.data.project[index],
-                          );
-                        },
-                      ),
+                      const ProjectComponent(),
                       const SizedBox(height: kToolbarHeight),
                       const FooterWidget(),
                       const SizedBox(height: kToolbarHeight),

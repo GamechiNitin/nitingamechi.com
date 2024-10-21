@@ -1,15 +1,14 @@
 // project_item.dart
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/features/project/data/project_response.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:nitingamechi/utils/helper.dart';
 
-import 'data/project_response.dart';
-
-class ProjectItem extends StatelessWidget {
+class ProjectItemWidget extends StatelessWidget {
   final ProjectModel project;
 
-  const ProjectItem({
+  const ProjectItemWidget({
     super.key,
     required this.project,
   });
@@ -73,38 +72,6 @@ class ProjectItem extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 16,
                 color: AppColors.kDarkGrey1Color,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Flexible(
-              child: Wrap(
-                runSpacing: 8,
-                spacing: 8,
-                children: List.generate(
-                  project.technology!.length,
-                  (index) {
-                    Color bgColor = Helper.generateRandomColor();
-                    return Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: bgColor,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(300)),
-                      ),
-                      child: Text(
-                        project.technology![index],
-                        style: TextStyle(
-                          fontSize: 13,
-                          letterSpacing: 1.4,
-                          fontWeight: FontWeight.bold,
-                          color: Helper.getTextColor(
-                              bgColor), // Use your color constant if necessary
-                        ),
-                      ),
-                    );
-                  },
-                ),
               ),
             ),
           ],

@@ -15,6 +15,22 @@
             "playstore": "NA",
             "sourceCode": "NA",
             "category": "personal"
+        },
+        {
+            "title": "Talk",
+            "description": "A chat application that allows users to communicate in real-time.",
+            "industry": "Social Communication",
+            "technology": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "HTTP"
+            ],
+            "image": "assets/image/project/Talk.png",
+            "appstore": "NA",
+            "playstore": "NA",
+            "sourceCode": "NA",
+            "category": "personal"
         }
     ],
     "experience": [

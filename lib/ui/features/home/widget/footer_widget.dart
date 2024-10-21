@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:nitingamechi/ui/features/home/view/web/cubit/nav_cubit.dart';
 import 'package:nitingamechi/utils/app_assets.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
-import 'package:nitingamechi/utils/app_routes.dart';
 import 'package:nitingamechi/utils/helper.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
 
