@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/ui/features/home/view/bloc/home_bloc.dart';
 import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/widget/home_project_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
+import 'package:shimmer/shimmer.dart';
 
 class ProjectComponent extends StatelessWidget {
   const ProjectComponent({super.key});
@@ -13,10 +15,10 @@ class ProjectComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassMorphism(
       blur: 10,
-      color: AppColors.kBlueColor,
+      color: AppColors.kWhiteColor,
       bcolor: AppColors.kWhite40Color,
       border: true,
-      opacity: 0.1,
+      opacity: 0.3,
       borderRadius: BorderRadius.circular(kBorderRadius),
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -27,26 +29,35 @@ class ProjectComponent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    AppString.kProject,
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      fontSize: 55,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.kBlackColor,
+                  Shimmer.fromColors(
+                    baseColor: AppColors.kWhiteColor,
+                    highlightColor: Colors.blueAccent,
+                    child: Text(
+                      AppString.kProject,
+                      style: GoogleFonts.poppins(
+                        color: AppColors.kWhiteColor,
+                        fontSize: 50,
+                        fontWeight: FontWeight.w600,
+                        wordSpacing: 1,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    AppString.kProjectHeadline,
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.kBlackColor,
+                  Shimmer.fromColors(
+                    baseColor: AppColors.kBlackColor,
+                    highlightColor: Colors.blueAccent,
+                    child: Text(
+                      AppString.kProjectHeadline,
+                      style: GoogleFonts.poppins(
+                        color: AppColors.kWhiteColor,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w600,
+                        wordSpacing: 1,
+                        height: 2,
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 20),
                   BlocBuilder<HomeBloc, HomeState>(
                     builder: (context, state) {
                       switch (state) {
@@ -56,7 +67,7 @@ class ProjectComponent extends StatelessWidget {
                           return const Center(child: Text("No Data"));
                         case HomeStateData():
                           return GridView.builder(
-                            itemCount: state.data.project.length - 1,
+                            itemCount: state.data.project.length,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: DeviceInfo(context).isMobile

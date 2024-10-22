@@ -36,7 +36,7 @@ class SocialComponent extends StatelessWidget {
                 },
                 child: GlassMorphism(
                   blur: 10,
-                  color: Colors.pinkAccent,
+                  color: AppColors.kPrimaryColor,
                   opacity: 0.2,
                   borderRadius: BorderRadius.circular(300),
                   child: Container(
@@ -44,7 +44,7 @@ class SocialComponent extends StatelessWidget {
                     child: const Icon(
                       Icons.email,
                       size: 30,
-                      color: Colors.redAccent,
+                      color: AppColors.kPrimaryColor,
                       // height: 35,
                       // width: 35,
                     ),
@@ -63,7 +63,7 @@ class SocialComponent extends StatelessWidget {
                 },
                 child: GlassMorphism(
                   blur: 10,
-                  color: Colors.lightGreen,
+                  color: AppColors.kPrimaryColor,
                   opacity: 0.2,
                   borderRadius: BorderRadius.circular(300),
                   child: Container(
@@ -71,7 +71,7 @@ class SocialComponent extends StatelessWidget {
                     child: const Icon(
                       Icons.call_sharp,
                       size: 30,
-                      color: Colors.lightGreen,
+                      color: AppColors.kPrimaryColor,
                       // height: 35,
                       // width: 35,
                     ),
@@ -83,7 +83,7 @@ class SocialComponent extends StatelessWidget {
                 onTap: () => Helper.launchLink(Uri.parse(kLinkedinURL)),
                 child: GlassMorphism(
                   blur: 10,
-                  color: Colors.blue,
+                  color: AppColors.kPrimaryColor,
                   opacity: 0.2,
                   borderRadius: BorderRadius.circular(300),
                   child: Container(

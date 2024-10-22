@@ -5,6 +5,7 @@ import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.d
 import 'package:nitingamechi/ui/features/home/view/mobile/home_component.dart';
 import 'package:nitingamechi/ui/features/home/view/mobile/project_component.dart';
 import 'package:nitingamechi/ui/features/home/widget/footer_widget.dart';
+import 'package:nitingamechi/ui/features/home/widget/skill_widget.dart';
 
 class HomeWebScreen extends StatelessWidget {
   const HomeWebScreen({super.key});
@@ -22,7 +23,9 @@ class HomeWebScreen extends StatelessWidget {
           SizedBox(height: kToolbarHeight),
           AboutComponent(),
           SizedBox(height: kToolbarHeight),
-          ExperienceComponent(),
+          SkillWidget(),
+          // SizedBox(height: kToolbarHeight),
+          // ExperienceComponent(),
           SizedBox(height: kToolbarHeight),
           ProjectComponent(),
           SizedBox(height: kToolbarHeight),
