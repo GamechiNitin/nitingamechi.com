@@ -28,4 +28,7 @@ I hold a Bachelor's Degree in Computer Science from SVIT Vasad, where I gained e
       'Quick summary of my recent experience';
   static const String kEducation = "Education";
   static const String kNoData = "No Data";
+  static const String kSkill = "Skill";
+  static const String kSkillHeadline =
+      "Programming Language, Framework and Tools";
 }

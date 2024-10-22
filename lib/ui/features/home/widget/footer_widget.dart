@@ -17,7 +17,7 @@ class FooterWidget extends StatelessWidget {
       builder: (context, state) {
         return GlassMorphism(
           blur: 10,
-          color: AppColors.kBlackColor,
+          color: AppColors.kWhiteColor,
           bcolor: AppColors.kWhite40Color,
           border: true,
           opacity: 0.3,
