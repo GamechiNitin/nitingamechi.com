@@ -1,6 +1,6 @@
 // project_item.dart
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:nitingamechi/utils/helper.dart';
 

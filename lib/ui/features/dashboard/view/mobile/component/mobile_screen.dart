@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
-import 'package:nitingamechi/core/theme/theme_cubit/dark_mode_cubit.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/about_component.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.dart';
-import 'package:nitingamechi/ui/features/home/widget/dm_widget.dart';
+import 'package:nitingamechi/utils/theme/theme_cubit/dark_mode_cubit.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/about_component.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/experience_component.dart';
+import 'package:nitingamechi/ui/widget/dm_widget.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 

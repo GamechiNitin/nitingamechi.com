@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:nitingamechi/core/data/company/company_model.dart';
+import 'package:nitingamechi/core/data/company_model/company_model.dart';
 import 'package:nitingamechi/ui/features/project/data/project_response.dart';
 
 part 'experience_response.freezed.dart';

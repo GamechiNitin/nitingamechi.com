@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nitingamechi/ui/features/home/view/bloc/home_bloc.dart';
-import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
-import 'package:nitingamechi/ui/widget/home_project_widget.dart';
+import 'package:nitingamechi/ui/features/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
+import 'package:nitingamechi/ui/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/widget/project_tile_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -58,14 +58,14 @@ class ProjectComponent extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  BlocBuilder<HomeBloc, HomeState>(
+                  BlocBuilder<DashboardBloc, DashboardState>(
                     builder: (context, state) {
                       switch (state) {
-                        case HomeStateError():
+                        case DashboardStateError():
                           return Center(child: Text(state.message));
-                        case HomeStateNoData():
+                        case DashboardStateNoData():
                           return const Center(child: Text("No Data"));
-                        case HomeStateData():
+                        case DashboardStateData():
                           return GridView.builder(
                             itemCount: state.data.project.length,
                             gridDelegate:

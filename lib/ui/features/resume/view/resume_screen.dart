@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/experience_card_component.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/project_component.dart';
-import 'package:nitingamechi/ui/features/home/widget/footer_widget.dart';
-import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
-import 'package:nitingamechi/ui/features/project/project_item_widget.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/experience_card_component.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/project_component.dart';
+import 'package:nitingamechi/ui/widget/footer_widget.dart';
+import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/features/resume/bloc/resume_bloc.dart';
 import 'package:nitingamechi/ui/features/resume/view/widget/education_card_widget.dart';
 import 'package:nitingamechi/utils/app_string.dart';

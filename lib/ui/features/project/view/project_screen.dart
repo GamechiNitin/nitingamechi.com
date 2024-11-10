@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
-import 'package:nitingamechi/ui/features/home/widget/footer_widget.dart';
+import 'package:nitingamechi/ui/widget/footer_widget.dart';
 import 'package:nitingamechi/ui/features/project/bloc/project_bloc.dart';
 import 'package:nitingamechi/ui/features/project/project_item_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';

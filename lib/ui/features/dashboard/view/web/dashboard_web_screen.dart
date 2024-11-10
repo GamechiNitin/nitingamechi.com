@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/features/contact/contact_screen.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/about_component.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/experience_component.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/home_component.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/project_component.dart';
-import 'package:nitingamechi/ui/features/home/widget/footer_widget.dart';
-import 'package:nitingamechi/ui/features/home/widget/skill_widget.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/about_component.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/home_component.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/project_component.dart';
+import 'package:nitingamechi/ui/widget/footer_widget.dart';
+import 'package:nitingamechi/ui/widget/skill_widget.dart';
 
-class HomeWebScreen extends StatelessWidget {
-  const HomeWebScreen({super.key});
+class DashboardWebScreen extends StatelessWidget {
+  const DashboardWebScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +23,6 @@ class HomeWebScreen extends StatelessWidget {
           AboutComponent(),
           SizedBox(height: kToolbarHeight),
           SkillWidget(),
-          // SizedBox(height: kToolbarHeight),
-          // ExperienceComponent(),
           SizedBox(height: kToolbarHeight),
           ProjectComponent(),
           SizedBox(height: kToolbarHeight),

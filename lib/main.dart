@@ -1,9 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nitingamechi/core/theme/theme_cubit/dark_mode_cubit.dart';
-import 'package:nitingamechi/ui/features/home/view/bloc/home_bloc.dart';
-import 'package:nitingamechi/utils/theme/dark_theme.dart';
+import 'package:nitingamechi/utils/theme/theme_cubit/dark_mode_cubit.dart';
+import 'package:nitingamechi/ui/features/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
 import 'utils/app_routes.dart';
 import 'utils/theme/light_theme.dart';
 
@@ -17,7 +16,8 @@ Future<void> main() async {
           create: (context) => DarkModeCubit()..changeTheme(prefThemeValue),
         ),
         BlocProvider(
-          create: (context) => HomeBloc()..add(const HomeEvent.fetchData()),
+          create: (context) =>
+              DashboardBloc()..add(const DashboardEvent.fetchData()),
         ),
       ],
       child: const MyApp(),
@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
           title: 'Nitin Gamechi',
           debugShowCheckedModeBanner: false,
           themeMode: state.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-          theme: lightTheme,
-          darkTheme: darkTheme,
+          theme: AppTheme.lightTheme(context),
+          darkTheme: AppTheme.darkTheme(context),
           routerConfig: AppRoutes.router,
         );
       },

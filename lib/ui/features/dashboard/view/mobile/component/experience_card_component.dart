@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/core/data/company/company_model.dart';
-import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
+import 'package:nitingamechi/core/data/company_model/company_model.dart';
+import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class ExperienceCardWidget extends StatelessWidget {

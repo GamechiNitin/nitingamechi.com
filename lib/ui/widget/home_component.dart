@@ -23,9 +23,8 @@ class HomeComponent extends StatelessWidget {
                   "Namaste, I'm",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                Text(
+                const Text(
                   "Nitin Gamechi",
-                  style: AppStyle.kH4,
                 ),
                 Stack(
                   alignment: Alignment.topCenter,

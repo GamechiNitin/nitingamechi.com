@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nitingamechi/ui/features/home/view/bloc/home_bloc.dart';
+import 'package:nitingamechi/ui/features/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 import 'experience_card_component.dart';
@@ -20,14 +20,14 @@ class ExperienceComponent extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(height: 16),
-        BlocBuilder<HomeBloc, HomeState>(
+        BlocBuilder<DashboardBloc, DashboardState>(
           builder: (context, state) {
             switch (state) {
-              case HomeStateError():
+              case DashboardStateError():
                 return Center(child: Text(state.message));
-              case HomeStateNoData():
+              case DashboardStateNoData():
                 return const Center(child: Text("No Data"));
-              case HomeStateData():
+              case DashboardStateData():
                 return ListView.separated(
                   itemCount: state.data.company.length,
                   separatorBuilder: (context, index) =>

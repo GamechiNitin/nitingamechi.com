@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nitingamechi/ui/features/home/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class AboutComponent extends StatelessWidget {

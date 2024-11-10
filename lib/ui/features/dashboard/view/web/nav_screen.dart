@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:nitingamechi/ui/features/contact/contact_screen.dart';
-import 'package:nitingamechi/ui/features/home/view/mobile/mobile_screen.dart';
-import 'package:nitingamechi/ui/features/home/view/web/cubit/nav_cubit.dart';
-import 'package:nitingamechi/ui/features/home/view/web/home/home_web_screen.dart';
-import 'package:nitingamechi/ui/features/home/widget/blur_scaffold_widget.dart';
-import 'package:nitingamechi/ui/features/home/widget/dm_widget.dart';
+import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/web/dashboard_web_screen.dart';
+import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/mobile_screen.dart';
+import 'package:nitingamechi/ui/widget/blur_scaffold_widget.dart';
+import 'package:nitingamechi/ui/widget/dm_widget.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/ui/features/resume/view/resume_screen.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
@@ -102,7 +102,7 @@ class _NavScreenState extends State<NavScreen>
                     child: TabBarView(
                       controller: _controller,
                       children: const [
-                        HomeWebScreen(),
+                        DashboardWebScreen(),
                         ResumeScreen(),
                         ProjectScreen(),
                         ContactScreen(),
