@@ -23,7 +23,6 @@ ThemeData lightThemeData(BuildContext context) => ThemeData(
         trackColor: WidgetStatePropertyAll(AppColors.kLPrimaryColor),
         trackOutlineColor: WidgetStatePropertyAll(AppColors.kTransparentColor),
       ),
-
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: AppColors.kWhiteColor,
         selectedIconTheme: IconThemeData(color: AppColors.kBlackColor),
@@ -62,7 +61,6 @@ ThemeData lightThemeData(BuildContext context) => ThemeData(
       ),
       useMaterial3: true,
       primaryColor: AppColors.kPrimaryColor,
-
       scaffoldBackgroundColor:
           ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).surface,
       splashColor:
@@ -105,15 +103,20 @@ ThemeData lightThemeData(BuildContext context) => ThemeData(
     );
 
 TextTheme? commontextTheme(BuildContext context) => TextTheme(
-      headlineLarge: AppTextStyles.getTitle(
+      headlineLarge: AppTextStyles.getHeadline(
         context: context,
         color: AppColors.kBlackColor,
-        scaleFactor: 26.0,
+        scaleFactor: 16.0,
       ),
-      headlineMedium: AppTextStyles.getTitle(
+      headlineMedium: AppTextStyles.getHeadline(
         context: context,
         color: AppColors.kBlackColor,
-        // Default scaleFactor will be used (16.0)
+        scaleFactor: 14,
+      ),
+      headlineSmall: AppTextStyles.getHeadline(
+        context: context,
+        color: AppColors.kBlackColor,
+        scaleFactor: 8.0,
       ),
       bodyLarge: AppTextStyles.getBody(
         context: context,
@@ -129,5 +132,15 @@ TextTheme? commontextTheme(BuildContext context) => TextTheme(
         context: context,
         color: AppColors.kPrimaryColor,
         // Default scaleFactor will be used (14.0)
+      ),
+      titleMedium: AppTextStyles.getHeadline(
+        context: context,
+        color: AppColors.kBlackColor,
+        scaleFactor: 14,
+      ),
+      titleLarge: AppTextStyles.getHeadline(
+        context: context,
+        color: AppColors.kBlackColor,
+        scaleFactor: 16,
       ),
     );

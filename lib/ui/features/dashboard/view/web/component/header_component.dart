@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
+import 'package:nitingamechi/utils/theme/light_theme.dart';
 import 'package:rive/rive.dart' as rive;
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 
-import 'social_component.dart';
+import '../../mobile/component/social_component.dart';
 
-class HomeComponent extends StatelessWidget {
-  const HomeComponent({super.key});
+class HeaderComponent extends StatelessWidget {
+  const HeaderComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,28 +26,32 @@ class HomeComponent extends StatelessWidget {
                   SizedBox(height: MediaQuery.sizeOf(context).width * 0.05),
                   Text(
                     "Namaste, I'm",
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontSize: 14,
-                        ),
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
+                  const SizedBox(height: 8),
                   Text(
                     "Nitin Gamechi",
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: AppTextStyles.getHeadline(
+                      context: context,
+                      color: AppColors.kDarkGrey1Color,
+                      scaleFactor: 22,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   Shimmer.fromColors(
                     baseColor: AppColors.kWhiteColor,
                     highlightColor: Colors.blueAccent,
                     child: Text(
                       'Software Developer',
-                      style: GoogleFonts.poppins(
+                      style: AppTextStyles.getHeadline(
+                        context: context,
                         color: AppColors.kWhiteColor,
-                        fontSize: 30,
+                        scaleFactor: 40,
                         fontWeight: FontWeight.w600,
-                        wordSpacing: 1,
-                        height: 2,
                       ),
                     ),
                   ),
+                  const SizedBox(height: 20),
                   Text(
                     AppString.kIntro,
                     textAlign: TextAlign.justify,
@@ -86,14 +90,16 @@ class HomeComponent extends StatelessWidget {
                     children: [
                       Text(
                         "Namaste, I'm",
-                        style:
-                            Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                  fontSize: 12,
-                                ),
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       Text(
                         "Nitin Gamechi",
-                        style: Theme.of(context).textTheme.headlineSmall,
+                        style: AppTextStyles.getHeadline(
+                          context: context,
+                          color: AppColors.kDarkGrey1Color,
+                          scaleFactor: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ],
                   ),
@@ -113,18 +119,20 @@ class HomeComponent extends StatelessWidget {
             highlightColor: Colors.blueAccent,
             child: Text(
               'Software Developer',
-              style: GoogleFonts.poppins(
+              style: AppTextStyles.getHeadline(
+                context: context,
                 color: AppColors.kWhiteColor,
-                fontSize: 30,
+                scaleFactor: 20,
                 fontWeight: FontWeight.w600,
-                wordSpacing: 1,
               ),
             ),
           ),
           const SizedBox(height: 10),
           Text(
             AppString.kIntro,
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 14,
+                ),
           ),
           const SocialComponent(),
         ],

@@ -47,7 +47,7 @@ class _NavScreenState extends State<NavScreen>
                   Size(kToolbarHeight, MediaQuery.sizeOf(context).width),
               child: Container(
                 padding: EdgeInsets.only(
-                  left: kAppWebPadding(context),
+                  left: kBodyWebPadding(context),
                   right: 20,
                 ),
                 color: AppColors.kWhiteColor,
@@ -93,24 +93,20 @@ class _NavScreenState extends State<NavScreen>
                 ),
               ),
             ),
-            body: Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: kBodyWebPadding(context)),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: TabBarView(
-                      controller: _controller,
-                      children: const [
-                        DashboardWebScreen(),
-                        ResumeScreen(),
-                        ProjectScreen(),
-                        ContactScreen(),
-                      ],
-                    ),
+            body: Column(
+              children: [
+                Expanded(
+                  child: TabBarView(
+                    controller: _controller,
+                    children: const [
+                      DashboardWebScreen(),
+                      ResumeScreen(),
+                      ProjectScreen(),
+                      ContactScreen(),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

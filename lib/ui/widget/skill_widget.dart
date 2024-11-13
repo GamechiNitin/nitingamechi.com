@@ -26,17 +26,6 @@ class SkillWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                AppString.kSkill,
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.kBlackColor,
-                  letterSpacing: 1.2,
-                ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
                 AppString.kSkillHeadline,
                 textAlign: TextAlign.start,
                 style: TextStyle(

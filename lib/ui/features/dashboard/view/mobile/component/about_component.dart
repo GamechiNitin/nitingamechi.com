@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
+import 'package:nitingamechi/utils/theme/light_theme.dart';
+import 'package:shimmer/shimmer.dart';
 
 class AboutComponent extends StatelessWidget {
   const AboutComponent({super.key});
@@ -19,23 +20,49 @@ class AboutComponent extends StatelessWidget {
         borderRadius: BorderRadius.circular(kBorderRadius),
         child: Container(
           padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                AppString.kAboutMe,
-                style: GoogleFonts.poppins(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                  wordSpacing: 1,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Shimmer.fromColors(
+                      baseColor: AppColors.kWhiteColor,
+                      highlightColor: Colors.blueAccent,
+                      child: Text(
+                        AppString.kAboutMe,
+                        style: AppTextStyles.getHeadline(
+                          color: AppColors.kWhiteColor,
+                          scaleFactor: 20,
+                          context: context,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      AppString.kAboutSubtitle2,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                AppString.kAboutSubtitle2,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(),
+              const SizedBox(width: 20),
+              GlassMorphism(
+                blur: 10,
+                color: AppColors.kBlueColor,
+                opacity: 0.2,
+                borderRadius: BorderRadius.circular(12),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    AppAssets.nitin,
+                    height: 250,
+                    width: 280,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ],
           ),

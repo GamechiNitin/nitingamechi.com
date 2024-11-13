@@ -8,7 +8,7 @@ import 'package:nitingamechi/ui/widget/dm_widget.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
-import 'home_component.dart';
+import '../../web/component/header_component.dart';
 import 'project_component.dart';
 
 List<String> menu = ['Home', 'Project', 'About', 'Experience', 'Resume'];
@@ -134,7 +134,7 @@ class MobileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HomeComponent(),
+                    HeaderComponent(),
                     AboutComponent(),
                     ExperienceComponent(),
                     ProjectComponent(),

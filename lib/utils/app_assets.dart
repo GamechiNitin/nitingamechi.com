@@ -5,7 +5,7 @@ abstract class AppAssets {
   static const String kLinkedin = 'assets/image/icon/linked_in.png';
   static const String kLinkedin2 = 'assets/image/icon/linkedin.png';
   static const String kcontact = 'assets/image/other/contact.png';
-  static const String nitin = 'assets/image/other/nitin.png';
+  static const String nitin = 'assets/image/other/nitin.jpg';
 
   // Social
   static const String kflutter = 'assets/image/icon/flutter.png';
