@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/features/resume/data/resume_response.dart';
-import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class EducationCardWidget extends StatelessWidget {
   const EducationCardWidget({
@@ -19,9 +18,7 @@ class EducationCardWidget extends StatelessWidget {
         children: [
           Text(
             company.title ?? '',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.kSecondaryColor,
-                ),
+            style: Theme.of(context).textTheme.labelLarge,
           ),
           const SizedBox(height: 10),
           Row(
@@ -30,36 +27,32 @@ class EducationCardWidget extends StatelessWidget {
             children: [
               Icon(
                 Icons.location_on_outlined,
-                size: 13,
+                size: 14,
                 color: Theme.of(context).iconTheme.color,
               ),
-              const SizedBox(width: 4),
+              const SizedBox(width: 8),
               Text(
                 company.location ?? '',
                 maxLines: 1,
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Theme.of(context).iconTheme.color,
-                    ),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               const SizedBox(width: 20),
               Icon(
                 Icons.watch_later_outlined,
-                size: 13,
+                size: 14,
                 color: Theme.of(context).iconTheme.color,
               ),
-              const SizedBox(width: 4),
+              const SizedBox(width: 8),
               Text(
                 company.timeline ?? '',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Theme.of(context).iconTheme.color,
-                    ),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ],
           ),
           const SizedBox(height: 12),
           Text(
             company.description ?? "",
-            style: Theme.of(context).textTheme.labelSmall,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 16),
         ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   static double kOpacity = 0.7;
   static const Color kDefaultColor = Colors.blue;
+  static const Color kDefault2Color = Colors.deepOrange;
 
   static const Color kLPrimaryColor = Color(0x403CCF4E);
 

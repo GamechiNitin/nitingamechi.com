@@ -41,6 +41,7 @@ class ResumeScreen extends StatelessWidget {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +82,7 @@ class ResumeScreen extends StatelessWidget {
                                   AppString.kEducation,
                                   textAlign: TextAlign.start,
                                   style:
-                                      Theme.of(context).textTheme.headlineSmall,
+                                      Theme.of(context).textTheme.displayLarge,
                                 ),
                               ),
                             ],
@@ -91,24 +92,25 @@ class ResumeScreen extends StatelessWidget {
                             color: AppColors.kPrimaryColor,
                             opacity: 0.2,
                             border: true,
-                            borderRadius: BorderRadius.circular(10),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
+                            borderRadius: BorderRadius.circular(6),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 7.0,
+                                horizontal: 12,
+                              ),
                               child: Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.download,
-                                    size: 16,
-                                    color: AppColors.kPrimaryColor,
+                                    size: 18,
+                                    color: AppColors.kWhiteColor,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Text(
                                     AppString.kDownloadResume,
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: AppColors.kWhiteColor,
-                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .displaySmall,
                                   )
                                 ],
                               ),
@@ -137,9 +139,7 @@ class ResumeScreen extends StatelessWidget {
                         ),
                       ),
                       // ----------
-                      const SizedBox(
-                        height: kToolbarHeight,
-                      ),
+                      const SizedBox(height: kToolbarHeight),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -177,7 +177,7 @@ class ResumeScreen extends StatelessWidget {
                             child: Text(
                               AppString.kWork,
                               textAlign: TextAlign.start,
-                              style: Theme.of(context).textTheme.headlineSmall,
+                              style: Theme.of(context).textTheme.displayLarge,
                             ),
                           ),
                         ],
@@ -205,34 +205,8 @@ class ResumeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          GlassMorphism(
-                            blur: 10,
-                            color: AppColors.kPrimaryColor,
-                            opacity: 0.1,
-                            borderRadius: BorderRadius.circular(10),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Icon(
-                                Icons.school,
-                                color: AppColors.kPrimaryColor,
-                                size: 20,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 8),
-                            child: Text(
-                              AppString.kProject,
-                              textAlign: TextAlign.start,
-                              style: Theme.of(context).textTheme.headlineSmall,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
+
+                      const SizedBox(height: kToolbarHeight),
                       const ProjectComponent(),
                       const SizedBox(height: kToolbarHeight),
                       const FooterWidget(),

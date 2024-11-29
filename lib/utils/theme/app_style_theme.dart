@@ -277,9 +277,9 @@ class AppTextStyles {
     required BuildContext context,
     required Color color,
     Color? darkColor,
-    FontWeight fontWeight = FontWeight.bold,
+    FontWeight fontWeight = FontWeight.normal,
     double letterSpacing = 0.0,
-    double scaleFactor = 24.0,
+    double scaleFactor = 16.0,
     FontFamily fontFamily = FontFamily.poppins,
   }) {
     return _generateTextStyle(
@@ -329,6 +329,27 @@ class AppTextStyles {
       context: context,
       color: color.withOpacity(0.5), // Lighter color for muted effect
       darkColor: darkColor ?? color.withOpacity(0.5),
+      fontWeight: fontWeight,
+      letterSpacing: letterSpacing,
+      scaleFactor: scaleFactor,
+      fontFamily: fontFamily,
+    );
+  }
+
+  // Subtitle text style
+  static TextStyle getTitle({
+    required BuildContext context,
+    required Color color,
+    Color? darkColor,
+    FontWeight fontWeight = FontWeight.normal,
+    double letterSpacing = 0.0,
+    double scaleFactor = 14.0,
+    FontFamily fontFamily = FontFamily.poppins,
+  }) {
+    return _generateTextStyle(
+      context: context,
+      color: color,
+      darkColor: darkColor,
       fontWeight: fontWeight,
       letterSpacing: letterSpacing,
       scaleFactor: scaleFactor,

@@ -82,6 +82,7 @@ ThemeData lightThemeData(BuildContext context) => ThemeData(
         modalBackgroundColor:
             ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor).surface,
       ),
+      fontFamily: FontFamily.poppins.name,
       inputDecorationTheme: InputDecorationTheme(
         labelStyle: const TextStyle(
           fontSize: 14,
@@ -118,29 +119,60 @@ TextTheme? commontextTheme(BuildContext context) => TextTheme(
         color: AppColors.kBlackColor,
         scaleFactor: 8.0,
       ),
-      bodyLarge: AppTextStyles.getBody(
-        context: context,
-        color: Colors.blue,
-        scaleFactor: 20.0,
-      ),
       labelMedium: AppTextStyles.getLabel(
         context: context,
         color: AppColors.kBlueAccentColor,
         scaleFactor: 16.0,
       ),
-      displayLarge: AppTextStyles.getButtonText(
+      bodyLarge: AppTextStyles.getBody(
         context: context,
-        color: AppColors.kPrimaryColor,
-        // Default scaleFactor will be used (14.0)
+        color: Colors.blue,
+        scaleFactor: 20.0,
       ),
-      titleMedium: AppTextStyles.getHeadline(
+      bodySmall: AppTextStyles.getBody(
         context: context,
         color: AppColors.kBlackColor,
+        scaleFactor: 12,
+      ),
+      displayLarge: AppTextStyles.getDisplay(
+        context: context,
+        color: AppColors.kPrimaryColor,
+        scaleFactor: 16,
+        fontWeight: FontWeight.w500,
+        // Default scaleFactor will be used (14.0)
+      ),
+      displayMedium: AppTextStyles.getDisplay(
+        context: context,
+        color: AppColors.kDefaultColor,
         scaleFactor: 14,
       ),
-      titleLarge: AppTextStyles.getHeadline(
+      displaySmall: AppTextStyles.getDisplay(
+        context: context,
+        color: AppColors.kWhiteColor,
+        scaleFactor: 12,
+        fontWeight: FontWeight.w400,
+      ),
+      titleLarge: AppTextStyles.getTitle(
         context: context,
         color: AppColors.kBlackColor,
         scaleFactor: 16,
+      ),
+      titleMedium: AppTextStyles.getTitle(
+        context: context,
+        color: AppColors.kBlackColor,
+        scaleFactor: 12,
+        // fontWeight:
+      ),
+      titleSmall: AppTextStyles.getTitle(
+        context: context,
+        color: AppColors.kPrimaryColor,
+        scaleFactor: 10,
+        fontWeight: FontWeight.w400,
+      ),
+      labelLarge: AppTextStyles.getHeadline(
+        context: context,
+        color: AppColors.kDarkGrey1Color,
+        scaleFactor: 14,
+        fontWeight: FontWeight.w500,
       ),
     );

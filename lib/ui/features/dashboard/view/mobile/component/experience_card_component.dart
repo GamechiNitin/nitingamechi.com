@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nitingamechi/core/data/company_model/company_model.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
+import 'package:nitingamechi/utils/theme/light_theme.dart';
 
 class ExperienceCardWidget extends StatelessWidget {
   const ExperienceCardWidget({
@@ -21,17 +22,15 @@ class ExperienceCardWidget extends StatelessWidget {
           children: [
             Text(
               company.position ?? '',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.kSecondaryColor,
-                  ),
+              style: Theme.of(context).textTheme.labelLarge,
             ),
             Text(
               " - ",
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.labelLarge,
             ),
             Text(
               company.company ?? '',
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.labelLarge,
             ),
           ],
         ),
@@ -42,29 +41,25 @@ class ExperienceCardWidget extends StatelessWidget {
           children: [
             Icon(
               Icons.location_on_outlined,
-              size: 13,
+              size: 14,
               color: Theme.of(context).iconTheme.color,
             ),
-            const SizedBox(width: 4),
+            const SizedBox(width: 8),
             Text(
               company.location ?? '',
               maxLines: 1,
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: Theme.of(context).iconTheme.color,
-                  ),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const SizedBox(width: 20),
             Icon(
               Icons.watch_later_outlined,
-              size: 13,
+              size: 14,
               color: Theme.of(context).iconTheme.color,
             ),
-            const SizedBox(width: 4),
+            const SizedBox(width: 8),
             Text(
               company.timeline ?? '',
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: Theme.of(context).iconTheme.color,
-                  ),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
           ],
         ),
@@ -89,9 +84,9 @@ class ExperienceCardWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      company.description![index],
+                      company.description?[index] ?? "",
                       maxLines: 2,
-                      style: Theme.of(context).textTheme.labelSmall,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ],
                 ),
@@ -124,10 +119,11 @@ class ExperienceCardWidget extends StatelessWidget {
                 ),
                 child: Text(
                   company.stack?[index] ?? '',
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontSize: 12,
-                        color: AppColors.kPrimaryColor,
-                      ),
+                  style: AppTextStyles.getHeadline(
+                    context: context,
+                    color: AppColors.kDarkGrey1Color,
+                    scaleFactor: 12,
+                  ),
                 ),
               ),
             ),

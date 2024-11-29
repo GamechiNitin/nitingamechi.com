@@ -43,9 +43,9 @@ class ProjectScreen extends StatelessWidget {
                               : DeviceInfo(context).isTablet
                                   ? 2
                                   : 3,
-                          mainAxisExtent: 500,
+                          mainAxisExtent: 450,
                           crossAxisSpacing: 20,
-                          mainAxisSpacing: 20,
+                          mainAxisSpacing: 30,
                         ),
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {

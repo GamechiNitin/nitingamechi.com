@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/ui/features/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
+import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/widget/project_tile_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
@@ -75,9 +76,9 @@ class ProjectComponent extends StatelessWidget {
                                       DeviceInfo(context).isTablet
                                   ? 1
                                   : 2,
-                              mainAxisExtent: 350,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 20,
+                              mainAxisExtent: 320,
+                              crossAxisSpacing: 30,
+                              mainAxisSpacing: 30,
                             ),
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
@@ -126,19 +127,26 @@ class ProjectComponent extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Text(
-                        AppString.kViewMore,
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.kBlackColor,
+                      TextButton(
+                        onPressed: () {
+                          BlocProvider.of<NavCubit>(context).updateIndex(2);
+                        },
+                        child: const Text(
+                          AppString.kViewMore,
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.kBlackColor,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 20),
                       FloatingActionButton(
                         mini: true,
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<NavCubit>(context).updateIndex(2);
+                        },
                         backgroundColor: AppColors.kBackgroundColor,
                         child: const Icon(
                           Icons.chevron_right,
