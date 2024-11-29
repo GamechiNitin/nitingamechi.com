@@ -49,11 +49,14 @@ class ProjectItemWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            Text(
-              project.description!,
-              style: const TextStyle(
-                fontSize: 16,
-                color: AppColors.kDarkGrey1Color,
+            Flexible(
+              child: Text(
+                project.description ?? "",
+                maxLines: 2,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: AppColors.kDarkGrey1Color,
+                ),
               ),
             ),
             const SizedBox(height: 8),

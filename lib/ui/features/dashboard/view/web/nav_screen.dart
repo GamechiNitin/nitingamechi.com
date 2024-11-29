@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
-import 'package:nitingamechi/ui/features/contact/contact_screen.dart';
+import 'package:nitingamechi/ui/features/contact/ui/contact_screen.dart';
 import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
 import 'package:nitingamechi/ui/features/dashboard/view/web/dashboard_web_screen.dart';
 import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/mobile_screen.dart';

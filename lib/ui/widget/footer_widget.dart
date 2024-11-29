@@ -221,25 +221,30 @@ class FooterWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Developed by Nitin Gamechi',
-                      style: TextStyle(
-                        color: AppColors.kH11,
-                        fontSize: 12,
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Developed by Nitin Gamechi',
+                        style: TextStyle(
+                          color: AppColors.kH11,
+                          fontSize: 12,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      '© ${DateTime.now().year} Next.in, All rights reserved.',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
+                      const SizedBox(height: 10),
+                      Flexible(
+                        child: Text(
+                          '© ${DateTime.now().year} Next.in, All rights reserved.',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             ),

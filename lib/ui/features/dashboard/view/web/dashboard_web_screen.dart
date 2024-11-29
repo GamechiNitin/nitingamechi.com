@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/ui/features/contact/contact_screen.dart';
+import 'package:nitingamechi/ui/features/contact/ui/contact_component.dart';
 import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/about_component.dart';
 import 'package:nitingamechi/ui/features/dashboard/view/web/component/header_component.dart';
-import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/project_component.dart';
+import 'package:nitingamechi/ui/features/project/view/project_component.dart';
 import 'package:nitingamechi/ui/widget/footer_widget.dart';
 import 'package:nitingamechi/ui/widget/skill_widget.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
@@ -13,9 +13,8 @@ class DashboardWebScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      // padding: EdgeInsets.all(20),
       padding: EdgeInsets.symmetric(horizontal: kBodyWebPadding(context)),
-      physics: const BouncingScrollPhysics(),
+      // physics: const BouncingScrollPhysics(),
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +27,7 @@ class DashboardWebScreen extends StatelessWidget {
           SizedBox(height: kToolbarHeight),
           ProjectComponent(),
           SizedBox(height: kToolbarHeight),
-          ContactScreen(),
+          ContactComponent(),
           SizedBox(height: kToolbarHeight),
           FooterWidget(),
           SizedBox(height: kToolbarHeight),

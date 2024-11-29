@@ -9,7 +9,7 @@ import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 import '../../web/component/header_component.dart';
-import 'project_component.dart';
+import '../../../../project/view/project_component.dart';
 
 List<String> menu = ['Home', 'Project', 'About', 'Experience', 'Resume'];
 

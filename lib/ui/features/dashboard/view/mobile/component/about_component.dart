@@ -14,7 +14,7 @@ class AboutComponent extends StatelessWidget {
       child: GlassMorphism(
         blur: 10,
         color: AppColors.kFrostedGlassColor,
-        bcolor: AppColors.kWhite40Color,
+        // bcolor: AppColors.kWhite40Color,
         border: true,
         opacity: 0.3,
         borderRadius: BorderRadius.circular(kBorderRadius),
@@ -28,8 +28,8 @@ class AboutComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Shimmer.fromColors(
-                      baseColor: AppColors.kWhiteColor,
-                      highlightColor: Colors.blueAccent,
+                      baseColor: AppColors.kDefaultColor,
+                      highlightColor: AppColors.kWhiteColor,
                       child: Text(
                         AppString.kAboutMe,
                         style: AppTextStyles.getHeadline(

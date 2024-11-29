@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart' show immutable;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nitingamechi/ui/features/contact/contact_screen.dart';
+import 'package:nitingamechi/ui/features/contact/ui/contact_screen.dart';
 import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
 import 'package:nitingamechi/ui/features/dashboard/view/web/nav_screen.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';

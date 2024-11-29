@@ -27,7 +27,10 @@ class ProjectScreen extends StatelessWidget {
               case ProjectStateData():
                 return SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
-                  padding: const EdgeInsets.all(20),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: kBodyWebPadding(context),
+                    vertical: kToolbarHeight,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

@@ -30,8 +30,8 @@ class ProjectComponent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Shimmer.fromColors(
-                    baseColor: AppColors.kWhiteColor,
-                    highlightColor: Colors.blueAccent,
+                    baseColor: AppColors.kDefaultColor,
+                    highlightColor: AppColors.kWhiteColor,
                     child: Text(
                       AppString.kProject,
                       style: GoogleFonts.poppins(
@@ -67,14 +67,14 @@ class ProjectComponent extends StatelessWidget {
                           return const Center(child: Text("No Data"));
                         case DashboardStateData():
                           return GridView.builder(
+                            // scrollDirection: Axis.horizontal,
                             itemCount: state.data.project.length,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: DeviceInfo(context).isMobile
+                              crossAxisCount: DeviceInfo(context).isMobile ||
+                                      DeviceInfo(context).isTablet
                                   ? 1
-                                  : DeviceInfo(context).isTablet
-                                      ? 2
-                                      : 2,
+                                  : 2,
                               mainAxisExtent: 350,
                               crossAxisSpacing: 20,
                               mainAxisSpacing: 20,
