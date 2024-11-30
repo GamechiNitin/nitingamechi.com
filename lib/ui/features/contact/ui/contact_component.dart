@@ -42,9 +42,13 @@ class _ContactComponentState extends State<ContactComponent> {
                 color: AppColors.kWhiteColor,
                 borderRadius: BorderRadius.all(Radius.circular(kBorderRadius)),
               ),
-              child: Image.asset(
-                AppAssets.kcontact,
-                fit: BoxFit.fitWidth,
+              child: ClipRRect(
+                borderRadius:
+                    const BorderRadius.all(Radius.circular(kBorderRadius)),
+                child: Image.asset(
+                  AppAssets.getContactAssets(),
+                  fit: BoxFit.fitWidth,
+                ),
               ),
             ),
             const SizedBox(width: kToolbarHeight),

@@ -1,11 +1,16 @@
+import "dart:math";
+
 abstract class AppAssets {
   static const String kProfile = 'assets/image/other/dash.png';
   static const String kDash1 = 'assets/image/other/dash2022_4k.png';
   static const String kGithub = 'assets/image/icon/github.png';
   static const String kLinkedin = 'assets/image/icon/linked_in.png';
   static const String kLinkedin2 = 'assets/image/icon/linkedin.png';
-  static const String kcontact = 'assets/image/other/contact.png';
   static const String nitin = 'assets/image/other/nitin.jpg';
+
+  static const String kcontact =
+      'assets/image/other/Modern-Digital-Communication.jpeg';
+  static const String kcontact1 = 'assets/image/other/Tech-Savvy-Duo.jpeg';
 
   // Social
   static const String kflutter = 'assets/image/icon/flutter.png';
@@ -40,4 +45,15 @@ abstract class AppAssets {
     (kAppStore, "App Store"),
     (kvscode, "Vs Code"),
   ];
+
+  static const List<String> contactImageList = [kcontact, kcontact1];
+  static String getContactAssets() {
+    final random = Random();
+
+    if (contactImageList.isEmpty) {
+      return kcontact;
+    }
+    int randomIndex = random.nextInt(contactImageList.length);
+    return contactImageList[randomIndex];
+  }
 }
