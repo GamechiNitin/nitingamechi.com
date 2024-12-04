@@ -78,8 +78,8 @@
             "imagelist": [
                 "assets/image/project/toys/1.png",
                 "assets/image/project/toys/2.png",
-                "assets/image/project/toys/3.png",
-                "assets/image/project/toys/4.png",
+                "assets/image/project/toys/3.jpg",
+                "assets/image/project/toys/4.jpg",
                 "assets/image/project/toys/5.png",
                 "assets/image/project/toys/6.png",
                 "assets/image/project/toys/7.png",
@@ -89,6 +89,59 @@
             ],
             "appstore": "",
             "playstore": "NA",
+            "sourceCode": "NA",
+            "category": "company"
+        },
+        {
+            "title": "eBuySugar",
+            "description": "E-commerce of Sugar seller and tender app.",
+            "industry": "E-commerce",
+            "technology": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "HTTP"
+            ],
+            "image": "assets/image/project/eBuySugar/0.jpg",
+            "imagelist": [
+                "assets/image/project/eBuySugar/0.jpg",
+                "assets/image/project/eBuySugar/01.png",
+                "assets/image/project/eBuySugar/1.png",
+                "assets/image/project/eBuySugar/2.png",
+                "assets/image/project/eBuySugar/3.png",
+                "assets/image/project/eBuySugar/4.png",
+                "assets/image/project/eBuySugar/5.png",
+                "assets/image/project/eBuySugar/6.png",
+                "assets/image/project/eBuySugar/7.png",
+                "assets/image/project/eBuySugar/8.png"
+            ],
+            "appstore": "",
+            "playstore": "https://play.google.com/store/search?q=EBuySugar&c=apps&hl=en_US",
+            "sourceCode": "NA",
+            "category": "company"
+        },
+        {
+            "title": "Seamens Center",
+            "description": "E-commerce and Grossary shopping app.",
+            "industry": "E-commerce",
+            "technology": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "HTTP",
+                "Stripe"
+            ],
+            "image": "assets/image/project/seamens/0.png",
+            "imagelist": [
+                "assets/image/project/seamens/0.png",
+                "assets/image/project/seamens/1.png",
+                "assets/image/project/seamens/2.png",
+                "assets/image/project/seamens/3.png",
+                "assets/image/project/seamens/4.png",
+                "assets/image/project/seamens/5.png"
+            ],
+            "appstore": "",
+            "playstore": "https://play.google.com/store/apps/details?id=com.greenturtle&hl=en_US",
             "sourceCode": "NA",
             "category": "company"
         },
