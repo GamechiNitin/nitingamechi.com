@@ -33,6 +33,4 @@ class ProjectModel with _$ProjectModel {
       _$ProjectModelFromJson(json);
 }
 
-enum CategoryEnum {
-  personal,
-}
+enum CategoryEnum { personal, company }

@@ -1,6 +1,121 @@
 {
     "data": [
         {
+            "title": "Digital Money",
+            "description": "A chat application that allows users to communicate in real-time.",
+            "industry": "Finance",
+            "technology": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "HTTP"
+            ],
+            "image": "assets/image/project/dm/1.png",
+            "imagelist": [
+                "assets/image/project/dm/1.png",
+                "assets/image/project/dm/2.png",
+                "assets/image/project/dm/3.png",
+                "assets/image/project/dm/4.png",
+                "assets/image/project/dm/5.png",
+                "assets/image/project/dm/6.png",
+                "assets/image/project/dm/7.png",
+                "assets/image/project/dm/8.png",
+                "assets/image/project/dm/9.png",
+                "assets/image/project/dm/10.png",
+                "assets/image/project/dm/11.png",
+                "assets/image/project/dm/12.png",
+                "assets/image/project/dm/13.png",
+                "assets/image/project/dm/14.png",
+                "assets/image/project/dm/15.png"
+            ],
+            "appstore": "NA",
+            "playstore": "NA",
+            "sourceCode": "NA",
+            "category": "personal"
+        },
+        {
+            "title": "Tercardia SmartDoc",
+            "description": " Doctor consultant app for physicians & patient’s",
+            "industry": "Health",
+            "technology": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "HTTP",
+                "Biometric",
+                "Google Autocomplete"
+            ],
+            "image": "assets/image/project/tercardia/1.png",
+            "imagelist": [
+                "assets/image/project/tercardia/1.png",
+                "assets/image/project/tercardia/2.png",
+                "assets/image/project/tercardia/3.png",
+                "assets/image/project/tercardia/4.png",
+                "assets/image/project/tercardia/5.png",
+                "assets/image/project/tercardia/6.png",
+                "assets/image/project/tercardia/7.png",
+                "assets/image/project/tercardia/8.png",
+                "assets/image/project/tercardia/9.png",
+                "assets/image/project/tercardia/10.png"
+            ],
+            "appstore": "https://apps.apple.com/in/app/tercardia-smartdoc/id1530891676",
+            "playstore": "NA",
+            "sourceCode": "NA",
+            "category": "company"
+        },
+        {
+            "title": "SharePoint-India",
+            "description": "Toys - Buy, Share and Rent online.",
+            "industry": "E-commerce",
+            "technology": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "HTTP",
+                "Razorpay"
+            ],
+            "image": "assets/image/project/toys/1.png",
+            "imagelist": [
+                "assets/image/project/toys/1.png",
+                "assets/image/project/toys/2.png",
+                "assets/image/project/toys/3.png",
+                "assets/image/project/toys/4.png",
+                "assets/image/project/toys/5.png",
+                "assets/image/project/toys/6.png",
+                "assets/image/project/toys/7.png",
+                "assets/image/project/toys/8.png",
+                "assets/image/project/toys/9.png",
+                "assets/image/project/toys/10.png"
+            ],
+            "appstore": "",
+            "playstore": "NA",
+            "sourceCode": "NA",
+            "category": "company"
+        },
+        {
+            "title": "Biebol",
+            "description": "Social media app and Video Call.",
+            "industry": "Social Communication",
+            "technology": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "HTTP",
+                "Stripe"
+            ],
+            "image": "assets/image/project/biebol/1.png",
+            "imagelist": [
+                "assets/image/project/biebol/1.png",
+                "assets/image/project/biebol/2.png",
+                "assets/image/project/biebol/3.png",
+                "assets/image/project/biebol/4.png"
+            ],
+            "appstore": "",
+            "playstore": "https://play.google.com/store/apps/details?id=com.biebol&hl=en_US",
+            "sourceCode": "NA",
+            "category": "company"
+        },
+        {
             "title": "Talk",
             "description": "A chat application that allows users to communicate in real-time.",
             "industry": "Social Communication",
@@ -41,39 +156,6 @@
                 "assets/image/project/tmdb/2.png",
                 "assets/image/project/tmdb/3.png",
                 "assets/image/project/tmdb/4.png"
-            ],
-            "appstore": "NA",
-            "playstore": "NA",
-            "sourceCode": "NA",
-            "category": "personal"
-        },
-        {
-            "title": "Digital Money",
-            "description": "A chat application that allows users to communicate in real-time.",
-            "industry": "Finance",
-            "technology": [
-                "Flutter",
-                "Dart",
-                "Firebase",
-                "HTTP"
-            ],
-            "image": "assets/image/project/dm/1.png",
-            "imagelist": [
-                "assets/image/project/dm/1.png",
-                "assets/image/project/dm/2.png",
-                "assets/image/project/dm/3.png",
-                "assets/image/project/dm/4.png",
-                "assets/image/project/dm/5.png",
-                "assets/image/project/dm/6.png",
-                "assets/image/project/dm/7.png",
-                "assets/image/project/dm/8.png",
-                "assets/image/project/dm/9.png",
-                "assets/image/project/dm/10.png",
-                "assets/image/project/dm/11.png",
-                "assets/image/project/dm/12.png",
-                "assets/image/project/dm/13.png",
-                "assets/image/project/dm/14.png",
-                "assets/image/project/dm/15.png"
             ],
             "appstore": "NA",
             "playstore": "NA",

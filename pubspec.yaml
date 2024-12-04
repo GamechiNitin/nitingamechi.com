@@ -97,6 +97,9 @@ flutter:
     - assets/image/project/hw/
     - assets/image/project/dash/
     - assets/image/project/wallet/
+    - assets/image/project/biebol/
+    - assets/image/project/tercardia/
+    - assets/image/project/toys/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
