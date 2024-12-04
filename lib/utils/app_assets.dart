@@ -26,6 +26,15 @@ abstract class AppAssets {
   static const String kvscode = 'assets/image/icon/code.png';
   static const String kpostman = 'assets/image/icon/postman.png';
   static const String kgo = 'assets/image/icon/go.png';
+
+  // Talk
+  static const String kTalk1 = 'assets/image/project/talk/1.png';
+  static const String kTalk2 = 'assets/image/project/talk/2.png';
+  static const String kTalk3 = 'assets/image/project/talk/3.png';
+  static const String kTalk4 = 'assets/image/project/talk/4.png';
+  static const String kTalk5 = 'assets/image/project/talk/5.png';
+  static const String kTalk6 = 'assets/image/project/talk/6.png';
+  static const String kTalk7 = 'assets/image/project/talk/7.png';
   // Rive
   static const String kDash = 'assets/rive/dash.riv';
 

@@ -115,7 +115,7 @@ class ProjectComponent extends StatelessWidget {
                         child: Container(
                           color: AppColors.kFrostedGlassColor,
                           child: Image.asset(
-                            "assets/image/project/Talk.png",
+                            "assets/image/project/dm/5.png",
                             width: MediaQuery.of(context).size.width,
                             fit: BoxFit.cover,
                           ),

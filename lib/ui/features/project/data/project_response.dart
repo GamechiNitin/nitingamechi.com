@@ -19,6 +19,7 @@ class ProjectModel with _$ProjectModel {
     @JsonKey(name: "title") String? title,
     @JsonKey(name: "location") String? location,
     @JsonKey(name: "image") String? image,
+    @JsonKey(name: "imagelist") List<String>? imagelist,
     @JsonKey(name: "industry") String? industry,
     @JsonKey(name: "technology") List<String>? technology,
     @JsonKey(name: "playstore") String? playstore,

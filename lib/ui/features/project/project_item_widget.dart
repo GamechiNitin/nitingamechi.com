@@ -32,12 +32,12 @@ class ProjectItem extends StatelessWidget {
               borderRadius:
                   const BorderRadius.all(Radius.circular(kBorderRadius)),
               child: Container(
-                color: AppColors.kFrostedGlassColor,
+                // color: AppColors.kFrostedGlassColor,
                 child: Image.asset(
                   project.image ?? "",
                   width: MediaQuery.of(context).size.width,
                   height: 160,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),

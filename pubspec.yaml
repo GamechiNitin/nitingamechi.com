@@ -90,6 +90,13 @@ flutter:
     - assets/image/logo/
     - assets/image/other/
     - assets/json/
+    - assets/image/project/talk/
+    - assets/image/project/tmdb/
+    - assets/image/project/dm/
+    - assets/image/project/infinity/
+    - assets/image/project/hw/
+    - assets/image/project/dash/
+    - assets/image/project/wallet/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
