@@ -2,7 +2,8 @@
     "data": [
         {
             "title": "Digital Money",
-            "description": "A chat application that allows users to communicate in real-time.",
+            "shortDescription": "Real-time chat app for digital financial transactions.",
+            "description": "Digital Money is a mobile application that allows users to communicate in real-time and make secure financial transactions through integrated payment systems. Built with modern technologies, it enhances the user experience with seamless communication and transactional capabilities.",
             "industry": "Finance",
             "technology": [
                 "Flutter",
@@ -31,11 +32,18 @@
             "appstore": "NA",
             "playstore": "NA",
             "sourceCode": "NA",
-            "category": "personal"
+            "category": "personal",
+            "projectGoals": [
+                "Real-time communication",
+                "Secure financial transactions",
+                "Cross-platform support"
+            ],
+            "userBase": "Individual users looking for financial communication and transactions"
         },
         {
             "title": "Tercardia SmartDoc",
-            "description": " Doctor consultant app for physicians & patient’s",
+            "shortDescription": "Doctor consultation app for physicians and patients.",
+            "description": "Tercardia SmartDoc is a healthcare application designed to connect physicians and patients for remote consultations. The app integrates biometric security features and offers a seamless user experience for medical professionals and their patients.",
             "industry": "Health",
             "technology": [
                 "Flutter",
@@ -61,11 +69,18 @@
             "appstore": "https://apps.apple.com/in/app/tercardia-smartdoc/id1530891676",
             "playstore": "NA",
             "sourceCode": "NA",
-            "category": "company"
+            "category": "company",
+            "projectGoals": [
+                "Remote consultations",
+                "Biometric authentication",
+                "Seamless experience for healthcare professionals"
+            ],
+            "userBase": "Physicians and patients seeking remote healthcare solutions"
         },
         {
             "title": "SharePoint-India",
-            "description": "Toys - Buy, Share and Rent online.",
+            "shortDescription": "E-commerce platform for buying, sharing, and renting toys.",
+            "description": "SharePoint-India is an e-commerce platform that allows users to buy, share, and rent toys. It provides a sustainable way for users to access toys while reducing waste, all within a user-friendly interface.",
             "industry": "E-commerce",
             "technology": [
                 "Flutter",
@@ -90,11 +105,18 @@
             "appstore": "",
             "playstore": "NA",
             "sourceCode": "NA",
-            "category": "company"
+            "category": "company",
+            "projectGoals": [
+                "Toy renting and buying platform",
+                "Sustainable user interaction",
+                "Easy payment system"
+            ],
+            "userBase": "Parents and caregivers looking for sustainable toy options"
         },
         {
             "title": "eBuySugar",
-            "description": "E-commerce of Sugar seller and tender app.",
+            "shortDescription": "E-commerce app for sugar sellers and buyers.",
+            "description": "eBuySugar is an e-commerce application designed specifically for the sugar industry. It connects sellers and buyers, streamlining the process of trading and purchasing sugar in bulk. The platform supports real-time transactions and order management.",
             "industry": "E-commerce",
             "technology": [
                 "Flutter",
@@ -118,11 +140,18 @@
             "appstore": "",
             "playstore": "https://play.google.com/store/search?q=EBuySugar&c=apps&hl=en_US",
             "sourceCode": "NA",
-            "category": "company"
+            "category": "company",
+            "projectGoals": [
+                "Sugar buying and selling platform",
+                "Bulk order management",
+                "Secure transactions"
+            ],
+            "userBase": "Businesses and individuals in the sugar trading industry"
         },
         {
             "title": "Seamens Center",
-            "description": "E-commerce and Grossary shopping app.",
+            "shortDescription": "Grocery shopping and e-commerce platform.",
+            "description": "Seamens Center is a mobile app offering grocery shopping and other e-commerce services. It connects users with local vendors for fresh groceries, along with supporting a wide range of other products.",
             "industry": "E-commerce",
             "technology": [
                 "Flutter",
@@ -143,11 +172,18 @@
             "appstore": "",
             "playstore": "https://play.google.com/store/apps/details?id=com.greenturtle&hl=en_US",
             "sourceCode": "NA",
-            "category": "company"
+            "category": "company",
+            "projectGoals": [
+                "Grocery shopping platform",
+                "Multi-vendor support",
+                "Simple and efficient user experience"
+            ],
+            "userBase": "Consumers looking for convenient grocery shopping"
         },
         {
             "title": "Biebol",
-            "description": "Social media app and Video Call.",
+            "shortDescription": "Social media and video calling app.",
+            "description": "Biebol is a social media app that combines features for video calling, chatting, and sharing media. With a focus on easy interaction, it provides a platform for connecting friends and family through multimedia communication.",
             "industry": "Social Communication",
             "technology": [
                 "Flutter",
@@ -166,11 +202,18 @@
             "appstore": "",
             "playstore": "https://play.google.com/store/apps/details?id=com.biebol&hl=en_US",
             "sourceCode": "NA",
-            "category": "company"
+            "category": "company",
+            "projectGoals": [
+                "Social media interaction",
+                "Video calls",
+                "Multimedia sharing"
+            ],
+            "userBase": "General users looking for communication and media sharing"
         },
         {
             "title": "Talk",
-            "description": "A chat application that allows users to communicate in real-time.",
+            "shortDescription": "Real-time messaging app.",
+            "description": "Talk is a mobile app focused on providing a secure and reliable platform for real-time communication. Users can send instant messages and connect globally with friends and family.",
             "industry": "Social Communication",
             "technology": [
                 "Flutter",
@@ -191,11 +234,18 @@
             "appstore": "NA",
             "playstore": "NA",
             "sourceCode": "NA",
-            "category": "personal"
+            "category": "personal",
+            "projectGoals": [
+                "Real-time messaging",
+                "User-friendly interface",
+                "Global connectivity"
+            ],
+            "userBase": "Anyone looking for a simple messaging solution"
         },
         {
             "title": "TMDB - Movie App",
-            "description": "A chat application that allows users to communicate in real-time.",
+            "shortDescription": "App for exploring movies and TV shows.",
+            "description": "The TMDB Movie App allows users to explore the latest movies, TV shows, and related media. Integrated with TMDB's API, the app delivers movie details, trailers, reviews, and more.",
             "industry": "Entertainment",
             "technology": [
                 "Flutter",
@@ -213,100 +263,13 @@
             "appstore": "NA",
             "playstore": "NA",
             "sourceCode": "NA",
-            "category": "personal"
-        },
-        {
-            "title": "Dash - Ecommerce app",
-            "description": "A chat application that allows users to communicate in real-time.",
-            "industry": "Shopping",
-            "technology": [
-                "Flutter",
-                "Dart",
-                "Firebase",
-                "HTTP"
+            "category": "personal",
+            "projectGoals": [
+                "Movie and TV exploration",
+                "User-friendly interface",
+                "Seamless API integration"
             ],
-            "image": "assets/image/project/dash/1.png",
-            "imagelist": [
-                "assets/image/project/dash/1.png",
-                "assets/image/project/dash/2.png",
-                "assets/image/project/dash/3.png",
-                "assets/image/project/dash/4.png"
-            ],
-            "appstore": "NA",
-            "playstore": "NA",
-            "sourceCode": "NA",
-            "category": "personal"
-        },
-        {
-            "title": "Infinity - Ecommerce app",
-            "description": "A chat application that allows users to communicate in real-time.",
-            "industry": "Shopping",
-            "technology": [
-                "Flutter",
-                "Dart",
-                "Firebase",
-                "HTTP"
-            ],
-            "image": "assets/image/project/infinity/1.png",
-            "imagelist": [
-                "assets/image/project/infinity/1.png",
-                "assets/image/project/infinity/2.png",
-                "assets/image/project/infinity/3.png",
-                "assets/image/project/infinity/4.png"
-            ],
-            "appstore": "NA",
-            "playstore": "NA",
-            "sourceCode": "NA",
-            "category": "personal"
-        },
-        {
-            "title": "Health Wellness app",
-            "description": "A chat application that allows users to communicate in real-time.",
-            "industry": "Health",
-            "technology": [
-                "Flutter",
-                "Dart",
-                "Firebase",
-                "HTTP"
-            ],
-            "image": "assets/image/project/hw/1.png",
-            "imagelist": [
-                "assets/image/project/hw/1.png",
-                "assets/image/project/hw/2.png",
-                "assets/image/project/hw/3.png",
-                "assets/image/project/hw/4.png",
-                "assets/image/project/hw/5.png",
-                "assets/image/project/hw/6.png"
-            ],
-            "appstore": "NA",
-            "playstore": "NA",
-            "sourceCode": "NA",
-            "category": "personal"
-        },
-        {
-            "title": "Crypto Wallet App",
-            "description": "A chat application that allows users to communicate in real-time.",
-            "industry": "Finance",
-            "technology": [
-                "Flutter",
-                "Dart",
-                "Firebase",
-                "HTTP"
-            ],
-            "image": "assets/image/project/wallet/1.png",
-            "imagelist": [
-                "assets/image/project/wallet/1.png",
-                "assets/image/project/wallet/2.png",
-                "assets/image/project/wallet/3.png",
-                "assets/image/project/wallet/4.png",
-                "assets/image/project/wallet/5.png",
-                "assets/image/project/wallet/6.png",
-                "assets/image/project/wallet/7.png"
-            ],
-            "appstore": "NA",
-            "playstore": "NA",
-            "sourceCode": "NA",
-            "category": "personal"
+            "userBase": "Movie enthusiasts and TV show lovers"
         }
     ]
 }

@@ -17,11 +17,13 @@ class ProjectResponse with _$ProjectResponse {
 class ProjectModel with _$ProjectModel {
   const factory ProjectModel({
     @JsonKey(name: "title") String? title,
-    @JsonKey(name: "location") String? location,
+    @JsonKey(name: "shortDescription") String? shortDescription,
     @JsonKey(name: "image") String? image,
     @JsonKey(name: "imagelist") List<String>? imagelist,
     @JsonKey(name: "industry") String? industry,
     @JsonKey(name: "technology") List<String>? technology,
+    @JsonKey(name: "projectGoals") List<String>? projectGoals,
+    @JsonKey(name: "userBase") String? userBase,
     @JsonKey(name: "playstore") String? playstore,
     @JsonKey(name: "appstore") String? appstore,
     @JsonKey(name: "sourceCode") String? sourceCode,

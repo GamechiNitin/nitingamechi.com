@@ -4,10 +4,12 @@ import 'package:go_router/go_router.dart';
 import 'package:nitingamechi/ui/features/contact/ui/contact_screen.dart';
 import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
 import 'package:nitingamechi/ui/features/dashboard/view/web/nav_screen.dart';
+import 'package:nitingamechi/ui/features/preview/project_preview_screen.dart';
+import 'package:nitingamechi/ui/features/project/data/project_response.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/ui/features/resume/view/resume_screen.dart';
 
-enum AppRouteEnum { splash, home, resume, project, contact }
+enum AppRouteEnum { splash, home, resume, project, contact, projectPreview }
 
 @immutable
 abstract class AppRoutes {
@@ -35,6 +37,14 @@ abstract class AppRoutes {
         path: '/${AppRouteEnum.contact.name}',
         name: AppRouteEnum.contact.name,
         builder: (context, state) => const ContactScreen(),
+      ),
+      GoRoute(
+        path: '/${AppRouteEnum.projectPreview.name}',
+        name: AppRouteEnum.projectPreview.name,
+        builder: (context, state) {
+          ProjectModel data = state.extra as ProjectModel;
+          return ProjectPreviewScreen(data: data);
+        },
       ),
     ],
   );

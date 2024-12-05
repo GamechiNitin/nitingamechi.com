@@ -51,7 +51,7 @@ class ProjectItemWidget extends StatelessWidget {
             const SizedBox(height: 8),
             Flexible(
               child: Text(
-                project.description ?? "",
+                project.shortDescription ?? "",
                 maxLines: 2,
                 style: const TextStyle(
                   fontSize: 16,

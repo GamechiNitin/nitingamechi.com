@@ -52,7 +52,9 @@ class ProjectItem extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              project.description!,
+              project.shortDescription ?? "",
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 fontSize: 16,
                 color: AppColors.kDarkGrey1Color,

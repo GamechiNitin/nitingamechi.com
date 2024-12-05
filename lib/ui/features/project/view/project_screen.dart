@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nitingamechi/ui/widget/footer_widget.dart';
 import 'package:nitingamechi/ui/features/project/bloc/project_bloc.dart';
 import 'package:nitingamechi/ui/features/project/project_item_widget.dart';
+import 'package:nitingamechi/utils/app_routes.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class ProjectScreen extends StatelessWidget {
@@ -49,8 +51,14 @@ class ProjectScreen extends StatelessWidget {
                         ),
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {
-                          return ProjectItem(
-                            project: state.data.data[index],
+                          return InkWell(
+                            onTap: () => GoRouter.of(context).pushNamed(
+                              AppRouteEnum.projectPreview.name,
+                              extra: state.data.data[index],
+                            ),
+                            child: ProjectItem(
+                              project: state.data.data[index],
+                            ),
                           );
                         },
                       ),
