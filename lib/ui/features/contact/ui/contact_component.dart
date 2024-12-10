@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/widget/image_widget.dart';
 import 'package:nitingamechi/ui/widget/textfeild_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
@@ -45,7 +46,7 @@ class _ContactComponentState extends State<ContactComponent> {
               child: ClipRRect(
                 borderRadius:
                     const BorderRadius.all(Radius.circular(kBorderRadius)),
-                child: Image.asset(
+                child: ImageWidget(
                   AppAssets.getContactAssets(),
                   fit: BoxFit.fitWidth,
                 ),

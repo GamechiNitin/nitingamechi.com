@@ -5,6 +5,7 @@
             "shortDescription": "Real-time chat app for digital financial transactions.",
             "description": "Digital Money is a mobile application that allows users to communicate in real-time and make secure financial transactions through integrated payment systems. Built with modern technologies, it enhances the user experience with seamless communication and transactional capabilities.",
             "industry": "Finance",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -31,7 +32,8 @@
             ],
             "appstore": "NA",
             "playstore": "NA",
-            "sourceCode": "NA",
+            "sourceCode": "https://github.com/GamechiNitin/SimpleBank",
+            "website": "NA",
             "category": "personal",
             "projectGoals": [
                 "Real-time communication",
@@ -45,6 +47,7 @@
             "shortDescription": "Doctor consultation app for physicians and patients.",
             "description": "Tercardia SmartDoc is a healthcare application designed to connect physicians and patients for remote consultations. The app integrates biometric security features and offers a seamless user experience for medical professionals and their patients.",
             "industry": "Health",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -70,6 +73,7 @@
             "playstore": "NA",
             "sourceCode": "NA",
             "category": "company",
+            "website": "https://www.tercardia.com/home",
             "projectGoals": [
                 "Remote consultations",
                 "Biometric authentication",
@@ -82,6 +86,7 @@
             "shortDescription": "E-commerce platform for buying, sharing, and renting toys.",
             "description": "SharePoint-India is an e-commerce platform that allows users to buy, share, and rent toys. It provides a sustainable way for users to access toys while reducing waste, all within a user-friendly interface.",
             "industry": "E-commerce",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -105,6 +110,7 @@
             "appstore": "",
             "playstore": "NA",
             "sourceCode": "NA",
+            "website": "NA",
             "category": "company",
             "projectGoals": [
                 "Toy renting and buying platform",
@@ -118,6 +124,7 @@
             "shortDescription": "E-commerce app for sugar sellers and buyers.",
             "description": "eBuySugar is an e-commerce application designed specifically for the sugar industry. It connects sellers and buyers, streamlining the process of trading and purchasing sugar in bulk. The platform supports real-time transactions and order management.",
             "industry": "E-commerce",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -127,7 +134,7 @@
             "image": "assets/image/project/eBuySugar/0.jpg",
             "imagelist": [
                 "assets/image/project/eBuySugar/0.jpg",
-                "assets/image/project/eBuySugar/01.png",
+                "assets/image/project/eBuySugar/01.jpg",
                 "assets/image/project/eBuySugar/1.png",
                 "assets/image/project/eBuySugar/2.png",
                 "assets/image/project/eBuySugar/3.png",
@@ -137,9 +144,10 @@
                 "assets/image/project/eBuySugar/7.png",
                 "assets/image/project/eBuySugar/8.png"
             ],
-            "appstore": "",
+            "appstore": "https://apps.apple.com/ca/app/ebuysugar/id1540754010",
             "playstore": "https://play.google.com/store/search?q=EBuySugar&c=apps&hl=en_US",
             "sourceCode": "NA",
+            "website": "https://ebuysugar.com/",
             "category": "company",
             "projectGoals": [
                 "Sugar buying and selling platform",
@@ -153,6 +161,7 @@
             "shortDescription": "Grocery shopping and e-commerce platform.",
             "description": "Seamens Center is a mobile app offering grocery shopping and other e-commerce services. It connects users with local vendors for fresh groceries, along with supporting a wide range of other products.",
             "industry": "E-commerce",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -173,6 +182,7 @@
             "playstore": "https://play.google.com/store/apps/details?id=com.greenturtle&hl=en_US",
             "sourceCode": "NA",
             "category": "company",
+            "website": "NA",
             "projectGoals": [
                 "Grocery shopping platform",
                 "Multi-vendor support",
@@ -185,6 +195,7 @@
             "shortDescription": "Social media and video calling app.",
             "description": "Biebol is a social media app that combines features for video calling, chatting, and sharing media. With a focus on easy interaction, it provides a platform for connecting friends and family through multimedia communication.",
             "industry": "Social Communication",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -203,6 +214,7 @@
             "playstore": "https://play.google.com/store/apps/details?id=com.biebol&hl=en_US",
             "sourceCode": "NA",
             "category": "company",
+            "website": "NA",
             "projectGoals": [
                 "Social media interaction",
                 "Video calls",
@@ -215,6 +227,7 @@
             "shortDescription": "Real-time messaging app.",
             "description": "Talk is a mobile app focused on providing a secure and reliable platform for real-time communication. Users can send instant messages and connect globally with friends and family.",
             "industry": "Social Communication",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -233,8 +246,9 @@
             ],
             "appstore": "NA",
             "playstore": "NA",
-            "sourceCode": "NA",
+            "sourceCode": "https://github.com/GamechiNitin/Talk",
             "category": "personal",
+            "website": "NA",
             "projectGoals": [
                 "Real-time messaging",
                 "User-friendly interface",
@@ -247,6 +261,7 @@
             "shortDescription": "App for exploring movies and TV shows.",
             "description": "The TMDB Movie App allows users to explore the latest movies, TV shows, and related media. Integrated with TMDB's API, the app delivers movie details, trailers, reviews, and more.",
             "industry": "Entertainment",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -262,7 +277,8 @@
             ],
             "appstore": "NA",
             "playstore": "NA",
-            "sourceCode": "NA",
+            "sourceCode": "https://github.com/GamechiNitin/TMDB-Movies-App",
+            "website": "NA",
             "category": "personal",
             "projectGoals": [
                 "Movie and TV exploration",

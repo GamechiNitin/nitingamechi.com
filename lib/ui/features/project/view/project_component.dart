@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nitingamechi/ui/features/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
 import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/widget/image_widget.dart';
 import 'package:nitingamechi/ui/widget/project_tile_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:shimmer/shimmer.dart';
@@ -114,7 +115,7 @@ class ProjectComponent extends StatelessWidget {
                             Radius.circular(kBorderRadius)),
                         child: Container(
                           color: AppColors.kFrostedGlassColor,
-                          child: Image.asset(
+                          child: ImageWidget(
                             "assets/image/project/dm/5.png",
                             width: MediaQuery.of(context).size.width,
                             fit: BoxFit.cover,

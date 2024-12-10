@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
+import 'image_widget.dart';
 import 'social_button_widget.dart';
 
 class AboutComponent extends StatelessWidget {
@@ -24,7 +25,7 @@ class AboutComponent extends StatelessWidget {
                   decoration: AppDecoration.kNueShadowDecoration,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(300),
-                    child: Image.asset(
+                    child: const ImageWidget(
                       AppAssets.kProfile,
                       width: size150,
                       height: size150,

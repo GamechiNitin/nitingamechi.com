@@ -51,7 +51,7 @@ class ProjectScreen extends StatelessWidget {
                         ),
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {
-                          return InkWell(
+                          return GestureDetector(
                             onTap: () => GoRouter.of(context).pushNamed(
                               AppRouteEnum.projectPreview.name,
                               extra: state.data.data[index],

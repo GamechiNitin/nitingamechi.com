@@ -17,6 +17,7 @@ class ProjectResponse with _$ProjectResponse {
 class ProjectModel with _$ProjectModel {
   const factory ProjectModel({
     @JsonKey(name: "title") String? title,
+    @JsonKey(name: "isLocal") bool? isLocal,
     @JsonKey(name: "shortDescription") String? shortDescription,
     @JsonKey(name: "image") String? image,
     @JsonKey(name: "imagelist") List<String>? imagelist,

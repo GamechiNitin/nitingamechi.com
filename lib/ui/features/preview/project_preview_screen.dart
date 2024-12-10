@@ -12,6 +12,7 @@ class ProjectPreviewScreen extends StatelessWidget {
     return BlurScaffoldWidget(
       child: ProjectPreview(
         title: data.title ?? "",
+        isLocal: data.isLocal ?? true,
         shortDescription: data.shortDescription ?? "",
         description: data.description ?? "",
         industry: data.industry ?? "",

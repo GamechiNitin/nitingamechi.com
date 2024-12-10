@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:nitingamechi/utils/app_assets.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
 import 'package:nitingamechi/utils/helper.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
+import 'package:nitingamechi/utils/theme/light_theme.dart';
 import 'carousel_widget.dart';
 import 'glass_widget.dart';
+import 'image_widget.dart';
 
 class ProjectPreview extends StatelessWidget {
   final String title;
+  final bool isLocal;
   final String shortDescription;
   final String description;
   final String industry;
@@ -36,6 +40,7 @@ class ProjectPreview extends StatelessWidget {
     required this.category,
     required this.projectGoals,
     required this.userBase,
+    required this.isLocal,
   });
 
   @override
@@ -53,146 +58,207 @@ class ProjectPreview extends StatelessWidget {
         borderRadius: BorderRadius.circular(kBorderRadius),
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: AppTextStyles.getHeadline(
+                        context: context,
+                        color: AppColors.kBlackColor,
+                        scaleFactor: 24.0,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+
+                    // Short Description
+                    Text(
+                      shortDescription,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+
+                    Text(
+                      description,
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                            fontWeight: FontWeight.w300,
+                          ),
+                    ),
+                    const SizedBox(height: 20),
+
+                    Row(
                       children: [
-                        Text(
-                          title,
-                          style: const TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 10),
-
-                        // Short Description
-                        Text(
-                          shortDescription,
-                          style: const TextStyle(
-                              fontSize: 16, fontStyle: FontStyle.italic),
-                        ),
-                        const SizedBox(height: 20),
-
-                        Text(
-                          description,
-                          style: const TextStyle(fontSize: 16),
-                        ),
-                        const SizedBox(height: 20),
-
-                        Row(
-                          children: [
-                            Text(
-                              "Industry: $industry",
-                              style: const TextStyle(
+                        RichText(
+                          text: TextSpan(children: [
+                            const TextSpan(
+                              text: "Industry: ",
+                              style: TextStyle(
                                 fontSize: 14,
-                                color: Colors.grey,
+                                color: AppColors.kDarkGrey1Color,
+                                fontWeight: FontWeight.w300,
                               ),
                             ),
-                            const SizedBox(width: 20),
-                            Text(
-                              "Category: $category",
+                            TextSpan(
+                              text: industry,
                               style: const TextStyle(
-                                  fontSize: 14, color: Colors.grey),
+                                fontSize: 14,
+                                color: AppColors.kBlackColor,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ],
+                          ]),
                         ),
-                        const SizedBox(height: 20),
-
-                        // Project Goals
-                        const Text("Project Goals:"),
-                        const SizedBox(height: 10),
-                        for (var goal in projectGoals)
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text("• $goal",
-                                style: const TextStyle(fontSize: 14)),
-                          ),
-                        const SizedBox(height: 20),
-
-                        // User Base
-                        Text(
-                          "User Base: $userBase",
-                          style:
-                              const TextStyle(fontSize: 14, color: Colors.grey),
-                        ),
-                        const SizedBox(height: 20),
-
-                        // Technology stack
-                        const Text(
-                          "Technologies used:",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 10),
-                        Wrap(
-                          runSpacing: 8,
-                          spacing: 8,
-                          children: List.generate(
-                            technology.length,
-                            (index) {
-                              Color bgColor = Helper.generateRandomColor();
-                              return Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 6),
-                                decoration: BoxDecoration(
-                                  color: bgColor,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(300)),
-                                ),
-                                child: Text(
-                                  technology[index],
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    letterSpacing: 1.4,
-                                    fontWeight: FontWeight.bold,
-                                    color: Helper.getTextColor(bgColor),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
+                        const SizedBox(width: 20),
+                        RichText(
+                          text: TextSpan(children: [
+                            const TextSpan(
+                              text: "Category: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.kDarkGrey1Color,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                            TextSpan(
+                              text: category,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: AppColors.kBlackColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ]),
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: CarouselWidget(imagelist: imagelist),
-                  )
-                ],
-              ),
+                    const SizedBox(height: 20),
 
-              // App Store / Play Store Links
-              Row(
-                children: [
-                  if (appstore != "NA")
-                    IconButton(
-                      icon: const Icon(Icons.apple),
-                      onPressed: () {
-                        // Open app store link
-                      },
+                    // Project Goals
+                    const Text(
+                      "Project Goals:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.kBlackColor,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  if (playstore != "NA")
-                    IconButton(
-                      icon: const Icon(Icons.android),
-                      onPressed: () {
-                        // Open playstore link
-                      },
+                    const SizedBox(height: 10),
+                    for (var goal in projectGoals)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Text("• $goal",
+                            style: const TextStyle(fontSize: 14)),
+                      ),
+                    const SizedBox(height: 20),
+
+                    // User Base
+                    Text(
+                      "User Base: $userBase",
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: AppColors.kDarkGrey1Color,
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
-                  if (sourceCode != "NA")
-                    IconButton(
-                      icon: const Icon(Icons.code),
-                      onPressed: () {
-                        // Open source code link
-                      },
+                    const SizedBox(height: 20),
+
+                    // Technology stack
+                    const Text(
+                      "Technologies used:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.kBlackColor,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                ],
+                    const SizedBox(height: 10),
+                    Wrap(
+                      runSpacing: 8,
+                      spacing: 8,
+                      children: List.generate(
+                        technology.length,
+                        (index) {
+                          Color bgColor = Helper.generateRandomColor();
+                          return Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: bgColor,
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(300)),
+                            ),
+                            child: Text(
+                              technology[index],
+                              style: TextStyle(
+                                fontSize: 13,
+                                letterSpacing: 1.4,
+                                fontWeight: FontWeight.bold,
+                                color: Helper.getTextColor(bgColor),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      children: [
+                        if (playstore != 'NA')
+                          IconButton(
+                            onPressed: () =>
+                                Helper.launchLink(Uri.parse(playstore)),
+                            icon: const ImageWidget(
+                              AppAssets.kplaystore,
+                              height: 40,
+                              width: 40,
+                              padding: EdgeInsets.all(6),
+                              borderRadius: kCircularBorderRadius,
+                            ),
+                          ),
+                        if (appstore != 'NA')
+                          IconButton(
+                            onPressed: () =>
+                                Helper.launchLink(Uri.parse(appstore)),
+                            icon: const ImageWidget(
+                              AppAssets.kAppStore,
+                              height: 40,
+                              width: 40,
+                              padding: EdgeInsets.all(6),
+                              borderRadius: kCircularBorderRadius,
+                            ),
+                          ),
+                        if (sourceCode != 'NA')
+                          IconButton(
+                            onPressed: () =>
+                                Helper.launchLink(Uri.parse(sourceCode)),
+                            icon: const ImageWidget(
+                              AppAssets.kGithub,
+                              height: 40,
+                              width: 40,
+                              padding: EdgeInsets.all(6),
+                              borderRadius: kCircularBorderRadius,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: CarouselWidget(
+                  imagelist: imagelist,
+                  isLocal: isLocal,
+                ),
+              )
             ],
           ),
         ),

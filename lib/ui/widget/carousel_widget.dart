@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
-
 import 'dot_indicator_widget.dart';
 import 'glass_widget.dart';
+import 'image_widget.dart';
 
 class CarouselWidget extends StatefulWidget {
-  const CarouselWidget({super.key, required this.imagelist});
+  const CarouselWidget(
+      {super.key, required this.imagelist, required this.isLocal});
   final List<String> imagelist;
+  final bool isLocal;
 
   @override
   State<CarouselWidget> createState() => _CarouselWidgetState();
@@ -32,7 +34,6 @@ class _CarouselWidgetState extends State<CarouselWidget> {
   void _updateIndex(int index) {
     pageController.jumpToPage(index);
     selectedImageIndex = index;
-
     _notify();
   }
 
@@ -64,10 +65,11 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                   itemBuilder: (context, index) {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                      child: Image.asset(
+                      child: ImageWidget(
                         widget.imagelist[index],
                         width: double.infinity,
                         height: 400,
+                        isLocal: widget.isLocal,
                         fit: fullscreen ? BoxFit.cover : BoxFit.contain,
                       ),
                     );

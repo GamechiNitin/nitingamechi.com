@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/widget/image_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:nitingamechi/utils/helper.dart';
 
@@ -90,7 +91,7 @@ class SocialComponent extends StatelessWidget {
                     padding: const EdgeInsets.all(6),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(300),
-                      child: Image.asset(
+                      child: const ImageWidget(
                         AppAssets.kLinkedin2,
                         height: 30,
                         width: 30,

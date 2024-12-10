@@ -7,6 +7,7 @@ import 'package:nitingamechi/utils/helper.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
 
 import 'glass_widget.dart';
+import 'image_widget.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});
@@ -128,7 +129,7 @@ class FooterWidget extends StatelessWidget {
                               padding: const EdgeInsets.all(8),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(300),
-                                child: Image.asset(
+                                child: const ImageWidget(
                                   AppAssets.kLinkedin2,
                                   height: 22,
                                   width: 22,

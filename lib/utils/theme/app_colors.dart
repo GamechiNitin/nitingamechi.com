@@ -28,6 +28,7 @@ class AppColors {
   static const Color kDarkGrey2Color = Color(0xFF332940);
 
   static const Color lightGreen = Colors.lightGreen;
+  static const Color greenAccent = Colors.greenAccent;
   static const Color kH11 = Color(0xFF80ffdb);
   static const Color kH1 = Color(0x4080ffdb);
 

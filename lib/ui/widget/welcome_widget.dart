@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nitingamechi/ui/widget/image_widget.dart';
 import 'package:nitingamechi/utils/app_assets.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
 import 'package:nitingamechi/utils/theme/app_decoration.dart';
@@ -14,14 +15,12 @@ class WelcomeWidget extends StatelessWidget {
       children: [
         Container(
           decoration: AppDecoration.kNueShadowDecoration,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(300),
-            child: Image.asset(
-              AppAssets.kProfile,
-              height: 120,
-              width: 120,
-              fit: BoxFit.cover,
-            ),
+          child: const ImageWidget(
+            AppAssets.kProfile,
+            height: 120,
+            width: 120,
+            fit: BoxFit.cover,
+            borderRadius: 300,
           ),
         ),
         const SizedBox(height: 20),

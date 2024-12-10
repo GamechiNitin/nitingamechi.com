@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
+import 'package:nitingamechi/ui/widget/image_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:nitingamechi/utils/theme/light_theme.dart';
 import 'package:shimmer/shimmer.dart';
@@ -56,7 +57,7 @@ class AboutComponent extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
+                  child: const ImageWidget(
                     AppAssets.nitin,
                     height: 250,
                     width: 280,

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/features/project/data/project_response.dart';
+import 'package:nitingamechi/ui/widget/image_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 class ProjectItemWidget extends StatelessWidget {
@@ -31,7 +32,7 @@ class ProjectItemWidget extends StatelessWidget {
                   const BorderRadius.all(Radius.circular(kBorderRadius)),
               child: Container(
                 color: AppColors.kFrostedGlassColor,
-                child: Image.asset(
+                child: ImageWidget(
                   project.image ?? "",
                   width: MediaQuery.of(context).size.width,
                   height: 160,
