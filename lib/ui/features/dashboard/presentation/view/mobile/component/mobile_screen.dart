@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:nitingamechi/utils/theme/theme_cubit/dark_mode_cubit.dart';
-import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/about_component.dart';
-import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/experience_component.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/widget/about_widget.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/view/mobile/component/experience_component.dart';
 import 'package:nitingamechi/ui/widget/dm_widget.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 
 import '../../web/component/header_component.dart';
-import '../../../../project/view/project_component.dart';
+import '../../../../../project/view/project_component.dart';
 
 List<String> menu = ['Home', 'Project', 'About', 'Experience', 'Resume'];
 
@@ -134,8 +134,18 @@ class MobileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HeaderComponent(),
-                    AboutComponent(),
+                    HeaderComponent(
+                      title: "Namaste, I'm",
+                      subTitle: "Nitin Gamechi",
+                      profession: "Software Engineer",
+                      description: AppString.kIntro,
+                    ),
+                    AboutWidget(
+                      title: AppString.kAboutMe,
+                      description: AppString.kAboutSubtitle2,
+                      image: AppAssets.nitin,
+                      isLocal: true,
+                    ),
                     ExperienceComponent(),
                     ProjectComponent(),
                   ],

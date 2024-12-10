@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nitingamechi/ui/features/dashboard/bloc/dashboard_bloc/dashboard_bloc.dart';
-import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/bloc/dashboard_bloc/dashboard_bloc.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/bloc/nav_cubit/nav_cubit.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/widget/image_widget.dart';
-import 'package:nitingamechi/ui/widget/project_tile_widget.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/widget/project_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -70,7 +70,7 @@ class ProjectComponent extends StatelessWidget {
                         case DashboardStateData():
                           return GridView.builder(
                             // scrollDirection: Axis.horizontal,
-                            itemCount: state.data.project.length,
+                            itemCount: 4,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: DeviceInfo(context).isMobile ||
@@ -83,8 +83,18 @@ class ProjectComponent extends StatelessWidget {
                             ),
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
-                            itemBuilder: (context, index) => ProjectItemWidget(
-                              project: state.data.project[index],
+                            itemBuilder: (context, index) => ProjectWidget(
+                              title: state.data.project[index].title ?? "",
+                              shortDescription:
+                                  state.data.project[index].shortDescription ??
+                                      "",
+                              category:
+                                  state.data.project[index].category ?? "",
+                              image: state.data.project[index].image ?? "",
+                              isLocal:
+                                  state.data.project[index].isLocal ?? true,
+                              industry:
+                                  state.data.project[index].industry ?? "",
                             ),
                           );
 

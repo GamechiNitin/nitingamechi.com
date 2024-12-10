@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/bloc/nav_cubit/nav_cubit.dart';
 import 'package:nitingamechi/utils/app_assets.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
+import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:nitingamechi/utils/helper.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
 
@@ -40,7 +41,7 @@ class FooterWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      "Shivshakti Farm, Vasad - 388306\nVasad, Anand, Gujarat-India.",
+                      AppString.kAddressFooter,
                       style: TextStyle(
                         color: AppColors.kWhite90Color,
                         fontSize: 12,
@@ -49,7 +50,7 @@ class FooterWidget extends StatelessWidget {
                     ),
                     const Spacer(),
                     const Text(
-                      "Let's Connect,",
+                      AppString.kLetConnectFooter,
                       style: TextStyle(
                         color: AppColors.kWhite90Color,
                         fontSize: 12,
@@ -227,7 +228,7 @@ class FooterWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        'Developed by Nitin Gamechi',
+                        AppString.kDevelopedByFooter,
                         style: TextStyle(
                           color: AppColors.kH11,
                           fontSize: 12,

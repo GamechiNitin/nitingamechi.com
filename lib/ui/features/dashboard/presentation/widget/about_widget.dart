@@ -5,8 +5,18 @@ import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:nitingamechi/utils/theme/light_theme.dart';
 import 'package:shimmer/shimmer.dart';
 
-class AboutComponent extends StatelessWidget {
-  const AboutComponent({super.key});
+class AboutWidget extends StatelessWidget {
+  const AboutWidget({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.image,
+    required this.isLocal,
+  });
+  final String title;
+  final String description;
+  final String image;
+  final bool isLocal;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +42,7 @@ class AboutComponent extends StatelessWidget {
                       baseColor: AppColors.kDefaultColor,
                       highlightColor: AppColors.kWhiteColor,
                       child: Text(
-                        AppString.kAboutMe,
+                        title,
                         style: AppTextStyles.getHeadline(
                           color: AppColors.kWhiteColor,
                           scaleFactor: 20,
@@ -43,27 +53,20 @@ class AboutComponent extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      AppString.kAboutSubtitle2,
+                      description,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ],
                 ),
               ),
               const SizedBox(width: 20),
-              GlassMorphism(
-                blur: 10,
-                color: AppColors.kBlueColor,
-                opacity: 0.2,
-                borderRadius: BorderRadius.circular(12),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: const ImageWidget(
-                    AppAssets.nitin,
-                    height: 250,
-                    width: 280,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+              ImageWidget(
+                image,
+                height: 250,
+                width: 280,
+                fit: BoxFit.cover,
+                isLocal: isLocal,
+                borderRadius: 12,
               ),
             ],
           ),

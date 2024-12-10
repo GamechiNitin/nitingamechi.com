@@ -8,8 +8,17 @@ import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import '../../mobile/component/social_component.dart';
 
 class HeaderComponent extends StatelessWidget {
-  const HeaderComponent({super.key});
-
+  const HeaderComponent({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.subTitle,
+    required this.profession,
+  });
+  final String title;
+  final String subTitle;
+  final String description;
+  final String profession;
   @override
   Widget build(BuildContext context) {
     if (!DeviceInfo(context).isMobile && !DeviceInfo(context).isSmallMobile) {
@@ -25,12 +34,12 @@ class HeaderComponent extends StatelessWidget {
                 children: [
                   SizedBox(height: MediaQuery.sizeOf(context).width * 0.05),
                   Text(
-                    "Namaste, I'm",
+                    title,
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "Nitin Gamechi",
+                    subTitle,
                     style: AppTextStyles.getHeadline(
                       context: context,
                       color: AppColors.kDarkGrey1Color,
@@ -42,7 +51,7 @@ class HeaderComponent extends StatelessWidget {
                     baseColor: AppColors.kWhiteColor,
                     highlightColor: Colors.blueAccent,
                     child: Text(
-                      'Software Developer',
+                      profession,
                       style: AppTextStyles.getHeadline(
                         context: context,
                         color: AppColors.kWhiteColor,
@@ -53,7 +62,7 @@ class HeaderComponent extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    AppString.kIntro,
+                    description,
                     textAlign: TextAlign.justify,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontSize: 16,
@@ -89,11 +98,11 @@ class HeaderComponent extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Namaste, I'm",
+                        title,
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       Text(
-                        "Nitin Gamechi",
+                        subTitle,
                         style: AppTextStyles.getHeadline(
                           context: context,
                           color: AppColors.kDarkGrey1Color,
@@ -118,7 +127,7 @@ class HeaderComponent extends StatelessWidget {
             baseColor: AppColors.kWhiteColor,
             highlightColor: Colors.blueAccent,
             child: Text(
-              'Software Developer',
+              profession,
               style: AppTextStyles.getHeadline(
                 context: context,
                 color: AppColors.kWhiteColor,
@@ -129,7 +138,7 @@ class HeaderComponent extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            AppString.kIntro,
+            description,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontSize: 14,
                 ),

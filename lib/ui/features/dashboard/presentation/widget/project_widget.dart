@@ -1,16 +1,25 @@
 // project_item.dart
 import 'package:flutter/material.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';
-import 'package:nitingamechi/ui/features/project/data/project_response.dart';
 import 'package:nitingamechi/ui/widget/image_widget.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
+import 'package:nitingamechi/utils/theme/light_theme.dart';
 
-class ProjectItemWidget extends StatelessWidget {
-  final ProjectModel project;
-
-  const ProjectItemWidget({
+class ProjectWidget extends StatelessWidget {
+  final String title;
+  final String shortDescription;
+  final String category;
+  final String industry;
+  final String image;
+  final bool isLocal;
+  const ProjectWidget({
     super.key,
-    required this.project,
+    required this.title,
+    required this.shortDescription,
+    required this.category,
+    required this.industry,
+    required this.image,
+    required this.isLocal,
   });
 
   @override
@@ -33,16 +42,17 @@ class ProjectItemWidget extends StatelessWidget {
               child: Container(
                 color: AppColors.kFrostedGlassColor,
                 child: ImageWidget(
-                  project.image ?? "",
+                  image,
                   width: MediaQuery.of(context).size.width,
                   height: 160,
                   fit: BoxFit.fitWidth,
+                  isLocal: isLocal,
                 ),
               ),
             ),
             const SizedBox(height: 16),
             Text(
-              project.title ?? "",
+              title,
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
@@ -52,7 +62,7 @@ class ProjectItemWidget extends StatelessWidget {
             const SizedBox(height: 8),
             Flexible(
               child: Text(
-                project.shortDescription ?? "",
+                shortDescription,
                 maxLines: 2,
                 style: const TextStyle(
                   fontSize: 16,
@@ -61,21 +71,39 @@ class ProjectItemWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            const Text(
-              "Industry",
-              style: TextStyle(
-                fontSize: 16,
-                color: AppColors.kDarkGrey1Color,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            // const SizedBox(height: 4),
-            Text(
-              project.industry ?? "",
-              style: const TextStyle(
-                fontSize: 16,
-                color: AppColors.kDarkGrey1Color,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  industry,
+                  style: AppTextStyles.getBody(
+                    context: context,
+                    scaleFactor: 12,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.kDefault2Color,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SizedBox(
+                    height: 14,
+                    child: VerticalDivider(
+                      thickness: 2.5,
+                      color: AppColors.kWhite90Color,
+                    ),
+                  ),
+                ),
+                Text(
+                  category.toUpperCase(),
+                  style: AppTextStyles.getBody(
+                    context: context,
+                    scaleFactor: 12,
+                    fontWeight: FontWeight.w400,
+                    color: const Color.fromARGB(255, 10, 192, 34),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

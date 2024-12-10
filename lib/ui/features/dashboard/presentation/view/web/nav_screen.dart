@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:nitingamechi/ui/features/contact/ui/contact_screen.dart';
-import 'package:nitingamechi/ui/features/dashboard/bloc/nav_cubit/nav_cubit.dart';
-import 'package:nitingamechi/ui/features/dashboard/view/web/dashboard_web_screen.dart';
-import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/mobile_screen.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/bloc/dashboard_bloc/dashboard_bloc.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/bloc/nav_cubit/nav_cubit.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/view/web/dashboard_web_screen.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/view/mobile/component/mobile_screen.dart';
 import 'package:nitingamechi/ui/widget/blur_scaffold_widget.dart';
 import 'package:nitingamechi/ui/widget/dm_widget.dart';
 import 'package:nitingamechi/ui/features/project/view/project_screen.dart';
@@ -26,6 +27,7 @@ class _NavScreenState extends State<NavScreen>
 
   @override
   void initState() {
+    context.read<DashboardBloc>().add(const DashboardEvent.fetchData());
     super.initState();
     _controller = TabController(length: 4, vsync: this);
   }

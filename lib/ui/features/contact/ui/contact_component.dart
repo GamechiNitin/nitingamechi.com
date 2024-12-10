@@ -12,7 +12,6 @@ class ContactComponent extends StatefulWidget {
 }
 
 class _ContactComponentState extends State<ContactComponent> {
-  // static TextEditingController controller = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController subjectController = TextEditingController();
@@ -58,7 +57,7 @@ class _ContactComponentState extends State<ContactComponent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Contact Us",
+                    AppString.kContactUs,
                     style: TextStyle(
                       fontSize: 55,
                       fontWeight: FontWeight.w600,
@@ -68,22 +67,22 @@ class _ContactComponentState extends State<ContactComponent> {
                   TextFormWidget(
                     controller: nameController,
                     focusNode: nameFocusNode,
-                    label: "Name",
-                    hint: "Enter your name",
+                    label: AppString.kNameContact,
+                    hint: AppString.kEnterNameContact,
                   ),
                   const SizedBox(height: 10),
                   TextFormWidget(
                     controller: emailController,
                     focusNode: emailFocusNode,
-                    label: "Email",
-                    hint: "Enter your email",
+                    label: AppString.kEmailContact,
+                    hint: AppString.kEnterEmailContact,
                   ),
                   const SizedBox(height: 10),
                   TextFormWidget(
                     controller: subjectController,
                     focusNode: subjectFocusNode,
-                    label: "Subject",
-                    hint: "Enter your subject",
+                    label: AppString.kSubjectContact,
+                    hint: AppString.kEnterSubjectContact,
                   ),
                   const SizedBox(height: 10),
                   TextFormWidget(
@@ -91,8 +90,8 @@ class _ContactComponentState extends State<ContactComponent> {
                     focusNode: messageFocusNode,
                     minLines: 3,
                     maxLines: 3,
-                    label: "Message",
-                    hint: "Enter your message",
+                    label: AppString.kMessageContact,
+                    hint: AppString.kEnterMessageContact,
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -106,7 +105,7 @@ class _ContactComponentState extends State<ContactComponent> {
                       ),
                       fixedSize: WidgetStateProperty.all(const Size(150, 50)),
                     ),
-                    child: const Text("Submit"),
+                    child: const Text(AppString.kSubmit),
                   )
                 ],
               ),

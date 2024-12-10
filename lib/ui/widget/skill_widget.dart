@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nitingamechi/utils/app_assets.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
 import 'package:nitingamechi/utils/app_string.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
@@ -7,7 +6,8 @@ import 'package:nitingamechi/utils/theme/app_colors.dart';
 import 'glass_widget.dart';
 
 class SkillWidget extends StatelessWidget {
-  const SkillWidget({super.key});
+  const SkillWidget({super.key, required this.imageList});
+  final List<(String, String)> imageList;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class SkillWidget extends StatelessWidget {
                 crossAxisAlignment: WrapCrossAlignment.center,
                 alignment: WrapAlignment.spaceEvenly,
                 children: List.generate(
-                  AppAssets.imageList.length,
+                  imageList.length,
                   (index) => GlassMorphism(
                     blur: 10,
                     color: AppColors.kWhiteColor,
@@ -57,13 +57,13 @@ class SkillWidget extends StatelessWidget {
                       child: Column(
                         children: [
                           Image.asset(
-                            AppAssets.imageList[index].$1,
+                            imageList[index].$1,
                             height: 50,
                             width: 50,
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            AppAssets.imageList[index].$2,
+                            imageList[index].$2,
                             style: const TextStyle(
                               fontSize: 14,
                               color: AppColors.kBlackColor,

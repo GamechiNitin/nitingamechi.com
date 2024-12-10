@@ -28,8 +28,10 @@
     "project": [
         {
             "title": "Talk",
-            "description": "A chat application that allows users to communicate in real-time.",
+            "shortDescription": "Real-time messaging app.",
+            "description": "Talk is a mobile app focused on providing a secure and reliable platform for real-time communication. Users can send instant messages and connect globally with friends and family.",
             "industry": "Social Communication",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
@@ -48,63 +50,54 @@
             ],
             "appstore": "NA",
             "playstore": "NA",
-            "sourceCode": "NA",
-            "category": "personal"
+            "sourceCode": "https://github.com/GamechiNitin/Talk",
+            "category": "personal",
+            "website": "NA",
+            "projectGoals": [
+                "Real-time messaging",
+                "User-friendly interface",
+                "Global connectivity"
+            ],
+            "userBase": "Anyone looking for a simple messaging solution"
         },
         {
-            "title": "TMDB - Movie App",
-            "description": "A chat application that allows users to communicate in real-time.",
-            "industry": "Entertainment",
+            "title": "Tercardia SmartDoc",
+            "shortDescription": "Doctor consultation app for physicians and patients.",
+            "description": "Tercardia SmartDoc is a healthcare application designed to connect physicians and patients for remote consultations. The app integrates biometric security features and offers a seamless user experience for medical professionals and their patients.",
+            "industry": "Health",
+            "isLocal": true,
             "technology": [
                 "Flutter",
                 "Dart",
                 "Firebase",
-                "HTTP"
+                "HTTP",
+                "Biometric",
+                "Google Autocomplete"
             ],
-            "image": "assets/image/project/tmdb/1.png",
+            "image": "assets/image/project/tercardia/1.png",
             "imagelist": [
-                "assets/image/project/tmdb/1.png",
-                "assets/image/project/tmdb/2.png",
-                "assets/image/project/tmdb/3.png",
-                "assets/image/project/tmdb/4.png"
+                "assets/image/project/tercardia/1.png",
+                "assets/image/project/tercardia/2.png",
+                "assets/image/project/tercardia/3.png",
+                "assets/image/project/tercardia/4.png",
+                "assets/image/project/tercardia/5.png",
+                "assets/image/project/tercardia/6.png",
+                "assets/image/project/tercardia/7.png",
+                "assets/image/project/tercardia/8.png",
+                "assets/image/project/tercardia/9.png",
+                "assets/image/project/tercardia/10.png"
             ],
-            "appstore": "NA",
+            "appstore": "https://apps.apple.com/in/app/tercardia-smartdoc/id1530891676",
             "playstore": "NA",
             "sourceCode": "NA",
-            "category": "personal"
-        },
-        {
-            "title": "Digital Money",
-            "description": "A chat application that allows users to communicate in real-time.",
-            "industry": "Finance",
-            "technology": [
-                "Flutter",
-                "Dart",
-                "Firebase",
-                "HTTP"
+            "category": "company",
+            "website": "https://www.tercardia.com/home",
+            "projectGoals": [
+                "Remote consultations",
+                "Biometric authentication",
+                "Seamless experience for healthcare professionals"
             ],
-            "image": "assets/image/project/dm/1.png",
-            "imagelist": [
-                "assets/image/project/dm/1.png",
-                "assets/image/project/dm/2.png",
-                "assets/image/project/dm/3.png",
-                "assets/image/project/dm/4.png",
-                "assets/image/project/dm/5.png",
-                "assets/image/project/dm/6.png",
-                "assets/image/project/dm/7.png",
-                "assets/image/project/dm/8.png",
-                "assets/image/project/dm/9.png",
-                "assets/image/project/dm/10.png",
-                "assets/image/project/dm/11.png",
-                "assets/image/project/dm/12.png",
-                "assets/image/project/dm/13.png",
-                "assets/image/project/dm/14.png",
-                "assets/image/project/dm/15.png"
-            ],
-            "appstore": "NA",
-            "playstore": "NA",
-            "sourceCode": "NA",
-            "category": "personal"
+            "userBase": "Physicians and patients seeking remote healthcare solutions"
         }
     ],
     "experience": [

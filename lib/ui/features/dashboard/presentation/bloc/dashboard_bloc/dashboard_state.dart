@@ -3,7 +3,7 @@ part of 'dashboard_bloc.dart';
 @freezed
 class DashboardState with _$DashboardState {
   const factory DashboardState.initial() = _Initial;
-  const factory DashboardState.data(ExperienceResponse data) =
+  const factory DashboardState.data(DashboardResponse data) =
       DashboardStateData;
   const factory DashboardState.noData() = DashboardStateNoData;
   const factory DashboardState.loading() = DashboardStateLoading;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nitingamechi/ui/features/dashboard/view/mobile/component/experience_card_component.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/view/mobile/component/experience_card_component.dart';
 import 'package:nitingamechi/ui/features/project/view/project_component.dart';
 import 'package:nitingamechi/ui/widget/footer_widget.dart';
 import 'package:nitingamechi/ui/widget/glass_widget.dart';

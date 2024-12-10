@@ -31,4 +31,22 @@ I hold a Bachelor's Degree in Computer Science from SVIT Vasad, where I gained e
   static const String kSkill = "Skill";
   static const String kSkillHeadline =
       "Programming Language, Framework and Tools";
+
+  // Footer
+  static const String kAddressFooter =
+      "Shivshakti Farm, Vasad - 388306\nVasad, Anand, Gujarat-India.";
+  static const String kLetConnectFooter = "Let's Connect,";
+  static const String kDevelopedByFooter = "Developed by Nitin Gamechi";
+
+  // Contact
+  static const String kContactUs = "Contact Us";
+  static const String kSubmit = "Submit";
+  static const String kMessageContact = "Message";
+  static const String kEnterMessageContact = "Enter your message";
+  static const String kSubjectContact = "Subject";
+  static const String kEnterSubjectContact = "Enter subject here";
+  static const String kEmailContact = "Email";
+  static const String kEnterEmailContact = "Enter your email";
+  static const String kNameContact = "Name";
+  static const String kEnterNameContact = "Enter your name";
 }
