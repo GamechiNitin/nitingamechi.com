@@ -1,8 +1,8 @@
+import 'api_result.dart';
+
 abstract class NetworkClient {
-  Future<Map<String, dynamic>> get(String endpoint);
-  Future<Map<String, dynamic>> post(String endpoint,
-      {required Map<String, dynamic> body});
-  Future<Map<String, dynamic>> put(String endpoint,
-      {required Map<String, dynamic> body});
-  Future<Map<String, dynamic>> delete(String endpoint);
+  Future<ApiResult> get(String endpoint);
+  Future<ApiResult> post(String endpoint, {required Map<String, dynamic> body});
+  Future<ApiResult> put(String endpoint, {required Map<String, dynamic> body});
+  Future<ApiResult> delete(String endpoint);
 }

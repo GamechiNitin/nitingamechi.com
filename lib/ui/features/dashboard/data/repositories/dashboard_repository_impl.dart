@@ -1,6 +1,3 @@
-// data/repositories/dashboard_repository_impl.dart
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:nitingamechi/core/error/error_message.dart';
 import 'package:nitingamechi/ui/features/dashboard/data/data_src/local_data_source.dart';
@@ -27,11 +24,10 @@ class DashboardRepositoryImpl implements DashboardRepository {
 
     // If no cached data, fetch data from the API
     try {
-      log("API Call");
       final remoteData = await remoteDataSource.fetchDataFromApi();
       // Cache the fetched data for future use
-      await localDataSource.cacheData(remoteData);
-      return Left(remoteData);
+      await localDataSource.cacheData(remoteData.data!);
+      return Left(remoteData.data!);
       // Return data fetched from API
     } catch (e) {
       return Right(ErrorMessage(message: e.toString()));

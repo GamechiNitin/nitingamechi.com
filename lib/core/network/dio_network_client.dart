@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:nitingamechi/core/error/exceptions.dart';
-
+import 'api_result.dart';
 import 'network_client.dart';
 
 class DioNetworkClient implements NetworkClient {
@@ -14,17 +13,17 @@ class DioNetworkClient implements NetworkClient {
   }) : dioClient = client ?? Dio();
 
   @override
-  Future<Map<String, dynamic>> get(String endpoint) async {
+  Future<ApiResult> get(String endpoint) async {
     try {
       final response = await dioClient.get('$baseUrl$endpoint');
       return _handleResponse(response);
     } catch (e) {
-      rethrow;
+      return ApiResult.error('Network error: $e', 500, "");
     }
   }
 
   @override
-  Future<Map<String, dynamic>> post(String endpoint,
+  Future<ApiResult> post(String endpoint,
       {required Map<String, dynamic> body}) async {
     try {
       final response = await dioClient.post(
@@ -34,12 +33,12 @@ class DioNetworkClient implements NetworkClient {
       );
       return _handleResponse(response);
     } catch (e) {
-      rethrow;
+      return ApiResult.error('Network error: $e', 500, "");
     }
   }
 
   @override
-  Future<Map<String, dynamic>> put(String endpoint,
+  Future<ApiResult> put(String endpoint,
       {required Map<String, dynamic> body}) async {
     try {
       final response = await dioClient.put(
@@ -49,36 +48,68 @@ class DioNetworkClient implements NetworkClient {
       );
       return _handleResponse(response);
     } catch (e) {
-      rethrow;
+      return ApiResult.error('Network error: $e', 500, "");
     }
   }
 
   @override
-  Future<Map<String, dynamic>> delete(String endpoint) async {
+  Future<ApiResult> delete(String endpoint) async {
     try {
       final response = await dioClient.delete('$baseUrl$endpoint');
       return _handleResponse(response);
     } catch (e) {
-      rethrow;
+      return ApiResult.error('Network error: $e', 500, "");
     }
   }
 
-  Map<String, dynamic> _handleResponse(Response response) {
-    final int statusCode = response.statusCode ?? 500;
-    final String body = response.data.toString();
+  ApiResult _handleResponse(Response response) {
+    final int statusCode = response.statusCode ?? 0;
+    final dynamic body = response.data;
 
     if (statusCode >= 200 && statusCode < 300) {
-      return jsonDecode(body);
+      return ApiResult.success(body, statusCode);
     } else if (statusCode == 400) {
-      throw BadRequestException(body);
+      return ApiResult.error(
+        _parseErrorBody(body),
+        statusCode,
+        'Bad Request: $body',
+      );
     } else if (statusCode == 401) {
-      throw UnauthorizedException('Unauthorized request');
+      return ApiResult.error(
+        _parseErrorBody(body),
+        statusCode,
+        'Unauthorized: $body',
+      );
     } else if (statusCode == 404) {
-      throw NotFoundException('Not found');
+      return ApiResult.error(
+        _parseErrorBody(body),
+        statusCode,
+        'Not Found: $body',
+      );
     } else if (statusCode == 500) {
-      throw InternalServerErrorException('Internal server error');
+      return ApiResult.error(
+        _parseErrorBody(body),
+        statusCode,
+        'Internal Server Error: $body',
+      );
     } else {
-      throw Exception('Network error');
+      return ApiResult.error(
+        _parseErrorBody(body),
+        statusCode,
+        'Unexpected error occurred',
+      );
+    }
+  }
+
+  // Helper method to parse error body into a string
+  String _parseErrorBody(dynamic body) {
+    if (body is String) {
+      return body;
+    } else if (body is Map) {
+      return jsonEncode(
+          body); // You can customize this based on your response format
+    } else {
+      return 'Unknown error';
     }
   }
 }

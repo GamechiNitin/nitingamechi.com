@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:nitingamechi/core/error/exceptions.dart';
+import 'package:nitingamechi/core/network/api_result.dart';
 import 'network_client.dart';
 
 class HttpNetworkClient implements NetworkClient {
@@ -13,18 +13,20 @@ class HttpNetworkClient implements NetworkClient {
   }) : httpClient = client ?? http.Client();
 
   @override
-  Future<Map<String, dynamic>> get(String endpoint) async {
+  Future<ApiResult> get(String endpoint) async {
     final Uri url = Uri.parse('$baseUrl$endpoint');
+    // Map<String, String>? headers;
     try {
-      final response = await httpClient.get(url);
+      http.Response response = await httpClient.get(url);
+
       return _handleResponse(response);
     } catch (e) {
-      rethrow;
+      return ApiResult.error(null, 0, e.toString());
     }
   }
 
   @override
-  Future<Map<String, dynamic>> post(String endpoint,
+  Future<ApiResult> post(String endpoint,
       {required Map<String, dynamic> body}) async {
     final Uri url = Uri.parse('$baseUrl$endpoint');
     try {
@@ -40,7 +42,7 @@ class HttpNetworkClient implements NetworkClient {
   }
 
   @override
-  Future<Map<String, dynamic>> put(String endpoint,
+  Future<ApiResult> put(String endpoint,
       {required Map<String, dynamic> body}) async {
     final Uri url = Uri.parse('$baseUrl$endpoint');
     try {
@@ -56,7 +58,7 @@ class HttpNetworkClient implements NetworkClient {
   }
 
   @override
-  Future<Map<String, dynamic>> delete(String endpoint) async {
+  Future<ApiResult> delete(String endpoint) async {
     final Uri url = Uri.parse('$baseUrl$endpoint');
     try {
       final response = await httpClient.delete(url);
@@ -66,20 +68,20 @@ class HttpNetworkClient implements NetworkClient {
     }
   }
 
-  Map<String, dynamic> _handleResponse(http.Response response) {
+  ApiResult _handleResponse(http.Response response) {
     final int statusCode = response.statusCode;
     final String body = response.body;
 
     if (statusCode >= 200 && statusCode < 300) {
-      return jsonDecode(body);
+      return ApiResult.success(body, statusCode);
     } else if (statusCode == 400) {
-      throw BadRequestException(body);
+      return ApiResult.error(body, statusCode, "Unauthorized request");
     } else if (statusCode == 401) {
-      throw UnauthorizedException('Unauthorized request');
+      return ApiResult.error(body, statusCode, "Unauthorized request");
     } else if (statusCode == 404) {
-      throw NotFoundException('Not found');
+      return ApiResult.error(body, statusCode, "Not found");
     } else if (statusCode == 500) {
-      throw InternalServerErrorException('Internal server error');
+      return ApiResult.error(body, statusCode, "Not found");
     } else {
       throw Exception('Network error');
     }

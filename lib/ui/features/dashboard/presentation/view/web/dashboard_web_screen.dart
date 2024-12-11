@@ -16,7 +16,6 @@ class DashboardWebScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(horizontal: kBodyWebPadding(context)),
-      // physics: const BouncingScrollPhysics(),
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
