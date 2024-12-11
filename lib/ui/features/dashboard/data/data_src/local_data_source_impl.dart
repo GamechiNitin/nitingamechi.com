@@ -1,6 +1,6 @@
 // data/data_sources/local_data_source_impl.dart
 import 'dart:convert';
-import 'package:nitingamechi/ui/features/dashboard/data/models/welcome_response.dart';
+import 'package:nitingamechi/ui/features/dashboard/data/models/dashboard_response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'local_data_source.dart';

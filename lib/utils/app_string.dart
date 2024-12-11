@@ -21,7 +21,6 @@ class AppString {
       'Experienced Software [Flutter] Developer within 2.5+ years, skilled in crafting elegant mobile apps using Flutter, Dart, Firebase, Socket.IO and Golang. Proficient in GitHub for version control, and efficient build/deployment with Fastlane and Jenkins. Focused on design, user experiences, and collaborative, high- quality solutions.';
   static const String kAboutSubtitle2 =
       '''I'm Nitin Gamechi, a Software Developer specializing in cross-platform mobile development for Android and iOS. Utilizing technologies like Flutter, Dart, Firebase, Socket.IO, and Go, I craft high-performance, scalable applications.
-
 I hold a Bachelor's Degree in Computer Science from SVIT Vasad, where I gained expertise in Flutter, Dart, Go, C++, Kotlin, HTML, CSS, and JavaScript, along with tools such as JSON, YAML, Fastlane, Jenkins, Git/GitHub, Figma, Postman, and Thunder Client. My aim is to create innovative software solutions that exceed user expectations and drive business success by staying ahead of industry trends.''';
   // 'Experience'
   static const String kExperienceTitle =

@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:nitingamechi/core/error/error_message.dart';
 import 'package:nitingamechi/ui/features/dashboard/data/data_src/local_data_source.dart';
 import 'package:nitingamechi/ui/features/dashboard/data/data_src/remote_data_source.dart';
-import 'package:nitingamechi/ui/features/dashboard/data/models/welcome_response.dart';
+import 'package:nitingamechi/ui/features/dashboard/data/models/dashboard_response.dart';
 import 'package:nitingamechi/ui/features/dashboard/domain/repositories/dashboard_repository.dart';
 
 class DashboardRepositoryImpl implements DashboardRepository {

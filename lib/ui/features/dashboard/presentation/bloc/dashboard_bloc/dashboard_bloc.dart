@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:nitingamechi/ui/features/dashboard/data/models/welcome_response.dart';
+import 'package:nitingamechi/ui/features/dashboard/data/models/dashboard_response.dart';
 import 'package:nitingamechi/ui/features/dashboard/domain/use_cases/fetch_data_use_case.dart';
 
 part 'dashboard_event.dart';
@@ -19,6 +19,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   Future<void> fetchData(_FetchData event, Emitter<DashboardState> emit) async {
     emit(const DashboardState.loading());
+    await Future.delayed(const Duration(seconds: 20));
 
     final result = await fetchDataUseCase();
 

@@ -1,18 +1,35 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'welcome_response.freezed.dart';
-part 'welcome_response.g.dart';
+part 'dashboard_response.freezed.dart';
+part 'dashboard_response.g.dart';
 
 @freezed
 class DashboardResponse with _$DashboardResponse {
   const factory DashboardResponse({
+    @JsonKey(name: "bio") required Bio bio,
     @Default([]) @JsonKey(name: "project") List<Project> project,
     @Default([]) @JsonKey(name: "experience") List<Experience> experience,
     @Default([]) @JsonKey(name: "education") List<Education> education,
-  }) = _Welcome;
+  }) = _DashboardResponse;
 
   factory DashboardResponse.fromJson(Map<String, dynamic> json) =>
       _$DashboardResponseFromJson(json);
+}
+
+@freezed
+class Bio with _$Bio {
+  const factory Bio({
+    @JsonKey(name: "title") String? title,
+    @JsonKey(name: "subTitle") String? subTitle,
+    @JsonKey(name: "profession") String? profession,
+    @JsonKey(name: "description") String? description,
+    @JsonKey(name: "isLocal") bool? isLocal,
+    @JsonKey(name: "location") String? location,
+    @JsonKey(name: "image") String? image,
+    @JsonKey(name: "about") String? about,
+  }) = _Bio;
+
+  factory Bio.fromJson(Map<String, dynamic> json) => _$BioFromJson(json);
 }
 
 @freezed

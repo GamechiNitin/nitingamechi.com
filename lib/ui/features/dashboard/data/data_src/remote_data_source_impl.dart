@@ -8,7 +8,7 @@ import 'package:nitingamechi/core/network/api_result.dart';
 import 'package:nitingamechi/core/network/endpoint.dart';
 import 'package:nitingamechi/core/network/network_client.dart';
 import 'package:nitingamechi/ui/features/dashboard/data/data_src/remote_data_source.dart';
-import 'package:nitingamechi/ui/features/dashboard/data/models/welcome_response.dart';
+import 'package:nitingamechi/ui/features/dashboard/data/models/dashboard_response.dart';
 
 class RemoteDataSourceImpl implements RemoteDataSource {
   final NetworkClient networkClient;
