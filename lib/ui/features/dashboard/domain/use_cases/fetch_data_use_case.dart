@@ -8,7 +8,7 @@ class FetchDataUseCase {
 
   FetchDataUseCase(this.repository);
 
-  Future<Either<DashboardResponse, ErrorMessage>> call() {
+  Future<Either<ErrorMessage, DashboardResponse>> call() {
     return repository.fetchData();
   }
 }

@@ -1,5 +1,7 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nitingamechi/core/common/widget/home_loading.dart';
 import 'package:nitingamechi/ui/features/contact/ui/contact_component.dart';
 import 'package:nitingamechi/ui/features/dashboard/presentation/bloc/dashboard_bloc/dashboard_bloc.dart';
 import 'package:nitingamechi/ui/features/dashboard/presentation/widget/about_widget.dart';
@@ -10,50 +12,53 @@ import 'package:nitingamechi/ui/widget/skill_widget.dart';
 import 'package:nitingamechi/utils/app_assets.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
 import 'package:nitingamechi/utils/app_string.dart';
-import 'package:nitingamechi/utils/helper.dart';
 
 class DashboardWebScreen extends StatelessWidget {
   const DashboardWebScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: kBodyWebPadding(context)),
-      child: BlocBuilder<DashboardBloc, DashboardState>(
-        builder: (context, state) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // if (state is DashboardStateLoading) Helper.loading(),
-              if (state is DashboardStateData)
-                HeaderComponent(
-                  title: state.data.bio.title ?? "",
-                  subTitle: state.data.bio.subTitle ?? "",
-                  profession: state.data.bio.profession ?? "",
-                  description: state.data.bio.description ?? "",
-                ),
-              const SizedBox(height: kToolbarHeight),
-              if (state is DashboardStateData)
-                AboutWidget(
-                  title: AppString.kAboutMe,
-                  description: state.data.bio.about ?? "",
-                  image: state.data.bio.image ?? "",
-                  isLocal: state.data.bio.isLocal ?? true,
-                ),
-              const SizedBox(height: kToolbarHeight),
-              const SkillWidget(imageList: AppAssets.imageList),
-              const SizedBox(height: kToolbarHeight),
-              const ProjectComponent(),
-              const SizedBox(height: kToolbarHeight),
-              const ContactComponent(),
-              const SizedBox(height: kToolbarHeight),
-              const FooterWidget(),
-              const SizedBox(height: kToolbarHeight),
-            ],
+    return BlocBuilder<DashboardBloc, DashboardState>(
+      builder: (context, state) {
+        log(state.toString());
+        if (state is DashboardStateLoading) {
+          return const HomeLoadingScreen();
+        } else {
+          return SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: kBodyWebPadding(context)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (state is DashboardStateData)
+                  HeaderComponent(
+                    title: state.data.bio.title ?? "",
+                    subTitle: state.data.bio.subTitle ?? "",
+                    profession: state.data.bio.profession ?? "",
+                    description: state.data.bio.description ?? "",
+                  ),
+                const SizedBox(height: kToolbarHeight),
+                if (state is DashboardStateData)
+                  AboutWidget(
+                    title: AppString.kAboutMe,
+                    description: state.data.bio.about ?? "",
+                    image: state.data.bio.image ?? "",
+                    isLocal: state.data.bio.isLocal ?? true,
+                  ),
+                const SizedBox(height: kToolbarHeight),
+                const SkillWidget(imageList: AppAssets.imageList),
+                const SizedBox(height: kToolbarHeight),
+                const ProjectComponent(),
+                const SizedBox(height: kToolbarHeight),
+                const ContactComponent(),
+                const SizedBox(height: kToolbarHeight),
+                const FooterWidget(),
+                const SizedBox(height: kToolbarHeight),
+              ],
+            ),
           );
-        },
-      ),
+        }
+      },
     );
   }
 }

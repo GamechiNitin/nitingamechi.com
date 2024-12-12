@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:nitingamechi/ui/features/dashboard/data/models/dashboard_response.dart';
@@ -19,21 +17,19 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   Future<void> fetchData(_FetchData event, Emitter<DashboardState> emit) async {
     emit(const DashboardState.loading());
-    await Future.delayed(const Duration(seconds: 20));
 
     final result = await fetchDataUseCase();
 
     result.fold(
-      (data) {
-        if (data.project.isEmpty) {
+      (l) {
+        emit(DashboardState.error(l.message));
+      },
+      (r) {
+        if (r.project.isEmpty) {
           emit(const DashboardState.noData());
         } else {
-          emit(DashboardState.data(data));
+          emit(DashboardState.data(r));
         }
-      },
-      (errorMessage) {
-        log(errorMessage.message);
-        emit(DashboardState.error(errorMessage.message));
       },
     );
   }

@@ -40,6 +40,7 @@ void _initProject() async {
       .registerLazySingleton<DashboardRepository>(() => DashboardRepositoryImpl(
             remoteDataSource: serviceLocator(),
             localDataSource: serviceLocator(),
+            connectionChecker: serviceLocator(),
           ));
 
   // Register Use Case

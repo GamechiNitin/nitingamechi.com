@@ -16,3 +16,16 @@ const String kEmailURL = 'nitingamechi@gmail.com';
 const String kCallURL = '+9179******97';
 const String kGithubURL = 'https://github.com/GamechiNitin';
 const String kLinkedinURL = 'https://www.linkedin.com/in/nitingamechi/';
+
+const double kButtonHeight = 56.0;
+const double kDialogButtonWidth = 120.0;
+const double kMediumButtonHeight = 42.0;
+const double kSmallButtonHeight = 31.0;
+const double kPrefix = 25.0;
+const double kIcon = 25.0;
+const double kMiniIcon = 16.0;
+const double kLoaderHW = 7.0;
+const double kBottomGap = 80.0;
+const double kDefaultGap = 16.0;
+const double kMiniGap = 8.0;
+const double kSmallGap = 4.0;
