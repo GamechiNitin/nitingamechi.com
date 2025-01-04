@@ -5,56 +5,59 @@ import 'package:nitingamechi/utils/export/utils_export.dart';
 import 'package:nitingamechi/utils/helper.dart';
 
 class SocialComponent extends StatelessWidget {
-  const SocialComponent({super.key});
+  const SocialComponent({
+    super.key,
+    this.color = AppColors.kPrimaryColor,
+  });
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: kToolbarHeight),
+      padding: const EdgeInsets.only(top: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Let's Connect,",
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontSize: 16,
+                  fontSize: 14,
+                  color: color,
                 ),
           ),
           const SizedBox(height: 8),
-          Row(
-            // alignment: WrapAlignment.start,
-            // spacing: 16,
-            // runSpacing: 16,
+          Wrap(
+            alignment: WrapAlignment.start,
+            spacing: 16,
+            runSpacing: 16,
             children: [
-              // const SizedBox(width: 16),
-              GestureDetector(
-                onTap: () {
+              IconButton(
+                onPressed: () {
                   final Uri emailLaunchUri = Uri(
                     scheme: 'mailto',
                     path: kEmailURL,
                   );
                   Helper.launchLink(emailLaunchUri);
                 },
-                child: GlassMorphism(
+                icon: GlassMorphism(
                   blur: 10,
-                  color: AppColors.kPrimaryColor,
+                  color: color,
                   opacity: 0.2,
                   borderRadius: BorderRadius.circular(300),
                   child: Container(
                     padding: const EdgeInsets.all(6),
-                    child: const Icon(
+                    child: Icon(
                       Icons.email,
                       size: 30,
-                      color: AppColors.kPrimaryColor,
+                      color: color,
                       // height: 35,
                       // width: 35,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
-              GestureDetector(
-                onTap: () {
+              IconButton(
+                onPressed: () {
                   final Uri call = Uri(
                     scheme: 'tel',
                     // scheme: 'tel:+1-555-010-999'
@@ -62,29 +65,26 @@ class SocialComponent extends StatelessWidget {
                   );
                   Helper.launchLink(call);
                 },
-                child: GlassMorphism(
+                icon: GlassMorphism(
                   blur: 10,
-                  color: AppColors.kPrimaryColor,
+                  color: color,
                   opacity: 0.2,
                   borderRadius: BorderRadius.circular(300),
                   child: Container(
                     padding: const EdgeInsets.all(6),
-                    child: const Icon(
+                    child: Icon(
                       Icons.call_sharp,
                       size: 30,
-                      color: AppColors.kPrimaryColor,
-                      // height: 35,
-                      // width: 35,
+                      color: color,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
-              GestureDetector(
-                onTap: () => Helper.launchLink(Uri.parse(kLinkedinURL)),
-                child: GlassMorphism(
+              IconButton(
+                onPressed: () => Helper.launchLink(Uri.parse(kLinkedinURL)),
+                icon: GlassMorphism(
                   blur: 10,
-                  color: AppColors.kPrimaryColor,
+                  color: color,
                   opacity: 0.2,
                   borderRadius: BorderRadius.circular(300),
                   child: Container(
@@ -100,13 +100,11 @@ class SocialComponent extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
-              GestureDetector(
-                onTap: () => Helper.launchLink(Uri.parse(kGithubURL)),
-                child: GlassMorphism(
+              IconButton(
+                onPressed: () => Helper.launchLink(Uri.parse(kGithubURL)),
+                icon: GlassMorphism(
                   blur: 10,
-                  color: Theme.of(context).textTheme.headlineSmall?.color ??
-                      Colors.black,
+                  color: color,
                   opacity: 0.2,
                   borderRadius: BorderRadius.circular(300),
                   child: Container(
@@ -117,9 +115,7 @@ class SocialComponent extends StatelessWidget {
                         AppAssets.kGithub,
                         height: 30,
                         width: 30,
-                        color:
-                            Theme.of(context).textTheme.headlineSmall!.color ??
-                                Colors.black,
+                        color: color,
                       ),
                     ),
                   ),

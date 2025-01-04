@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nitingamechi/ui/features/dashboard/presentation/bloc/nav_cubit/nav_cubit.dart';
+import 'package:nitingamechi/ui/features/dashboard/presentation/view/mobile/component/social_component.dart';
 import 'package:nitingamechi/utils/export/utils_export.dart';
-import 'package:nitingamechi/utils/helper.dart';
-
 import 'glass_widget.dart';
-import 'image_widget.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});
@@ -29,15 +27,15 @@ class FooterWidget extends StatelessWidget {
               color: AppColors.kBlackColor,
               borderRadius: BorderRadius.circular(kBorderRadius),
             ),
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(16),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       AppString.kAddressFooter,
                       style: TextStyle(
                         color: AppColors.kWhite90Color,
@@ -45,121 +43,8 @@ class FooterWidget extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    const Spacer(),
-                    const Text(
-                      AppString.kLetConnectFooter,
-                      style: TextStyle(
-                        color: AppColors.kWhite90Color,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Row(
-                      // alignment: WrapAlignment.start,
-                      // spacing: 16,
-                      // runSpacing: 16,
-                      children: [
-                        // const SizedBox(width: 16),
-                        GestureDetector(
-                          onTap: () {
-                            final Uri emailLaunchUri = Uri(
-                              scheme: 'mailto',
-                              path: kEmailURL,
-                            );
-                            Helper.launchLink(emailLaunchUri);
-                          },
-                          child: GlassMorphism(
-                            blur: 10,
-                            color: AppColors.kWhite90Color,
-                            opacity: 0.2,
-                            borderRadius: BorderRadius.circular(300),
-                            child: Container(
-                              padding: const EdgeInsets.all(8),
-                              child: const Icon(
-                                Icons.email,
-                                size: 22,
-                                color: Colors.white,
-                                // height: 35,
-                                // width: 35,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        GestureDetector(
-                          onTap: () {
-                            final Uri call = Uri(
-                              scheme: 'tel',
-                              // scheme: 'tel:+1-555-010-999'
-                              path: kCallURL,
-                            );
-                            Helper.launchLink(call);
-                          },
-                          child: GlassMorphism(
-                            blur: 10,
-                            color: AppColors.kWhite90Color,
-                            opacity: 0.2,
-                            borderRadius: BorderRadius.circular(300),
-                            child: Container(
-                              padding: const EdgeInsets.all(8),
-                              child: const Icon(
-                                Icons.call_sharp,
-                                size: 22,
-                                color: Colors.white,
-
-                                // height: 35,
-                                // width: 35,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        GestureDetector(
-                          onTap: () =>
-                              Helper.launchLink(Uri.parse(kLinkedinURL)),
-                          child: GlassMorphism(
-                            blur: 10,
-                            color: AppColors.kWhite90Color,
-                            opacity: 0.2,
-                            borderRadius: BorderRadius.circular(300),
-                            child: Container(
-                              padding: const EdgeInsets.all(8),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(300),
-                                child: const ImageWidget(
-                                  AppAssets.kLinkedin2,
-                                  height: 22,
-                                  width: 22,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        GestureDetector(
-                          onTap: () => Helper.launchLink(Uri.parse(kGithubURL)),
-                          child: GlassMorphism(
-                            blur: 10,
-                            color: AppColors.kWhiteColor,
-                            opacity: 0.2,
-                            borderRadius: BorderRadius.circular(300),
-                            child: Container(
-                              padding: const EdgeInsets.all(8),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(300),
-                                child: Image.asset(
-                                  AppAssets.kGithub,
-                                  height: 22,
-                                  width: 22,
-                                  color: AppColors.kWhiteColor,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    Spacer(),
+                    SocialComponent(color: AppColors.kWhite90Color),
                   ],
                 ),
                 Column(
