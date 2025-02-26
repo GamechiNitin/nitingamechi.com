@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_responsive_ui/flutter_responsive_ui.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nitingamechi/core/common/widget/home_loading.dart';
 import 'package:nitingamechi/ui/widget/footer_widget.dart';
 import 'package:nitingamechi/ui/features/project/bloc/project_bloc.dart';
 import 'package:nitingamechi/ui/features/project/project_item_widget.dart';
@@ -22,6 +23,8 @@ class ProjectScreen extends StatelessWidget {
         child: BlocBuilder<ProjectBloc, ProjectState>(
           builder: (context, state) {
             switch (state) {
+              case ProjectStateLoading():
+                return const HomeLoadingScreen();
               case ProjectStateError():
                 return Center(child: Text(state.message));
               case ProjectStateNoData():

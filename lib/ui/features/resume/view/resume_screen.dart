@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nitingamechi/core/common/widget/home_loading.dart';
 import 'package:nitingamechi/ui/features/dashboard/presentation/view/mobile/component/experience_card_component.dart';
 import 'package:nitingamechi/ui/features/project/view/project_component.dart';
 import 'package:nitingamechi/ui/widget/footer_widget.dart';
@@ -10,21 +11,21 @@ import 'package:nitingamechi/utils/app_string.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
 
+import 'widget/step_widget.dart';
+
 class ResumeScreen extends StatelessWidget {
   const ResumeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kTransparentColor,
-
-      // appBar: AppBar(
-      //   title: const Text("Resume"),
-      // ),
       body: BlocProvider(
         create: (context) => ResumeBloc()..add(const ResumeEvent.fetchData()),
         child: BlocBuilder<ResumeBloc, ResumeState>(
           builder: (context, state) {
             switch (state) {
+              case ResumeStateLoading():
+                return const HomeLoadingScreen();
               case ResumeStateError():
                 return Center(child: Text(state.message));
               case ResumeStateNoData():
@@ -226,42 +227,11 @@ class ResumeScreen extends StatelessWidget {
   }
 }
 
-class StepWidget extends StatelessWidget {
-  const StepWidget({super.key, required this.showLine, this.height});
-  final bool showLine;
-  final double? height;
+class ResumeViewWidget extends StatelessWidget {
+  const ResumeViewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 35,
-      child: Column(
-        children: [
-          GlassMorphism(
-            blur: 20,
-            color: AppColors.kPrimaryColor,
-            border: true,
-            bcolor: AppColors.kPrimaryColor.withOpacity(0.5),
-            opacity: 0.2,
-            borderRadius: BorderRadius.circular(300),
-            child: const Padding(
-              padding: EdgeInsets.all(3),
-              child: CircleAvatar(
-                radius: 3,
-                backgroundColor: AppColors.kPrimaryColor,
-              ),
-            ),
-          ),
-          if (showLine)
-            SizedBox(
-              height: height ?? 85,
-              child: VerticalDivider(
-                color: AppColors.kPrimaryColor.withOpacity(0.5),
-                width: 0.4,
-              ),
-            ),
-        ],
-      ),
-    );
+    return const Placeholder();
   }
 }
