@@ -47,7 +47,7 @@ class ProjectScreen extends StatelessWidget {
                                   : 3,
                           mainAxisExtent: 450,
                           crossAxisSpacing: 20,
-                          mainAxisSpacing: 30,
+                          mainAxisSpacing: 20,
                         ),
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {

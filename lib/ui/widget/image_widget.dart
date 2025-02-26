@@ -49,19 +49,19 @@ class ImageWidget extends StatelessWidget {
                     color: AppColors.kSecondaryColor,
                     size: 20,
                   ),
-                  // frameBuilder: (context, child, loadingProgress, val) {
-                  //   if (loadingProgress != null) return child;
-                  //   return Center(
-                  //     child: Shimmer.fromColors(
-                  //       baseColor: AppColors.greenAccent,
-                  //       highlightColor: Colors.blueAccent,
-                  //       child: const CircularProgressIndicator(
-                  //         backgroundColor: AppColors.greenAccent,
-                  //         color: AppColors.greenAccent,
-                  //       ),
-                  //     ),
-                  //   );
-                  // },
+                  frameBuilder: (context, child, loadingProgress, val) {
+                    if (loadingProgress != null) return child;
+                    return Center(
+                      child: Shimmer.fromColors(
+                        baseColor: AppColors.greenAccent,
+                        highlightColor: Colors.blueAccent,
+                        child: const CircularProgressIndicator(
+                          backgroundColor: AppColors.greenAccent,
+                          color: AppColors.greenAccent,
+                        ),
+                      ),
+                    );
+                  },
                 )
               : CachedNetworkImage(
                   imageUrl: urlPath,

@@ -41,7 +41,6 @@ class ProjectItem extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 8),
           GlassMorphism(
             blur: 10,
             color: AppColors.kH11,
@@ -82,9 +81,11 @@ class ProjectItem extends StatelessWidget {
               children: [
                 Text(
                   project.title ?? "",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.getBody(
                     context: context,
-                    scaleFactor: 24,
+                    scaleFactor: 22,
                     fontWeight: FontWeight.w500,
                     color: AppColors.kBlackColor,
                   ),
@@ -139,7 +140,7 @@ class ProjectItem extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
           SizedBox(
             height: 45,
             width: 350,
@@ -147,7 +148,7 @@ class ProjectItem extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const AlwaysScrollableScrollPhysics(),
               itemCount: project.technology!.length,
-              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               itemBuilder: (context, index) {
                 Color bgColor = Helper.generateRandomColor();
                 return Container(
