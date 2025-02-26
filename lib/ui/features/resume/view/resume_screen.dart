@@ -194,11 +194,13 @@ class ResumeScreen extends StatelessWidget {
                                 height: index == 1 ? 160 : 230,
                               ),
                               const SizedBox(width: 10),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 16.0),
-                                child: ExperienceCardWidget(
-                                  company: state.data.company[index],
-                                  index: index,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 16.0),
+                                  child: ExperienceCardWidget(
+                                    company: state.data.company[index],
+                                    index: index,
+                                  ),
                                 ),
                               ),
                             ],

@@ -18,6 +18,7 @@ class ExperienceCardWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Position and company name
         Row(
           children: [
             Text(
@@ -35,6 +36,8 @@ class ExperienceCardWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 10),
+
+        // Location and timeline
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,36 +67,41 @@ class ExperienceCardWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 12),
-        if (company.description != null)
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: List.generate(
-              company.description!.length,
-              (index) => Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(top: 6),
-                      child: CircleAvatar(
-                        radius: 2,
-                        backgroundColor: AppColors.kSecondaryColor,
-                      ),
+
+        // Description (with improved handling for nulls and layout issues)
+        if (company.description != null && company.description!.isNotEmpty)
+          ListView.builder(
+            shrinkWrap: true, // Shrink-wrap the ListView to fit its content
+            physics:
+                const NeverScrollableScrollPhysics(), // Prevent internal scrolling
+            itemCount: company.description!.length,
+            itemBuilder: (context, index) {
+              return Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 30,
+                    child: CircleAvatar(
+                      radius: 4,
+                      backgroundColor: AppColors.kSecondaryColor,
                     ),
-                    const SizedBox(width: 8),
-                    Text(
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    // To make the Text take the available space
+                    child: Text(
                       company.description?[index] ?? "",
-                      maxLines: 2,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
-                  ],
-                ),
-              ),
-            ),
+                  ),
+                ],
+              );
+            },
           ),
         const SizedBox(height: 16),
+
+        // Tech stack (using GlassMorphism for styling)
         Wrap(
           runSpacing: 16,
           spacing: 16,
@@ -101,12 +109,9 @@ class ExperienceCardWidget extends StatelessWidget {
           alignment: WrapAlignment.center,
           direction: Axis.horizontal,
           verticalDirection: VerticalDirection.down,
-
-          // verticalDirection: VerticalDirection.down,
-
           crossAxisAlignment: WrapCrossAlignment.start,
           children: List.generate(
-            company.stack!.length,
+            company.stack?.length ?? 0,
             (index) => GlassMorphism(
               blur: 10,
               color: Colors.pinkAccent,
