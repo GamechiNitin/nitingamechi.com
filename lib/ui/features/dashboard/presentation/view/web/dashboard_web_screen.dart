@@ -21,42 +21,48 @@ class DashboardWebScreen extends StatelessWidget {
     return BlocBuilder<DashboardBloc, DashboardState>(
       builder: (context, state) {
         log(state.toString());
-        if (state is DashboardStateLoading) {
-          return const HomeLoadingScreen();
-        } else {
-          return SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: kBodyWebPadding(context)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                if (state is DashboardStateData)
+        switch (state) {
+          case DashboardStateLoading():
+            return const HomeLoadingScreen();
+          case DashboardStateError():
+            return Center(child: Text(state.message));
+          case DashboardStateNoData():
+            return const Center(child: Text(AppString.kNoData));
+          case DashboardStateData():
+            return SingleChildScrollView(
+              padding:
+                  EdgeInsets.symmetric(horizontal: kBodyWebPadding(context)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   HeaderComponent(
                     title: state.data.bio.title ?? "",
                     subTitle: state.data.bio.subTitle ?? "",
                     profession: state.data.bio.profession ?? "",
                     description: state.data.bio.description ?? "",
                   ),
-                const SizedBox(height: kToolbarHeight),
-                if (state is DashboardStateData)
+                  const SizedBox(height: kToolbarHeight),
                   AboutWidget(
                     title: AppString.kAboutMe,
                     description: state.data.bio.about ?? "",
                     image: state.data.bio.image ?? "",
                     isLocal: state.data.bio.isLocal ?? true,
                   ),
-                const SizedBox(height: kToolbarHeight),
-                const SkillWidget(imageList: AppAssets.imageList),
-                const SizedBox(height: kToolbarHeight),
-                const ProjectComponent(),
-                const SizedBox(height: kToolbarHeight),
-                const ContactComponent(),
-                const SizedBox(height: kToolbarHeight),
-                const FooterWidget(),
-                const SizedBox(height: kToolbarHeight),
-              ],
-            ),
-          );
+                  const SizedBox(height: kToolbarHeight),
+                  const SkillWidget(imageList: AppAssets.imageList),
+                  const SizedBox(height: kToolbarHeight),
+                  const ProjectComponent(),
+                  const SizedBox(height: kToolbarHeight),
+                  const ContactComponent(),
+                  const SizedBox(height: kToolbarHeight),
+                  const FooterWidget(),
+                  const SizedBox(height: kToolbarHeight),
+                ],
+              ),
+            );
+          default:
+            return SizedBox();
         }
       },
     );

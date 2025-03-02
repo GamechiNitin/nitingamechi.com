@@ -8,6 +8,7 @@ import 'package:nitingamechi/ui/widget/glass_widget.dart';
 import 'package:nitingamechi/ui/features/resume/bloc/resume_bloc.dart';
 import 'package:nitingamechi/ui/features/resume/view/widget/education_card_widget.dart';
 import 'package:nitingamechi/utils/app_string.dart';
+import 'package:nitingamechi/utils/helper.dart';
 import 'package:nitingamechi/utils/theme/app_colors.dart';
 import 'package:nitingamechi/utils/app_dimens.dart';
 
@@ -88,32 +89,36 @@ class ResumeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          GlassMorphism(
-                            blur: 20,
-                            color: AppColors.kPrimaryColor,
-                            opacity: 0.2,
-                            border: true,
-                            borderRadius: BorderRadius.circular(6),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 7.0,
-                                horizontal: 12,
-                              ),
-                              child: Row(
-                                children: [
-                                  const Icon(
-                                    Icons.download,
-                                    size: 18,
-                                    color: AppColors.kWhiteColor,
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Text(
-                                    AppString.kDownloadResume,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displaySmall,
-                                  )
-                                ],
+                          InkWell(
+                            onTap: () =>
+                                Helper.launchLink(Uri.parse(kDownloadResume)),
+                            child: GlassMorphism(
+                              blur: 20,
+                              color: AppColors.kPrimaryColor,
+                              opacity: 0.2,
+                              border: true,
+                              borderRadius: BorderRadius.circular(6),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 7.0,
+                                  horizontal: 12,
+                                ),
+                                child: Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.download,
+                                      size: 18,
+                                      color: AppColors.kWhiteColor,
+                                    ),
+                                    const SizedBox(width: 10),
+                                    Text(
+                                      AppString.kDownloadResume,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
