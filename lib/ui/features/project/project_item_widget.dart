@@ -60,11 +60,12 @@ class ProjectItem extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 8.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6),
-                      child: Image.asset(
+                      child: ImageWidget(
                         project.imagelist![index],
                         width: 45,
                         height: 45,
                         fit: BoxFit.cover,
+                        borderRadius: 6,
                       ),
                     ),
                   );

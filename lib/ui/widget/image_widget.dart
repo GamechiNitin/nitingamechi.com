@@ -25,6 +25,10 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (isLocal) {
+      precacheImage(AssetImage(urlPath), context); // Precache image
+    }
+
     return GlassMorphism(
       blur: 10,
       color: AppColors.kFrostedGlassColor,
@@ -49,19 +53,21 @@ class ImageWidget extends StatelessWidget {
                     color: AppColors.kSecondaryColor,
                     size: 20,
                   ),
-                  frameBuilder: (context, child, loadingProgress, val) {
-                    if (loadingProgress != null) return child;
-                    return Center(
-                      child: Shimmer.fromColors(
-                        baseColor: AppColors.greenAccent,
-                        highlightColor: Colors.blueAccent,
-                        child: const CircularProgressIndicator(
-                          backgroundColor: AppColors.greenAccent,
-                          color: AppColors.greenAccent,
-                        ),
-                      ),
-                    );
-                  },
+                  // frameBuilder: (context, child, loadingProgress, val) {
+                  //   if (loadingProgress != null) {
+                  //     return Center(
+                  //       child: Shimmer.fromColors(
+                  //         baseColor: AppColors.greenAccent,
+                  //         highlightColor: Colors.blueAccent,
+                  //         child: const CircularProgressIndicator(
+                  //           backgroundColor: AppColors.greenAccent,
+                  //           color: AppColors.greenAccent,
+                  //         ),
+                  //       ),
+                  //     );
+                  //   }
+                  //   return child;
+                  // },
                 )
               : CachedNetworkImage(
                   imageUrl: urlPath,

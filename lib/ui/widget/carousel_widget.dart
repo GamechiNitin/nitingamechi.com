@@ -132,7 +132,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                     padding: const EdgeInsets.only(right: 8.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
+                      child: ImageWidget(
                         widget.imagelist[index],
                         width: 90,
                         height: 90,
